@@ -17,6 +17,9 @@
 			"note": "Shown in the masculine form; to a woman say mah shloh-MEKH."},
 		"thank_you": {"native": "תודה",
 			"respelling": "toh-DAH", "status": "ai"},
+		"youre_welcome": {"native": "על לא דבר",
+			"respelling": "al loh dah-VAR", "status": "ai",
+			"note": "Literally 'for nothing'; the standard reply to thanks."},
 		"no_problem": {"native": "אין בעיה",
 			"respelling": "eyn bah-ah-YAH", "status": "ai",
 			"slang": {
@@ -36,6 +39,9 @@
 			"respelling": "KEHN", "status": "ai"},
 		"no": {"native": "לא",
 			"respelling": "LOH", "status": "ai"},
+		"of_course": {"native": "בטח",
+			"respelling": "beh-TAKH", "status": "ai",
+			"note": "Everyday emphatic 'of course, sure'."},
 		"amazing": {"native": "נפלא!",
 			"respelling": "nif-LAH", "status": "ai",
 			"slang": {

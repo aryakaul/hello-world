@@ -5,7 +5,7 @@ A phone-first quick reference for saying warm, courteous phrases
 the country you're standing in. Search for a country or spin
 the globe, and read the pronunciation out loud.
 
-Currently: 49 countries, 51 languages, 15 phrases each.
+Currently: 49 countries, 51 languages, 17 phrases each.
 Pronunciations are anglicized respellings with stressed
 syllables in CAPS ("Gracias" → GRAH-see-ahs). Entries marked
 "unverified" were AI-generated (then cross-checked against
