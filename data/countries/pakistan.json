@@ -9,6 +9,22 @@
 		{
 			"language": "urdu",
 			"guidance": "National lingua franca."
+		},
+		{
+			"language": "punjabi",
+			"guidance": "By far the largest: Lahore and central Punjab."
+		},
+		{
+			"language": "pashto",
+			"guidance": "Khyber Pakhtunkhwa: Peshawar."
+		},
+		{
+			"language": "sindhi",
+			"guidance": "Sindh: Karachi, Hyderabad."
+		},
+		{
+			"language": "saraiki",
+			"guidance": "Southern Punjab: Multan, Bahawalpur."
 		}
 	]
 }

@@ -9,6 +9,14 @@
 		{
 			"language": "swahili",
 			"guidance": "National language; welcomed everywhere; English also works."
+		},
+		{
+			"language": "kikuyu",
+			"guidance": "Central Kenya and around Nairobi."
+		},
+		{
+			"language": "luo",
+			"guidance": "Western Kenya: Kisumu."
 		}
 	]
 }

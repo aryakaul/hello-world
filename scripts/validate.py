@@ -43,6 +43,7 @@ SCRIPT_RANGES = {
 	"hausa": ((0x41, 0x5A), (0x61, 0x7A),
 		(0xC0, 0x24F), (0x1E00, 0x1EFF),
 		(0x250, 0x2AF)),
+	"tifinagh": ((0x2D30, 0x2D7F),),
 }
 
 LANG_SCRIPT = {
@@ -73,6 +74,14 @@ LANG_SCRIPT = {
 	"swiss_german": "latin", "tagalog": "latin",
 	"tok_pisin": "latin", "ukrainian": "cyrillic",
 	"yoruba": "yoruba", "zulu": "latin",
+	"azerbaijani": "arabic", "cebuano": "latin",
+	"isan": "thai", "kikuyu": "latin",
+	"luo": "latin", "northern_thai": "thai",
+	"pashto": "arabic", "punjabi": "arabic",
+	"saraiki": "arabic", "sepedi": "latin",
+	"sindhi": "arabic", "sukuma": "latin",
+	"sundanese": "latin", "tamazight": "tifinagh",
+	"xhosa": "latin",
 }
 
 

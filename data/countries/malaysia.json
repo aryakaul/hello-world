@@ -9,6 +9,10 @@
 		{
 			"language": "malay",
 			"guidance": "National language; use everywhere."
+		},
+		{
+			"language": "mandarin",
+			"guidance": "About a quarter of Malaysians; Chinese communities everywhere."
 		}
 	]
 }

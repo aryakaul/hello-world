@@ -13,6 +13,10 @@
 		{
 			"language": "javanese",
 			"guidance": "Largest regional language; Central and East Java."
+		},
+		{
+			"language": "sundanese",
+			"guidance": "West Java: Bandung, Bogor."
 		}
 	]
 }

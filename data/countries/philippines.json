@@ -9,6 +9,10 @@
 		{
 			"language": "tagalog",
 			"guidance": "Manila and Luzon; understood nationally as Filipino."
+		},
+		{
+			"language": "cebuano",
+			"guidance": "Visayas and much of Mindanao: Cebu, Davao."
 		}
 	]
 }

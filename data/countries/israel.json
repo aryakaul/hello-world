@@ -9,6 +9,14 @@
 		{
 			"language": "hebrew",
 			"guidance": "Official; English widely understood."
+		},
+		{
+			"language": "arabic_msa",
+			"guidance": "Spoken natively by 18%; Levantine colloquial differs — MSA is understood."
+		},
+		{
+			"language": "russian",
+			"guidance": "Widely spoken; 15%+ native speakers."
 		}
 	]
 }

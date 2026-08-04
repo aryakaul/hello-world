@@ -9,6 +9,10 @@
 		{
 			"language": "persian",
 			"guidance": "Official; use everywhere (Farsi)."
+		},
+		{
+			"language": "azerbaijani",
+			"guidance": "The northwest: Tabriz, Urmia."
 		}
 	]
 }

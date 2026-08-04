@@ -11,8 +11,16 @@
 			"guidance": "Largest home language: Durban, Joburg, KwaZulu-Natal."
 		},
 		{
+			"language": "xhosa",
+			"guidance": "Eastern Cape; strong in Cape Town too."
+		},
+		{
 			"language": "afrikaans",
 			"guidance": "Western and Northern Cape."
+		},
+		{
+			"language": "sepedi",
+			"guidance": "Limpopo: Polokwane."
 		}
 	]
 }

@@ -38,7 +38,8 @@
 			"continent": "Europe",
 			"languages": [
 				"Dutch",
-				"French"
+				"French",
+				"German"
 			]
 		},
 		{
@@ -129,8 +130,7 @@
 			"iso_num": "818",
 			"continent": "Africa",
 			"languages": [
-				"Arabic (Egyptian)",
-				"French"
+				"Arabic (Egyptian)"
 			]
 		},
 		{
@@ -199,7 +199,8 @@
 			"continent": "Asia",
 			"languages": [
 				"Indonesian",
-				"Javanese"
+				"Javanese",
+				"Sundanese"
 			]
 		},
 		{
@@ -209,7 +210,8 @@
 			"iso_num": "364",
 			"continent": "Asia",
 			"languages": [
-				"Persian"
+				"Persian",
+				"Azerbaijani"
 			]
 		},
 		{
@@ -219,7 +221,9 @@
 			"iso_num": "376",
 			"continent": "Asia",
 			"languages": [
-				"Hebrew"
+				"Hebrew",
+				"Arabic (Modern Standard)",
+				"Russian"
 			]
 		},
 		{
@@ -229,7 +233,8 @@
 			"iso_num": "380",
 			"continent": "Europe",
 			"languages": [
-				"Italian"
+				"Italian",
+				"German"
 			]
 		},
 		{
@@ -249,7 +254,9 @@
 			"iso_num": "404",
 			"continent": "Africa",
 			"languages": [
-				"Swahili"
+				"Swahili",
+				"Kikuyu",
+				"Luo"
 			]
 		},
 		{
@@ -259,7 +266,8 @@
 			"iso_num": "458",
 			"continent": "Asia",
 			"languages": [
-				"Malay"
+				"Malay",
+				"Mandarin"
 			]
 		},
 		{
@@ -280,6 +288,7 @@
 			"continent": "Africa",
 			"languages": [
 				"Moroccan Arabic",
+				"Tamazight",
 				"French"
 			]
 		},
@@ -323,7 +332,11 @@
 			"iso_num": "586",
 			"continent": "Asia",
 			"languages": [
-				"Urdu"
+				"Urdu",
+				"Punjabi",
+				"Pashto",
+				"Sindhi",
+				"Saraiki"
 			]
 		},
 		{
@@ -354,7 +367,8 @@
 			"iso_num": "608",
 			"continent": "Asia",
 			"languages": [
-				"Tagalog"
+				"Tagalog",
+				"Cebuano"
 			]
 		},
 		{
@@ -405,7 +419,9 @@
 			"continent": "Africa",
 			"languages": [
 				"Zulu",
-				"Afrikaans"
+				"Xhosa",
+				"Afrikaans",
+				"Sepedi"
 			]
 		},
 		{
@@ -470,7 +486,8 @@
 			"iso_num": "834",
 			"continent": "Africa",
 			"languages": [
-				"Swahili"
+				"Swahili",
+				"Sukuma"
 			]
 		},
 		{
@@ -480,7 +497,9 @@
 			"iso_num": "764",
 			"continent": "Asia",
 			"languages": [
-				"Thai"
+				"Thai",
+				"Isan",
+				"Northern Thai"
 			]
 		},
 		{
@@ -542,6 +561,11 @@
 			"native_name": "العربية الفصحى"
 		},
 		{
+			"slug": "azerbaijani",
+			"name": "Azerbaijani",
+			"native_name": "آذربایجان دیلی"
+		},
+		{
 			"slug": "bengali",
 			"name": "Bengali",
 			"native_name": "বাংলা"
@@ -555,6 +579,11 @@
 			"slug": "catalan",
 			"name": "Catalan",
 			"native_name": "Català"
+		},
+		{
+			"slug": "cebuano",
+			"name": "Cebuano",
+			"native_name": "Binisaya"
 		},
 		{
 			"slug": "czech",
@@ -612,6 +641,11 @@
 			"native_name": "Bahasa Indonesia"
 		},
 		{
+			"slug": "isan",
+			"name": "Isan",
+			"native_name": "ภาษาอีสาน"
+		},
+		{
 			"slug": "italian",
 			"name": "Italian",
 			"native_name": "Italiano"
@@ -632,6 +666,11 @@
 			"native_name": "ខ្មែរ"
 		},
 		{
+			"slug": "kikuyu",
+			"name": "Kikuyu",
+			"native_name": "Gĩkũyũ"
+		},
+		{
 			"slug": "korean",
 			"name": "Korean",
 			"native_name": "한국어"
@@ -640,6 +679,11 @@
 			"slug": "kurdish",
 			"name": "Kurdish (Kurmanji)",
 			"native_name": "Kurmancî"
+		},
+		{
+			"slug": "luo",
+			"name": "Luo",
+			"native_name": "Dholuo"
 		},
 		{
 			"slug": "malay",
@@ -667,9 +711,19 @@
 			"native_name": "Naijá"
 		},
 		{
+			"slug": "northern_thai",
+			"name": "Northern Thai",
+			"native_name": "คำเมือง"
+		},
+		{
 			"slug": "oromo",
 			"name": "Oromo",
 			"native_name": "Afaan Oromoo"
+		},
+		{
+			"slug": "pashto",
+			"name": "Pashto",
+			"native_name": "پښتو"
 		},
 		{
 			"slug": "persian",
@@ -687,6 +741,11 @@
 			"native_name": "Português"
 		},
 		{
+			"slug": "punjabi",
+			"name": "Punjabi",
+			"native_name": "پنجابی"
+		},
+		{
 			"slug": "quechua",
 			"name": "Quechua",
 			"native_name": "Runasimi"
@@ -697,6 +756,21 @@
 			"native_name": "Русский"
 		},
 		{
+			"slug": "saraiki",
+			"name": "Saraiki",
+			"native_name": "سرائیکی"
+		},
+		{
+			"slug": "sepedi",
+			"name": "Sepedi",
+			"native_name": "Sepedi"
+		},
+		{
+			"slug": "sindhi",
+			"name": "Sindhi",
+			"native_name": "سنڌي"
+		},
+		{
 			"slug": "sinhala",
 			"name": "Sinhala",
 			"native_name": "සිංහල"
@@ -705,6 +779,16 @@
 			"slug": "spanish",
 			"name": "Spanish",
 			"native_name": "Español"
+		},
+		{
+			"slug": "sukuma",
+			"name": "Sukuma",
+			"native_name": "Kisukuma"
+		},
+		{
+			"slug": "sundanese",
+			"name": "Sundanese",
+			"native_name": "Basa Sunda"
 		},
 		{
 			"slug": "swahili",
@@ -725,6 +809,11 @@
 			"slug": "tagalog",
 			"name": "Tagalog",
 			"native_name": "Tagalog"
+		},
+		{
+			"slug": "tamazight",
+			"name": "Tamazight",
+			"native_name": "ⵜⴰⵎⴰⵣⵉⵖⵜ"
 		},
 		{
 			"slug": "tamil",
@@ -770,6 +859,11 @@
 			"slug": "vietnamese",
 			"name": "Vietnamese",
 			"native_name": "Tiếng Việt"
+		},
+		{
+			"slug": "xhosa",
+			"name": "Xhosa",
+			"native_name": "isiXhosa"
 		},
 		{
 			"slug": "yoruba",

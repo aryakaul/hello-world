@@ -9,6 +9,14 @@
 		{
 			"language": "thai",
 			"guidance": "Official; use everywhere."
+		},
+		{
+			"language": "isan",
+			"guidance": "The northeast — a third of Thais; Lao-related."
+		},
+		{
+			"language": "northern_thai",
+			"guidance": "Chiang Mai and the Lanna north."
 		}
 	]
 }

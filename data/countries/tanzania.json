@@ -9,6 +9,10 @@
 		{
 			"language": "swahili",
 			"guidance": "National language; use everywhere."
+		},
+		{
+			"language": "sukuma",
+			"guidance": "Northwest: Mwanza and the Lake zone."
 		}
 	]
 }
