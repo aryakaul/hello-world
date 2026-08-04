@@ -20,10 +20,22 @@
 			"respelling": "SHOOK-ran", "status": "ai"},
 		"youre_welcome": {"native": "العفو",
 			"respelling": "el-AHF-oo", "status": "ai",
-			"note": "The 'oo' is a quick w, not a full syllable."},
+			"note": "The 'oo' is a quick w, not a full syllable.",
+			"slang": {
+				"native": "على إيه؟",
+				"respelling": "AH-la EYH",
+				"note": "Literally 'for what?'; playful, humble; any friendly context.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "مفيش مشكلة",
 			"respelling": "mah-FEESH MOOSH-keh-lah", "status": "ai",
-			"note": "Literally 'there's no problem'."},
+			"note": "Literally 'there's no problem'.",
+			"slang": {
+				"native": "ولا يهمك",
+				"respelling": "wa-la yi-HIM-mak",
+				"note": "Warm reassurance; friends, family, strangers alike.",
+				"status": "ai"
+			}},
 		"please": {"native": "من فضلك",
 			"respelling": "min FAHD-lak", "status": "ai",
 			"note": "To a woman: min FAHD-lik."},
@@ -38,7 +50,13 @@
 		"no": {"native": "لأ",
 			"respelling": "LAH", "status": "ai"},
 		"of_course": {"native": "طبعًا",
-			"respelling": "TAB-ahn", "status": "ai"},
+			"respelling": "TAB-ahn", "status": "ai",
+			"slang": {
+				"native": "أكيد",
+				"respelling": "ah-KEED",
+				"note": "Enthusiastic 'for sure'; casual, any friendly context.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "جميل أوي",
 			"respelling": "gah-MEEL AH-wee", "status": "ai",
 			"note": "Egyptian g is hard, as in 'go'.",

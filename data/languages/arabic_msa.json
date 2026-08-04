@@ -34,7 +34,13 @@
 			"respelling": "AF-wan", "status": "ai",
 			"note": "Standard reply to thanks; the same word also works for a casual \"excuse me.\""},
 		"no_problem": {"native": "لا مشكلة",
-			"respelling": "la MUSH-ki-la", "status": "ai"},
+			"respelling": "la MUSH-ki-la", "status": "ai",
+			"slang": {
+				"native": "ولا يهمك",
+				"respelling": "wa-la yhi-MAK",
+				"note": "Warm everyday Gulf/Saudi \"don't worry about it\"; to a woman say wala yhimmik (ولا يهمِك). Fine with friends and friendly strangers.",
+				"status": "ai"
+			}},
 		"please": {"native": "من فضلك",
 			"respelling": "min FAD-lik", "status": "ai",
 			"note": "Shown for a man; to a woman say min fadliki (من فضلِك)."},
@@ -50,7 +56,13 @@
 			"respelling": "LAA", "status": "ai"},
 		"of_course": {"native": "طبعاً",
 			"respelling": "TAB-an", "status": "ai",
-			"note": "Common emphatic yes; bit-tab' (بالطبع) is a more formal written alternative."},
+			"note": "Common emphatic yes; bit-tab' (بالطبع) is a more formal written alternative.",
+			"slang": {
+				"native": "أكيد",
+				"respelling": "a-KEED",
+				"note": "Everyday Gulf/Saudi \"for sure/definitely\"; casual and warm, fine with friends and friendly strangers.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "رائع",
 			"respelling": "RAA-i", "status": "ai",
 			"slang": {

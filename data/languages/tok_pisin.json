@@ -23,7 +23,13 @@
 			"note": "Add 'tru' (Tenkyu tru) to mean 'thank you very much.'"},
 		"youre_welcome": {"native": "Nogat samting",
 			"respelling": "NO-gaht SAHM-ting", "status": "ai",
-			"note": "Literally 'no problem/nothing'; the standard reply to thanks. 'Nogat wari' (no worries) also works."},
+			"note": "Literally 'no problem/nothing'; the standard reply to thanks. 'Nogat wari' (no worries) also works.",
+			"slang": {
+				"native": "Noken wari",
+				"respelling": "NO-ken WAH-ree",
+				"note": "Playful, drawn-out 'don't you worry'; said with extra warmth/attitude among friends, more animated than the plain reply.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "Maski",
 			"respelling": "MAHS-kee", "status": "ai",
 			"note": "Casual 'never mind, no worries'; brushes off thanks or a small mistake as nothing."},

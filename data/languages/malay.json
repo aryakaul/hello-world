@@ -45,7 +45,13 @@
 			"note": "In casual speech Malaysians shorten this to tak."},
 		"of_course": {"native": "Sudah tentu",
 			"respelling": "SOO-dah TEHN-too", "status": "ai",
-			"note": "Literally 'already certain'; affirms a request emphatically."},
+			"note": "Literally 'already certain'; affirms a request emphatically.",
+			"slang": {
+				"native": "Mestilah!",
+				"respelling": "mehs-TEE-lah",
+				"note": "Upbeat, everyday 'of course!'; fine with friends, family, or a friendly stranger.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "Hebat!",
 			"respelling": "HEH-baht", "status": "ai",
 			"slang": {

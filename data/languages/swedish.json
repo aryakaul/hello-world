@@ -32,7 +32,13 @@
 			"respelling": "vah-shaw-GOOD", "status": "ai",
 			"note": "Literally 'be so good'; the standard reply to tack."},
 		"no_problem": {"native": "Ingen fara",
-			"respelling": "ING-ehn FAH-rah", "status": "ai"},
+			"respelling": "ING-ehn FAH-rah", "status": "ai",
+			"slang": {
+				"native": "Lugnt!",
+				"respelling": "LOONGT",
+				"note": "Everyday casual; friends, safe with strangers.",
+				"status": "ai"
+			}},
 		"please": {"native": "Snälla",
 			"respelling": "SNELL-ah", "status": "ai",
 			"note": "Swedish has no direct 'please' — Swedes often just add tack (thanks) to a request instead, e.g. 'en kaffe, tack'."},
@@ -46,7 +52,13 @@
 			"respelling": "NAY", "status": "ai"},
 		"of_course": {"native": "Självklart",
 			"respelling": "SHELV-klahrt", "status": "ai",
-			"note": "The everyday word for 'of course'; naturligtvis is more formal."},
+			"note": "The everyday word for 'of course'; naturligtvis is more formal.",
+			"slang": {
+				"native": "Såklart!",
+				"respelling": "saw-KLAHRT",
+				"note": "Chatty, emphatic 'of course'; texting and speech.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "Fantastiskt!",
 			"respelling": "fan-TAS-tiskt", "status": "ai",
 			"slang": {

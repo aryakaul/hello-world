@@ -42,7 +42,13 @@
 		"youre_welcome": {"native": "Nie ma za co",
 			"respelling": "nyeh mah ZAH tsoh", "status": "ai"},
 		"no_problem": {"native": "Nie ma sprawy",
-			"respelling": "nyeh mah SPRAH-vih", "status": "ai"},
+			"respelling": "nyeh mah SPRAH-vih", "status": "ai",
+			"slang": {
+				"native": "Spoko!",
+				"respelling": "SPOH-koh",
+				"note": "Everyday casual; fine with friends or a relaxed stranger.",
+				"status": "ai"
+			}},
 		"please": {"native": "Proszę",
 			"respelling": "PROH-sheh", "status": "ai"},
 		"excuse_me": {"native": "Przepraszam",
@@ -57,7 +63,13 @@
 		"no": {"native": "Nie",
 			"respelling": "NYEH", "status": "ai"},
 		"of_course": {"native": "Oczywiście",
-			"respelling": "oh-chih-VYEESH-cheh", "status": "ai"},
+			"respelling": "oh-chih-VYEESH-cheh", "status": "ai",
+			"slang": {
+				"native": "Jasne!",
+				"respelling": "YAHS-neh",
+				"note": "Common casual affirmative; friendly with anyone.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "Niesamowite!",
 			"respelling": "nyeh-sah-moh-VEE-teh",
 			"status": "ai",

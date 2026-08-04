@@ -35,10 +35,22 @@
 			"note": "The -mnida ending is formal; safest with strangers."},
 		"youre_welcome": {"native": "아니에요",
 			"respelling": "ah-nee-eh-yo", "status": "ai",
-			"note": "Literally 'it's nothing'; textbook 천만에요 sounds stiff."},
+			"note": "Literally 'it's nothing'; textbook 천만에요 sounds stiff.",
+			"slang": {
+				"native": "아니야",
+				"respelling": "ah-nee-yah",
+				"note": "Drop the -yo; friends or people younger than you.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "괜찮아요",
 			"respelling": "gwehn-chah-nah-yo", "status": "ai",
-			"note": "Also doubles as an apology reply or a soft no."},
+			"note": "Also doubles as an apology reply or a soft no.",
+			"slang": {
+				"native": "괜찮아",
+				"respelling": "gwehn-chah-nah",
+				"note": "Drop the -yo; close friends, not with elders.",
+				"status": "ai"
+			}},
 		"please": {"native": "주세요",
 			"respelling": "joo-seh-yo", "status": "ai",
 			"note": "Attach it to what you want: mool joo-seh-yo, water."},
@@ -55,7 +67,13 @@
 			"respelling": "ah-nee-yo", "status": "ai"},
 		"of_course": {"native": "그럼요",
 			"respelling": "geu-ruhm-yo", "status": "ai",
-			"note": "Warm, eager yes; 당연하죠 leans more 'obviously'."},
+			"note": "Warm, eager yes; 당연하죠 leans more 'obviously'.",
+			"slang": {
+				"native": "당연하지",
+				"respelling": "dahng-yuhn-hah-jee",
+				"note": "Confident, upbeat; friends or close coworkers.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "대단해요",
 			"respelling": "deh-dahn-heh-yo", "status": "ai",
 			"note": "deh-bahk is the excited, casual version.",

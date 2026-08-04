@@ -40,10 +40,22 @@
 			"note": "First falls sharply, second is light and quick."},
 		"youre_welcome": {"native": "不客气",
 			"respelling": "boo kuh-chee", "status": "ai",
-			"note": "Reply to thanks; after an apology, may gwahn-shee."},
+			"note": "Reply to thanks; after an apology, may gwahn-shee.",
+			"slang": {
+				"native": "应该的",
+				"respelling": "ying-guy-duh",
+				"note": "Adds 'my pleasure' warmth; fine with friends, staff, strangers.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "没关系",
 			"respelling": "may gwahn-shee", "status": "ai",
-			"note": "Casual 'it's nothing'; also softens an apology."},
+			"note": "Casual 'it's nothing'; also softens an apology.",
+			"slang": {
+				"native": "没事儿",
+				"respelling": "may shrr",
+				"note": "Northern/Beijing casual, erhua'd; close friends and family.",
+				"status": "ai"
+			}},
 		"please": {"native": "请",
 			"respelling": "cheeng", "status": "ai",
 			"note": "Prefixes a request: cheeng gay wor, 'please give me'."},
@@ -60,7 +72,13 @@
 			"note": "'boo' turns rising here; 'shr' is a buzz, no vowel."},
 		"of_course": {"native": "当然",
 			"respelling": "dahng-rahn", "status": "ai",
-			"note": "Emphatic yes; 'dahng' stays high and level, 'rahn' rises."},
+			"note": "Emphatic yes; 'dahng' stays high and level, 'rahn' rises.",
+			"slang": {
+				"native": "当然啦",
+				"respelling": "dahng-rahn-la",
+				"note": "Playful, upbeat 'of course!'; friends and banter, not formal.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "太棒了",
 			"respelling": "tai bahng luh", "status": "ai",
 			"note": "'tai' rhymes with 'eye', like dzai in goodbye.",

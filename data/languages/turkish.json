@@ -32,11 +32,23 @@
 		"youre_welcome": {"native": "Rica ederim",
 			"respelling": "ree-JAH eh-deh-REEM",
 			"status": "ai",
-			"note": "The standard reply to thanks; 'j' as in jam."},
+			"note": "The standard reply to thanks; 'j' as in jam.",
+			"slang": {
+				"native": "Bir şey değil",
+				"respelling": "beer shay DEH-eel",
+				"note": "Warmer, more casual than Rica ederim; friends and family.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "Sorun değil",
 			"respelling": "soh-ROON DEH-eel",
 			"status": "ai",
-			"note": "Casual; 'ğ' softens/lengthens, not a hard g."},
+			"note": "Casual; 'ğ' softens/lengthens, not a hard g.",
+			"slang": {
+				"native": "Boş ver",
+				"respelling": "bosh VEHR",
+				"note": "Playful 'never mind, don't sweat it'; casual settings.",
+				"status": "ai"
+			}},
 		"please": {"native": "Lütfen",
 			"respelling": "LEWT-fehn", "status": "ai"},
 		"excuse_me": {"native": "Affedersiniz",
@@ -53,7 +65,13 @@
 		"of_course": {"native": "Tabii ki",
 			"respelling": "tah-BEE kee",
 			"status": "ai",
-			"note": "Everyday spoken form; formal option: Elbette."},
+			"note": "Everyday spoken form; formal option: Elbette.",
+			"slang": {
+				"native": "Aynen!",
+				"respelling": "ai-NEHN",
+				"note": "Hype affirmation 'totally!'; casual, friends and peers.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "Harika!",
 			"respelling": "HAH-ree-kah", "status": "ai",
 			"slang": {

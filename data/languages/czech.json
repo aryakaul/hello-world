@@ -34,7 +34,13 @@
 			"note": "Literally 'not for what'; standard reply to thanks."},
 		"no_problem": {"native": "Žádný problém",
 			"respelling": "ZHAH-dnee PROB-lehm", "status": "ai",
-			"note": "Casual everyday phrase, popular with younger speakers."},
+			"note": "Casual everyday phrase, popular with younger speakers.",
+			"slang": {
+				"native": "V pohodě",
+				"respelling": "FPOH-ho-dyeh",
+				"note": "Even more relaxed reply meaning 'it's all good/no worries'; warm and safe with anyone in a casual moment.",
+				"status": "ai"
+			}},
 		"please": {"native": "Prosím",
 			"respelling": "PRO-seem", "status": "ai"},
 		"excuse_me": {"native": "Promiňte",
@@ -47,7 +53,13 @@
 			"respelling": "NEH", "status": "ai"},
 		"of_course": {"native": "Samozřejmě",
 			"respelling": "SAH-moh-zrzhey-mnyeh", "status": "ai",
-			"note": "Standard emphatic 'of course' to a request; not a literal calque."},
+			"note": "Standard emphatic 'of course' to a request; not a literal calque.",
+			"slang": {
+				"native": "Jasně!",
+				"respelling": "YAHS-nyeh",
+				"note": "Everyday casual 'sure/of course' among friends and peers; upbeat and fine with most people in a relaxed moment.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "Úžasné!",
 			"respelling": "OO-zhahs-neh", "status": "ai",
 			"slang": {

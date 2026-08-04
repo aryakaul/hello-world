@@ -32,7 +32,13 @@
 		"no": {"native": "Ні",
 			"respelling": "NEE", "status": "ai"},
 		"of_course": {"native": "Звичайно",
-			"respelling": "zvee-CHAI-noh", "status": "ai"},
+			"respelling": "zvee-CHAI-noh", "status": "ai",
+			"slang": {
+				"native": "Аякже!",
+				"respelling": "ah-YAHK-zheh",
+				"note": "Punchy colloquial way to say 'of course/for sure'; upbeat and common with friends, safe with a friendly stranger too.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "Дивовижно!",
 			"respelling": "dee-voh-VEEZH-noh", "status": "ai",
 			"slang": {

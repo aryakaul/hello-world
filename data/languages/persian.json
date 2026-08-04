@@ -25,7 +25,13 @@
 				"status": "ai"
 			}},
 		"youre_welcome": {"native": "خواهش می‌کنم",
-			"respelling": "khah-HESH mee-koh-NAM", "status": "ai"},
+			"respelling": "khah-HESH mee-koh-NAM", "status": "ai",
+			"slang": {
+				"native": "فدای سرت",
+				"respelling": "fah-DAH-yeh sa-RET",
+				"note": "Literally 'may it be sacrificed for your head'; warm taarof-flavored reply for close friends or family, said with real affection rather than literally. Too intimate for strangers or formal settings.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "قابلی نداره",
 			"respelling": "ghah-beh-LEE nah-DAH-reh", "status": "ai",
 			"note": "Literally 'it's not worth anything'; the go-to casual brush-off when someone thanks you for something small."},

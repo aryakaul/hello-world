@@ -43,7 +43,13 @@
 			"note": "Also means 'welcome'; the reply to asante."},
 		"no_problem": {"native": "Hakuna shida",
 			"respelling": "hah-KOO-nah SHEE-dah", "status": "ai",
-			"note": "Literally 'there's no trouble'; casual and warm."},
+			"note": "Literally 'there's no trouble'; casual and warm.",
+			"slang": {
+				"native": "Hamna shida",
+				"respelling": "HAHM-nah SHEE-dah",
+				"note": "Everyday contraction; hakuna shida is the schoolbook form.",
+				"status": "ai"
+			}},
 		"please": {"native": "Tafadhali",
 			"respelling": "tah-fah-DHAH-lee", "status": "ai",
 			"note": "The 'dh' is a soft th, as in 'this'."},

@@ -28,7 +28,13 @@
 			"note": "Literally 'same to you'; the standard reply to thanks."},
 		"no_problem": {"native": "Tidak apa-apa",
 			"respelling": "TEE-dah AH-pah AH-pah", "status": "ai",
-			"note": "Casual 'it's nothing'; also used for 'it's okay'."},
+			"note": "Casual 'it's nothing'; also used for 'it's okay'.",
+			"slang": {
+				"native": "Gapapa",
+				"respelling": "gah-PAH-pah",
+				"note": "Texting-famous contraction; friends, peers, casual chat.",
+				"status": "ai"
+			}},
 		"please": {"native": "Tolong",
 			"respelling": "TOH-long", "status": "ai",
 			"note": "Tolong asks for help; silakan means 'go ahead'."},
@@ -43,7 +49,13 @@
 			"note": "The final k is a soft catch, not a hard k."},
 		"of_course": {"native": "Tentu saja",
 			"respelling": "TEN-too SAH-jah", "status": "ai",
-			"note": "Emphatic 'of course'; tentu alone is more casual."},
+			"note": "Emphatic 'of course'; tentu alone is more casual.",
+			"slang": {
+				"native": "Pasti dong!",
+				"respelling": "PAH-stee DONG",
+				"note": "Peppy affirmation with the dong particle; friends, peers.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "Luar biasa!",
 			"respelling": "LOO-ar bee-AH-sah", "status": "ai",
 			"slang": {

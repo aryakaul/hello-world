@@ -23,7 +23,13 @@
 			"status": "ai"},
 		"youre_welcome": {"native": "どういたしまして",
 			"respelling": "doh-ee-tah-shee-mahsh-teh",
-			"status": "ai"},
+			"status": "ai",
+			"slang": {
+				"native": "いえいえ",
+				"respelling": "ee-eh ee-eh",
+				"note": "Casual brush-off with friends or coworkers; waves thanks away.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "大丈夫です",
 			"respelling": "dah-ee-joh-boo dess", "status": "ai",
 			"note": "Casual 'it's fine'; less formal than the polite phrase above."},

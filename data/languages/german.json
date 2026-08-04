@@ -20,9 +20,21 @@
 			"respelling": "DAHN-keh", "status": "ai"},
 		"youre_welcome": {"native": "Gern geschehen",
 			"respelling": "gehrn geh-SHAY-ehn", "status": "ai",
-			"note": "Literally 'gladly done'; 'Bitte' also works."},
+			"note": "Literally 'gladly done'; 'Bitte' also works.",
+			"slang": {
+				"native": "Kein Ding!",
+				"respelling": "kyne DING",
+				"note": "Casual reply to thanks; friends, like 'no worries'.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "Kein Problem",
-			"respelling": "kyne proh-BLAYM", "status": "ai"},
+			"respelling": "kyne proh-BLAYM", "status": "ai",
+			"slang": {
+				"native": "Kein Ding",
+				"respelling": "kyne DING",
+				"note": "Everyday casual; friends and colleagues.",
+				"status": "ai"
+			}},
 		"please": {"native": "Bitte",
 			"respelling": "BIT-teh", "status": "ai"},
 		"excuse_me": {"native": "Entschuldigung",
@@ -34,7 +46,13 @@
 		"no": {"native": "Nein",
 			"respelling": "NINE", "status": "ai"},
 		"of_course": {"native": "Natürlich",
-			"respelling": "nah-TEWR-likh", "status": "ai"},
+			"respelling": "nah-TEWR-likh", "status": "ai",
+			"slang": {
+				"native": "Na klar!",
+				"respelling": "nah KLAHR",
+				"note": "Everyday casual; friends, safe with strangers.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "Wunderbar!",
 			"respelling": "VOON-der-bar", "status": "ai",
 			"slang": {

@@ -47,7 +47,13 @@
 		"no_problem": {"native": "Geen probleem",
 			"respelling": "khayn proh-BLAYM",
 			"status": "ai",
-			"note": "Casual; geen has the guttural g, as in loch."},
+			"note": "Casual; geen has the guttural g, as in loch.",
+			"slang": {
+				"native": "Maakt niet uit",
+				"respelling": "mahkt neet OYT",
+				"note": "Reply to sorry; casual, friends/family/coworkers.",
+				"status": "ai"
+			}},
 		"please": {"native": "Alstublieft",
 			"respelling": "ahls-tew-BLEEFT",
 			"status": "ai",
@@ -64,7 +70,13 @@
 		"of_course": {"native": "Natuurlijk",
 			"respelling": "nah-TEWR-luhk",
 			"status": "ai",
-			"note": "Stress on the second syllable."},
+			"note": "Stress on the second syllable.",
+			"slang": {
+				"native": "Tuurlijk!",
+				"respelling": "TEWR-luhk",
+				"note": "Clipped natuurlijk; upbeat, everyday with friends/peers.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "Geweldig!",
 			"respelling": "khuh-VEL-duhkh", "status": "ai",
 			"note": "Both g sounds are guttural, as in loch.",

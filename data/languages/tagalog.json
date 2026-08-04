@@ -19,7 +19,13 @@
 			"respelling": "sah-LAH-maht", "status": "ai",
 			"note": "Add po for extra respect: Salamat po."},
 		"youre_welcome": {"native": "Walang anuman",
-			"respelling": "WAH-lahng ah-NOO-mahn", "status": "ai"},
+			"respelling": "WAH-lahng ah-NOO-mahn", "status": "ai",
+			"slang": {
+				"native": "Wala 'yun",
+				"respelling": "WAH-lah YOON",
+				"note": "Casual, only with friends or close peers; means no biggie.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "Walang problema",
 			"respelling": "WAH-lahng proh-BLEH-mah", "status": "ai",
 			"note": "More casual than Walang anuman, the usual reply to thanks."},

@@ -40,10 +40,22 @@
 			"note": "Women say obrigada (oh-bree-GAH-dah)."},
 		"youre_welcome": {"native": "De nada",
 			"respelling": "jee NAH-dah", "status": "ai",
-			"note": "Brazilian 'de' sounds like 'jee'."},
+			"note": "Brazilian 'de' sounds like 'jee'.",
+			"slang": {
+				"native": "Imagina!",
+				"respelling": "ee-mah-ZHEE-nah",
+				"note": "Casual; very Brazilian, warm and common with anyone.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "Sem problema",
 			"respelling": "seng proh-BLEH-mah", "status": "ai",
-			"note": "Casual reply; nasal 'sem' hums through the nose."},
+			"note": "Casual reply; nasal 'sem' hums through the nose.",
+			"slang": {
+				"native": "Tranquilo!",
+				"respelling": "trang-KEE-loo",
+				"note": "Casual; friends and peers, like 'no worries'.",
+				"status": "ai"
+			}},
 		"please": {"native": "Por favor",
 			"respelling": "poor fah-VOR", "status": "ai"},
 		"excuse_me": {"native": "Com licença",

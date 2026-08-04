@@ -19,7 +19,13 @@
 			"respelling": "toh-DAH", "status": "ai"},
 		"youre_welcome": {"native": "על לא דבר",
 			"respelling": "al loh dah-VAR", "status": "ai",
-			"note": "Literally 'for nothing'; the standard reply to thanks."},
+			"note": "Literally 'for nothing'; the standard reply to thanks.",
+			"slang": {
+				"native": "בכיף",
+				"respelling": "beh-KEF",
+				"note": "Casual 'my pleasure'; common among friends and peers.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "אין בעיה",
 			"respelling": "eyn bah-ah-YAH", "status": "ai",
 			"slang": {
@@ -41,7 +47,13 @@
 			"respelling": "LOH", "status": "ai"},
 		"of_course": {"native": "בטח",
 			"respelling": "beh-TAKH", "status": "ai",
-			"note": "Everyday emphatic 'of course, sure'."},
+			"note": "Everyday emphatic 'of course, sure'.",
+			"slang": {
+				"native": "ברור",
+				"respelling": "bah-ROOR",
+				"note": "Casual 'obviously, sure thing'; common with friends and peers.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "נפלא!",
 			"respelling": "nif-LAH", "status": "ai",
 			"slang": {

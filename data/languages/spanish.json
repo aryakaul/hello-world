@@ -23,7 +23,13 @@
 		"no_problem": {"native": "No hay problema",
 			"respelling": "noh ai proh-BLEH-mah",
 			"status": "ai",
-			"note": "Casual; 'No es nada' (it's nothing) also common."},
+			"note": "Casual; 'No es nada' (it's nothing) also common.",
+			"slang": {
+				"native": "No pasa nada",
+				"respelling": "noh PAH-sah NAH-dah",
+				"note": "Breezy brush-off; common Spain to Argentina.",
+				"status": "ai"
+			}},
 		"please": {"native": "Por favor",
 			"respelling": "pohr fah-BOHR",
 			"status": "ai"},
@@ -40,7 +46,13 @@
 		"of_course": {"native": "Por supuesto",
 			"respelling": "pohr soo-PWEHS-toh",
 			"status": "ai",
-			"note": "Everyday casual version: Claro."},
+			"note": "Everyday casual version: Claro.",
+			"slang": {
+				"native": "¡Claro!",
+				"respelling": "KLAH-roh",
+				"note": "Default one-word reply in relaxed talk; safe with anyone.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "¡Increíble!",
 			"respelling": "een-kreh-EE-bleh",
 			"status": "ai"},

@@ -45,7 +45,13 @@
 			"note": "Same word as please, said as a reply."},
 		"no_problem": {"native": "Не за что",
 			"respelling": "NYEH-zuh-shtuh", "status": "ai",
-			"note": "Reply to thanks; что is said shtuh."},
+			"note": "Reply to thanks; что is said shtuh.",
+			"slang": {
+				"native": "Не парься",
+				"respelling": "nyeh PAHR-syah",
+				"note": "Casual, 'don't sweat it'; friends and peers, not elders.",
+				"status": "ai"
+			}},
 		"please": {"native": "Пожалуйста",
 			"respelling": "pah-ZHAH-luy-stah",
 			"status": "ai",

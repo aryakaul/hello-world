@@ -37,7 +37,13 @@
 			"respelling": "GRAH-tsyeh", "status": "ai",
 			"note": "Ends in 'tsyeh', not 'zee-ay'."},
 		"youre_welcome": {"native": "Prego",
-			"respelling": "PREH-goh", "status": "ai"},
+			"respelling": "PREH-goh", "status": "ai",
+			"slang": {
+				"native": "Figurati!",
+				"respelling": "fee-goo-RAH-tee",
+				"note": "Casual 'don't mention it'; friends, peers, tu terms.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "Di niente",
 			"respelling": "dee NYEHN-teh", "status": "ai",
 			"note": "Casual 'it's nothing'; lighter than Prego."},
@@ -53,7 +59,13 @@
 		"no": {"native": "No",
 			"respelling": "NOH", "status": "ai"},
 		"of_course": {"native": "Certo!",
-			"respelling": "CHEHR-toh", "status": "ai"},
+			"respelling": "CHEHR-toh", "status": "ai",
+			"slang": {
+				"native": "Altroché!",
+				"respelling": "ahl-troh-KEH",
+				"note": "Punchy, emphatic 'you bet!'; friends, casual chat.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "Fantastico!",
 			"respelling": "fahn-TAS-tee-koh", "status": "ai",
 			"slang": {

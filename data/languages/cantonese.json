@@ -35,7 +35,13 @@
 			"note": "For service; 'm' is a hum. For a gift, daw jeh."},
 		"youre_welcome": {"native": "唔使客氣",
 			"respelling": "m sai haak hay", "status": "ai",
-			"note": "Reply to thanks; 'never mind' is m gan yiu."},
+			"note": "Reply to thanks; 'never mind' is m gan yiu.",
+			"slang": {
+				"native": "唔使",
+				"respelling": "m sai",
+				"note": "Short brush-off; drops haak hay. Friends or a friendly stranger.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "小事啦",
 			"respelling": "siu si la", "status": "ai",
 			"note": "'Small matter'; brushes off thanks or an apology."},

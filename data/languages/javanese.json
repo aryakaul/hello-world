@@ -30,7 +30,13 @@
 			"note": "Used by everyone; the casual short form is suwun."},
 		"youre_welcome": {"native": "Sami-sami",
 			"respelling": "SAH-mee SAH-mee", "status": "ai",
-			"note": "Reply to thanks, literally 'the same to you'."},
+			"note": "Reply to thanks, literally 'the same to you'.",
+			"slang": {
+				"native": "Podo-podo",
+				"respelling": "POH-doh POH-doh",
+				"note": "Ngoko; friends and peers, common in East Java.",
+				"status": "ai"
+			}},
 		"no_problem": {"native": "Ora popo",
 			"respelling": "OH-rah POH-poh", "status": "ai",
 			"note": "Ngoko for 'it's nothing'; polite is mboten menapa-menapa."},

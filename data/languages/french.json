@@ -43,7 +43,13 @@
 			"note": "The final n is nasal, barely touched."},
 		"no_problem": {"native": "Pas de problème",
 			"respelling": "pah duh proh-BLEHM", "status": "ai",
-			"note": "Casual and upbeat; fine with friends or strangers."},
+			"note": "Casual and upbeat; fine with friends or strangers.",
+			"slang": {
+				"native": "Pas de souci",
+				"respelling": "pah duh soo-SEE",
+				"note": "Very current, breezy; any age, friends or strangers.",
+				"status": "ai"
+			}},
 		"please": {"native": "S'il vous plaît",
 			"respelling": "seel voo PLEH", "status": "ai"},
 		"excuse_me": {"native": "Excusez-moi",
@@ -59,7 +65,13 @@
 			"note": "Nasal; the n is a hum, not a hard consonant."},
 		"of_course": {"native": "Bien sûr",
 			"respelling": "byan SEWR", "status": "ai",
-			"note": "The û is a tight, rounded 'ew' sound."},
+			"note": "The û is a tight, rounded 'ew' sound.",
+			"slang": {
+				"native": "Carrément !",
+				"respelling": "kah-ray-MAHN",
+				"note": "Punchy affirmative; casual, any age, friends.",
+				"status": "ai"
+			}},
 		"amazing": {"native": "C'est magnifique !",
 			"respelling": "seh mah-nyee-FEEK", "status": "ai",
 			"slang": {
