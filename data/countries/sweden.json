@@ -1,0 +1,14 @@
+{
+	"slug": "sweden",
+	"name": "Sweden",
+	"flag": "🇸🇪",
+	"iso": "SE",
+	"iso_num": "752",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "swedish",
+			"guidance": "Official; English is near-universal but Swedish delights."
+		}
+	]
+}

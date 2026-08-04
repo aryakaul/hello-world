@@ -1,0 +1,18 @@
+{
+	"slug": "morocco",
+	"name": "Morocco",
+	"flag": "🇲🇦",
+	"iso": "MA",
+	"iso_num": "504",
+	"continent": "Africa",
+	"languages": [
+		{
+			"language": "arabic_moroccan",
+			"guidance": "Darija — everyone's daily language."
+		},
+		{
+			"language": "french",
+			"guidance": "Cities and business; widely understood."
+		}
+	]
+}

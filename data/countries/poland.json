@@ -1,0 +1,14 @@
+{
+	"slug": "poland",
+	"name": "Poland",
+	"flag": "🇵🇱",
+	"iso": "PL",
+	"iso_num": "616",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "polish",
+			"guidance": "Official; use everywhere."
+		}
+	]
+}

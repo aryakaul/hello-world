@@ -1,0 +1,82 @@
+{
+	"slug": "french",
+	"name": "French",
+	"native_name": "Français",
+	"entries": {
+		"hello": {"native": "Bonjour",
+			"respelling": "bohn-ZHOOR", "status": "ai",
+			"note": "'zh' as in 'measure'; the r is soft and throaty.",
+			"slang": {
+				"native": "Salut !",
+				"respelling": "sah-LEW",
+				"note": "Casual hi for friends, classmates, peers; not your boss.",
+				"status": "ai"
+			}},
+		"good_morning": {"native": "Bonjour",
+			"respelling": "bohn-ZHOOR", "status": "ai",
+			"note": "No separate 'good morning'; bonjour covers it."},
+		"good_evening": {"native": "Bonsoir",
+			"respelling": "bohn-SWAHR", "status": "ai",
+			"note": "Switch to bonsoir from about 6pm."},
+		"goodbye": {"native": "Au revoir",
+			"respelling": "oh ruh-VWAHR", "status": "ai",
+			"slang": {
+				"native": "À plus !",
+				"respelling": "ah PLUS",
+				"note": "Casual 'see you later'; only for people on first-name terms.",
+				"status": "ai"
+			}},
+		"how_are_you": {"native": "Comment allez-vous ?",
+			"respelling": "koh-mahn-tah-lay-VOO", "status": "ai",
+			"note": "Polite 'vous' form; run the words together.",
+			"slang": {
+				"native": "Ça va ?",
+				"respelling": "sah VAH",
+				"note": "Casual check-in; fine with peers and new acquaintances.",
+				"status": "ai"
+			}},
+		"thank_you": {"native": "Merci",
+			"respelling": "mehr-SEE", "status": "ai",
+			"note": "Merci beaucoup (boh-KOO) for extra warmth."},
+		"no_problem": {"native": "De rien",
+			"respelling": "duh RYEHN", "status": "ai",
+			"note": "The final n is nasal, barely touched."},
+		"please": {"native": "S'il vous plaît",
+			"respelling": "seel voo PLEH", "status": "ai"},
+		"excuse_me": {"native": "Excusez-moi",
+			"respelling": "ehks-kew-zay MWAH", "status": "ai",
+			"note": "'kew' is the tight French u; round your lips."},
+		"sorry": {"native": "Pardon",
+			"respelling": "pahr-DOHN", "status": "ai",
+			"note": "Nasal 'ohn'; also used to squeeze past."},
+		"yes": {"native": "Oui",
+			"respelling": "WEE", "status": "ai"},
+		"no": {"native": "Non",
+			"respelling": "NOHN", "status": "ai",
+			"note": "Nasal; the n is a hum, not a hard consonant."},
+		"amazing": {"native": "C'est magnifique !",
+			"respelling": "seh mah-nyee-FEEK", "status": "ai",
+			"slang": {
+				"native": "C'est ouf !",
+				"respelling": "seh OOF",
+				"note": "Verlan slang, upbeat; casual settings, any age.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "C'est délicieux !",
+			"respelling": "seh day-lee-SYUH", "status": "ai",
+			"slang": {
+				"native": "C'est trop bon !",
+				"respelling": "seh troh BOHN",
+				"note": "Casual food praise; friends and family, not fine dining.",
+				"status": "ai"
+			}},
+		"cheers": {"native": "Santé !",
+			"respelling": "sahn-TAY", "status": "ai",
+			"slang": {
+				"native": "Tchin !",
+				"respelling": "CHEEN",
+				"note": "Shortened tchin-tchin; casual toast among friends.",
+				"status": "ai"
+			}}
+	}
+}

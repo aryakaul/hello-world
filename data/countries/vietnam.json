@@ -1,0 +1,14 @@
+{
+	"slug": "vietnam",
+	"name": "Vietnam",
+	"flag": "🇻🇳",
+	"iso": "VN",
+	"iso_num": "704",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "vietnamese",
+			"guidance": "Official; use everywhere."
+		}
+	]
+}

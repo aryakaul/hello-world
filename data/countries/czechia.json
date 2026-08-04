@@ -1,0 +1,14 @@
+{
+	"slug": "czechia",
+	"name": "Czechia",
+	"flag": "🇨🇿",
+	"iso": "CZ",
+	"iso_num": "203",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "czech",
+			"guidance": "Official everywhere."
+		}
+	]
+}

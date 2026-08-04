@@ -1,0 +1,18 @@
+{
+	"slug": "sri_lanka",
+	"name": "Sri Lanka",
+	"flag": "🇱🇰",
+	"iso": "LK",
+	"iso_num": "144",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "sinhala",
+			"guidance": "Majority language: south and west."
+		},
+		{
+			"language": "tamil",
+			"guidance": "North and east; also Colombo."
+		}
+	]
+}

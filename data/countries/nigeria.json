@@ -1,0 +1,18 @@
+{
+	"slug": "nigeria",
+	"name": "Nigeria",
+	"flag": "🇳🇬",
+	"iso": "NG",
+	"iso_num": "566",
+	"continent": "Africa",
+	"languages": [
+		{
+			"language": "nigerian_pidgin",
+			"guidance": "The bridge language everyone shares; casual by nature."
+		},
+		{
+			"language": "yoruba",
+			"guidance": "Lagos and the southwest."
+		}
+	]
+}

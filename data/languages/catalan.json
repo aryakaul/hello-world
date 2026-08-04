@@ -1,0 +1,55 @@
+{
+	"slug": "catalan",
+	"name": "Catalan",
+	"native_name": "Català",
+	"entries": {
+		"hello": {"native": "Hola",
+			"respelling": "OH-lah", "status": "ai"},
+		"good_morning": {"native": "Bon dia",
+			"respelling": "bon DEE-ah", "status": "ai"},
+		"good_evening": {"native": "Bona tarda",
+			"respelling": "BOH-nah TAR-dah", "status": "ai",
+			"note": "Used from afternoon into evening; Bona nit is for night/goodnight."
+		},
+		"goodbye": {"native": "Adéu",
+			"respelling": "ah-DEW", "status": "ai"},
+		"how_are_you": {"native": "Com estàs?",
+			"respelling": "kom ehs-TAHS", "status": "ai",
+			"note": "Informal; use Com està? for someone you should address formally.",
+			"slang": {
+				"native": "Com anem?",
+				"respelling": "kom ah-NEM",
+				"note": "Casual, friendly; fine with peers and friendly strangers.",
+				"status": "ai"
+			}},
+		"thank_you": {"native": "Gràcies",
+			"respelling": "GRAH-see-ehs", "status": "ai"},
+		"no_problem": {"native": "De res",
+			"respelling": "deh REHS", "status": "ai",
+			"note": "Literally 'of nothing'; the standard reply to thanks."},
+		"please": {"native": "Si us plau",
+			"respelling": "see-oos-PLOW", "status": "ai"},
+		"excuse_me": {"native": "Perdó",
+			"respelling": "per-DOH", "status": "ai"},
+		"sorry": {"native": "Ho sento",
+			"respelling": "oo SEN-toh", "status": "ai"},
+		"yes": {"native": "Sí",
+			"respelling": "SEE", "status": "ai"},
+		"no": {"native": "No",
+			"respelling": "NOH", "status": "ai"},
+		"amazing": {"native": "Increïble!",
+			"respelling": "in-kreh-EE-bleh", "status": "ai",
+			"slang": {
+				"native": "Que guai!",
+				"respelling": "keh GWAI",
+				"note": "Everyday colloquial word for great/awesome; safe with anyone friendly.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "Boníssim!",
+			"respelling": "boh-NEE-seem", "status": "ai",
+			"note": "Use Boníssima for feminine-agreeing nouns like l'ensaïmada."},
+		"cheers": {"native": "Salut!",
+			"respelling": "sah-LOOT", "status": "ai",
+			"note": "Also said after someone sneezes, like 'bless you'."}
+	}
+}

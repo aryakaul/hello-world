@@ -1,0 +1,14 @@
+{
+	"slug": "france",
+	"name": "France",
+	"flag": "🇫🇷",
+	"iso": "FR",
+	"iso_num": "250",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "french",
+			"guidance": "Official; use everywhere."
+		}
+	]
+}

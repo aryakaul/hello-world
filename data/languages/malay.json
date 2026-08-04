@@ -1,0 +1,69 @@
+{
+	"slug": "malay",
+	"name": "Malay",
+	"native_name": "Bahasa Melayu",
+	"entries": {
+		"hello": {"native": "Helo",
+			"respelling": "HEH-loh", "status": "ai"},
+		"good_morning": {"native": "Selamat pagi",
+			"respelling": "seh-LAH-mat PAH-gee", "status": "ai"},
+		"good_evening": {"native": "Selamat petang",
+			"respelling": "seh-LAH-mat peh-TANG", "status": "ai",
+			"note": "For daylight hours into dusk; after dark, Malaysians switch to selamat malam."},
+		"goodbye": {"native": "Jumpa lagi",
+			"respelling": "JOOM-pah LAH-gee", "status": "ai",
+			"note": "'See you again'; selamat tinggal is a more final, formal farewell."},
+		"how_are_you": {"native": "Apa khabar?",
+			"respelling": "AH-pah KHA-bar", "status": "ai",
+			"note": "The kh is a soft, breathy sound, like clearing your throat gently.",
+			"slang": {
+				"native": "Apa cerita?",
+				"respelling": "AH-pah cheh-REE-tah",
+				"note": "Literally 'what's the story'; casual, for friends and peers only.",
+				"status": "ai"
+			}},
+		"thank_you": {"native": "Terima kasih",
+			"respelling": "teh-REE-mah KAH-seh", "status": "ai"},
+		"no_problem": {"native": "Sama-sama",
+			"respelling": "SAH-mah SAH-mah", "status": "ai",
+			"note": "The reply to thanks; 'no worries' is tak apa."},
+		"please": {"native": "Tolong",
+			"respelling": "TOH-long", "status": "ai",
+			"note": "Tolong asks for help; sila is used on signs and formal invitations."},
+		"excuse_me": {"native": "Tumpang tanya",
+			"respelling": "TOOM-pang TAH-nyah", "status": "ai",
+			"note": "Literally 'may I ask'; use to get someone's attention politely."},
+		"sorry": {"native": "Maaf",
+			"respelling": "mah-AHF", "status": "ai"},
+		"yes": {"native": "Ya",
+			"respelling": "YAH", "status": "ai"},
+		"no": {"native": "Tidak",
+			"respelling": "TEE-dah", "status": "ai",
+			"note": "In casual speech Malaysians shorten this to tak."},
+		"amazing": {"native": "Hebat!",
+			"respelling": "HEH-baht", "status": "ai",
+			"slang": {
+				"native": "Best!",
+				"respelling": "BEHST",
+				"note": "Borrowed straight from English; casual and safe with anyone friendly.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "Sedap!",
+			"respelling": "seh-DAHP", "status": "ai",
+			"slang": {
+				"native": "Shiok!",
+				"respelling": "SHYOHK",
+				"note": "Playful and expressive; great with friends or the food vendor.",
+				"status": "ai"
+			}},
+		"cheers": {"native": "Minum!",
+			"respelling": "MEE-noom", "status": "ai",
+			"note": "Literally 'drink'; a simple, sober-friendly invitation to toast.",
+			"slang": {
+				"native": "Yam seng!",
+				"respelling": "YAHM SEHNG",
+				"note": "The classic shout at Malaysian dinners and weddings; drag out 'yam' then snap 'seng' with the group.",
+				"status": "ai"
+			}}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"slug": "italy",
+	"name": "Italy",
+	"flag": "🇮🇹",
+	"iso": "IT",
+	"iso_num": "380",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "italian",
+			"guidance": "Official; use everywhere."
+		}
+	]
+}

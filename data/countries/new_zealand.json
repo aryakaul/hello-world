@@ -1,0 +1,14 @@
+{
+	"slug": "new_zealand",
+	"name": "New Zealand",
+	"flag": "🇳🇿",
+	"iso": "NZ",
+	"iso_num": "554",
+	"continent": "Oceania",
+	"languages": [
+		{
+			"language": "maori",
+			"guidance": "Co-official; kia ora is warmly received everywhere."
+		}
+	]
+}

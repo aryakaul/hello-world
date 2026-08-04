@@ -1,0 +1,773 @@
+{
+	"countries": [
+		{
+			"slug": "argentina",
+			"name": "Argentina",
+			"flag": "🇦🇷",
+			"iso_num": "032",
+			"continent": "South America",
+			"languages": [
+				"Spanish"
+			]
+		},
+		{
+			"slug": "austria",
+			"name": "Austria",
+			"flag": "🇦🇹",
+			"iso_num": "040",
+			"continent": "Europe",
+			"languages": [
+				"German"
+			]
+		},
+		{
+			"slug": "bangladesh",
+			"name": "Bangladesh",
+			"flag": "🇧🇩",
+			"iso_num": "050",
+			"continent": "Asia",
+			"languages": [
+				"Bengali"
+			]
+		},
+		{
+			"slug": "belgium",
+			"name": "Belgium",
+			"flag": "🇧🇪",
+			"iso_num": "056",
+			"continent": "Europe",
+			"languages": [
+				"Dutch",
+				"French"
+			]
+		},
+		{
+			"slug": "brazil",
+			"name": "Brazil",
+			"flag": "🇧🇷",
+			"iso_num": "076",
+			"continent": "South America",
+			"languages": [
+				"Portuguese"
+			]
+		},
+		{
+			"slug": "cambodia",
+			"name": "Cambodia",
+			"flag": "🇰🇭",
+			"iso_num": "116",
+			"continent": "Asia",
+			"languages": [
+				"Khmer"
+			]
+		},
+		{
+			"slug": "canada",
+			"name": "Canada",
+			"flag": "🇨🇦",
+			"iso_num": "124",
+			"continent": "North America",
+			"languages": [
+				"French"
+			]
+		},
+		{
+			"slug": "chile",
+			"name": "Chile",
+			"flag": "🇨🇱",
+			"iso_num": "152",
+			"continent": "South America",
+			"languages": [
+				"Spanish"
+			]
+		},
+		{
+			"slug": "china",
+			"name": "China",
+			"flag": "🇨🇳",
+			"iso_num": "156",
+			"continent": "Asia",
+			"languages": [
+				"Mandarin",
+				"Cantonese"
+			]
+		},
+		{
+			"slug": "colombia",
+			"name": "Colombia",
+			"flag": "🇨🇴",
+			"iso_num": "170",
+			"continent": "South America",
+			"languages": [
+				"Spanish"
+			]
+		},
+		{
+			"slug": "cuba",
+			"name": "Cuba",
+			"flag": "🇨🇺",
+			"iso_num": "192",
+			"continent": "North America",
+			"languages": [
+				"Spanish"
+			]
+		},
+		{
+			"slug": "czechia",
+			"name": "Czechia",
+			"flag": "🇨🇿",
+			"iso_num": "203",
+			"continent": "Europe",
+			"languages": [
+				"Czech"
+			]
+		},
+		{
+			"slug": "egypt",
+			"name": "Egypt",
+			"flag": "🇪🇬",
+			"iso_num": "818",
+			"continent": "Africa",
+			"languages": [
+				"Arabic (Egyptian)",
+				"French"
+			]
+		},
+		{
+			"slug": "ethiopia",
+			"name": "Ethiopia",
+			"flag": "🇪🇹",
+			"iso_num": "231",
+			"continent": "Africa",
+			"languages": [
+				"Amharic",
+				"Oromo",
+				"Tigrinya"
+			]
+		},
+		{
+			"slug": "france",
+			"name": "France",
+			"flag": "🇫🇷",
+			"iso_num": "250",
+			"continent": "Europe",
+			"languages": [
+				"French"
+			]
+		},
+		{
+			"slug": "germany",
+			"name": "Germany",
+			"flag": "🇩🇪",
+			"iso_num": "276",
+			"continent": "Europe",
+			"languages": [
+				"German"
+			]
+		},
+		{
+			"slug": "greece",
+			"name": "Greece",
+			"flag": "🇬🇷",
+			"iso_num": "300",
+			"continent": "Europe",
+			"languages": [
+				"Greek"
+			]
+		},
+		{
+			"slug": "india",
+			"name": "India",
+			"flag": "🇮🇳",
+			"iso_num": "356",
+			"continent": "Asia",
+			"languages": [
+				"Hindi",
+				"Bengali",
+				"Marathi",
+				"Telugu",
+				"Tamil",
+				"Gujarati",
+				"Urdu"
+			]
+		},
+		{
+			"slug": "indonesia",
+			"name": "Indonesia",
+			"flag": "🇮🇩",
+			"iso_num": "360",
+			"continent": "Asia",
+			"languages": [
+				"Indonesian",
+				"Javanese"
+			]
+		},
+		{
+			"slug": "iran",
+			"name": "Iran",
+			"flag": "🇮🇷",
+			"iso_num": "364",
+			"continent": "Asia",
+			"languages": [
+				"Persian"
+			]
+		},
+		{
+			"slug": "israel",
+			"name": "Israel",
+			"flag": "🇮🇱",
+			"iso_num": "376",
+			"continent": "Asia",
+			"languages": [
+				"Hebrew"
+			]
+		},
+		{
+			"slug": "italy",
+			"name": "Italy",
+			"flag": "🇮🇹",
+			"iso_num": "380",
+			"continent": "Europe",
+			"languages": [
+				"Italian"
+			]
+		},
+		{
+			"slug": "japan",
+			"name": "Japan",
+			"flag": "🇯🇵",
+			"iso_num": "392",
+			"continent": "Asia",
+			"languages": [
+				"Japanese"
+			]
+		},
+		{
+			"slug": "kenya",
+			"name": "Kenya",
+			"flag": "🇰🇪",
+			"iso_num": "404",
+			"continent": "Africa",
+			"languages": [
+				"Swahili"
+			]
+		},
+		{
+			"slug": "malaysia",
+			"name": "Malaysia",
+			"flag": "🇲🇾",
+			"iso_num": "458",
+			"continent": "Asia",
+			"languages": [
+				"Malay"
+			]
+		},
+		{
+			"slug": "mexico",
+			"name": "Mexico",
+			"flag": "🇲🇽",
+			"iso_num": "484",
+			"continent": "North America",
+			"languages": [
+				"Spanish"
+			]
+		},
+		{
+			"slug": "morocco",
+			"name": "Morocco",
+			"flag": "🇲🇦",
+			"iso_num": "504",
+			"continent": "Africa",
+			"languages": [
+				"Moroccan Arabic",
+				"French"
+			]
+		},
+		{
+			"slug": "netherlands",
+			"name": "Netherlands",
+			"flag": "🇳🇱",
+			"iso_num": "528",
+			"continent": "Europe",
+			"languages": [
+				"Dutch"
+			]
+		},
+		{
+			"slug": "new_zealand",
+			"name": "New Zealand",
+			"flag": "🇳🇿",
+			"iso_num": "554",
+			"continent": "Oceania",
+			"languages": [
+				"Māori"
+			]
+		},
+		{
+			"slug": "nigeria",
+			"name": "Nigeria",
+			"flag": "🇳🇬",
+			"iso_num": "566",
+			"continent": "Africa",
+			"languages": [
+				"Nigerian Pidgin",
+				"Yoruba"
+			]
+		},
+		{
+			"slug": "pakistan",
+			"name": "Pakistan",
+			"flag": "🇵🇰",
+			"iso_num": "586",
+			"continent": "Asia",
+			"languages": [
+				"Urdu"
+			]
+		},
+		{
+			"slug": "papua_new_guinea",
+			"name": "Papua New Guinea",
+			"flag": "🇵🇬",
+			"iso_num": "598",
+			"continent": "Oceania",
+			"languages": [
+				"Tok Pisin"
+			]
+		},
+		{
+			"slug": "peru",
+			"name": "Peru",
+			"flag": "🇵🇪",
+			"iso_num": "604",
+			"continent": "South America",
+			"languages": [
+				"Spanish",
+				"Quechua"
+			]
+		},
+		{
+			"slug": "philippines",
+			"name": "Philippines",
+			"flag": "🇵🇭",
+			"iso_num": "608",
+			"continent": "Asia",
+			"languages": [
+				"Tagalog"
+			]
+		},
+		{
+			"slug": "poland",
+			"name": "Poland",
+			"flag": "🇵🇱",
+			"iso_num": "616",
+			"continent": "Europe",
+			"languages": [
+				"Polish"
+			]
+		},
+		{
+			"slug": "portugal",
+			"name": "Portugal",
+			"flag": "🇵🇹",
+			"iso_num": "620",
+			"continent": "Europe",
+			"languages": [
+				"Portuguese"
+			]
+		},
+		{
+			"slug": "russia",
+			"name": "Russia",
+			"flag": "🇷🇺",
+			"iso_num": "643",
+			"continent": "Europe",
+			"languages": [
+				"Russian"
+			]
+		},
+		{
+			"slug": "saudi_arabia",
+			"name": "Saudi Arabia",
+			"flag": "🇸🇦",
+			"iso_num": "682",
+			"continent": "Asia",
+			"languages": [
+				"Arabic (Modern Standard)"
+			]
+		},
+		{
+			"slug": "south_africa",
+			"name": "South Africa",
+			"flag": "🇿🇦",
+			"iso_num": "710",
+			"continent": "Africa",
+			"languages": [
+				"Zulu",
+				"Afrikaans"
+			]
+		},
+		{
+			"slug": "south_korea",
+			"name": "South Korea",
+			"flag": "🇰🇷",
+			"iso_num": "410",
+			"continent": "Asia",
+			"languages": [
+				"Korean"
+			]
+		},
+		{
+			"slug": "spain",
+			"name": "Spain",
+			"flag": "🇪🇸",
+			"iso_num": "724",
+			"continent": "Europe",
+			"languages": [
+				"Spanish",
+				"Catalan"
+			]
+		},
+		{
+			"slug": "sri_lanka",
+			"name": "Sri Lanka",
+			"flag": "🇱🇰",
+			"iso_num": "144",
+			"continent": "Asia",
+			"languages": [
+				"Sinhala",
+				"Tamil"
+			]
+		},
+		{
+			"slug": "sweden",
+			"name": "Sweden",
+			"flag": "🇸🇪",
+			"iso_num": "752",
+			"continent": "Europe",
+			"languages": [
+				"Swedish"
+			]
+		},
+		{
+			"slug": "switzerland",
+			"name": "Switzerland",
+			"flag": "🇨🇭",
+			"iso_num": "756",
+			"continent": "Europe",
+			"languages": [
+				"Swiss German",
+				"German",
+				"French",
+				"Italian"
+			]
+		},
+		{
+			"slug": "tanzania",
+			"name": "Tanzania",
+			"flag": "🇹🇿",
+			"iso_num": "834",
+			"continent": "Africa",
+			"languages": [
+				"Swahili"
+			]
+		},
+		{
+			"slug": "thailand",
+			"name": "Thailand",
+			"flag": "🇹🇭",
+			"iso_num": "764",
+			"continent": "Asia",
+			"languages": [
+				"Thai"
+			]
+		},
+		{
+			"slug": "turkey",
+			"name": "Turkey",
+			"flag": "🇹🇷",
+			"iso_num": "792",
+			"continent": "Asia",
+			"languages": [
+				"Turkish",
+				"Kurdish (Kurmanji)"
+			]
+		},
+		{
+			"slug": "ukraine",
+			"name": "Ukraine",
+			"flag": "🇺🇦",
+			"iso_num": "804",
+			"continent": "Europe",
+			"languages": [
+				"Ukrainian"
+			]
+		},
+		{
+			"slug": "vietnam",
+			"name": "Vietnam",
+			"flag": "🇻🇳",
+			"iso_num": "704",
+			"continent": "Asia",
+			"languages": [
+				"Vietnamese"
+			]
+		}
+	],
+	"languages": [
+		{
+			"slug": "afrikaans",
+			"name": "Afrikaans",
+			"native_name": "Afrikaans"
+		},
+		{
+			"slug": "amharic",
+			"name": "Amharic",
+			"native_name": "አማርኛ"
+		},
+		{
+			"slug": "arabic_egyptian",
+			"name": "Arabic (Egyptian)",
+			"native_name": "العربية المصرية"
+		},
+		{
+			"slug": "arabic_moroccan",
+			"name": "Moroccan Arabic",
+			"native_name": "الدارجة المغربية"
+		},
+		{
+			"slug": "arabic_msa",
+			"name": "Arabic (Modern Standard)",
+			"native_name": "العربية الفصحى"
+		},
+		{
+			"slug": "bengali",
+			"name": "Bengali",
+			"native_name": "বাংলা"
+		},
+		{
+			"slug": "cantonese",
+			"name": "Cantonese",
+			"native_name": "廣東話"
+		},
+		{
+			"slug": "catalan",
+			"name": "Catalan",
+			"native_name": "Català"
+		},
+		{
+			"slug": "czech",
+			"name": "Czech",
+			"native_name": "Čeština"
+		},
+		{
+			"slug": "dutch",
+			"name": "Dutch",
+			"native_name": "Nederlands"
+		},
+		{
+			"slug": "french",
+			"name": "French",
+			"native_name": "Français"
+		},
+		{
+			"slug": "german",
+			"name": "German",
+			"native_name": "Deutsch"
+		},
+		{
+			"slug": "greek",
+			"name": "Greek",
+			"native_name": "Ελληνικά"
+		},
+		{
+			"slug": "gujarati",
+			"name": "Gujarati",
+			"native_name": "ગુજરાતી"
+		},
+		{
+			"slug": "hebrew",
+			"name": "Hebrew",
+			"native_name": "עברית"
+		},
+		{
+			"slug": "hindi",
+			"name": "Hindi",
+			"native_name": "हिन्दी"
+		},
+		{
+			"slug": "indonesian",
+			"name": "Indonesian",
+			"native_name": "Bahasa Indonesia"
+		},
+		{
+			"slug": "italian",
+			"name": "Italian",
+			"native_name": "Italiano"
+		},
+		{
+			"slug": "japanese",
+			"name": "Japanese",
+			"native_name": "日本語"
+		},
+		{
+			"slug": "javanese",
+			"name": "Javanese",
+			"native_name": "Basa Jawa"
+		},
+		{
+			"slug": "khmer",
+			"name": "Khmer",
+			"native_name": "ខ្មែរ"
+		},
+		{
+			"slug": "korean",
+			"name": "Korean",
+			"native_name": "한국어"
+		},
+		{
+			"slug": "kurdish",
+			"name": "Kurdish (Kurmanji)",
+			"native_name": "Kurmancî"
+		},
+		{
+			"slug": "malay",
+			"name": "Malay",
+			"native_name": "Bahasa Melayu"
+		},
+		{
+			"slug": "mandarin",
+			"name": "Mandarin",
+			"native_name": "普通话"
+		},
+		{
+			"slug": "maori",
+			"name": "Māori",
+			"native_name": "Te Reo Māori"
+		},
+		{
+			"slug": "marathi",
+			"name": "Marathi",
+			"native_name": "मराठी"
+		},
+		{
+			"slug": "nigerian_pidgin",
+			"name": "Nigerian Pidgin",
+			"native_name": "Naijá"
+		},
+		{
+			"slug": "oromo",
+			"name": "Oromo",
+			"native_name": "Afaan Oromoo"
+		},
+		{
+			"slug": "persian",
+			"name": "Persian",
+			"native_name": "فارسی"
+		},
+		{
+			"slug": "polish",
+			"name": "Polish",
+			"native_name": "Polski"
+		},
+		{
+			"slug": "portuguese",
+			"name": "Portuguese",
+			"native_name": "Português"
+		},
+		{
+			"slug": "quechua",
+			"name": "Quechua",
+			"native_name": "Runasimi"
+		},
+		{
+			"slug": "russian",
+			"name": "Russian",
+			"native_name": "Русский"
+		},
+		{
+			"slug": "sinhala",
+			"name": "Sinhala",
+			"native_name": "සිංහල"
+		},
+		{
+			"slug": "spanish",
+			"name": "Spanish",
+			"native_name": "Español"
+		},
+		{
+			"slug": "swahili",
+			"name": "Swahili",
+			"native_name": "Kiswahili"
+		},
+		{
+			"slug": "swedish",
+			"name": "Swedish",
+			"native_name": "Svenska"
+		},
+		{
+			"slug": "swiss_german",
+			"name": "Swiss German",
+			"native_name": "Schwiizerdütsch"
+		},
+		{
+			"slug": "tagalog",
+			"name": "Tagalog",
+			"native_name": "Tagalog"
+		},
+		{
+			"slug": "tamil",
+			"name": "Tamil",
+			"native_name": "தமிழ்"
+		},
+		{
+			"slug": "telugu",
+			"name": "Telugu",
+			"native_name": "తెలుగు"
+		},
+		{
+			"slug": "thai",
+			"name": "Thai",
+			"native_name": "ภาษาไทย"
+		},
+		{
+			"slug": "tigrinya",
+			"name": "Tigrinya",
+			"native_name": "ትግርኛ"
+		},
+		{
+			"slug": "tok_pisin",
+			"name": "Tok Pisin",
+			"native_name": "Tok Pisin"
+		},
+		{
+			"slug": "turkish",
+			"name": "Turkish",
+			"native_name": "Türkçe"
+		},
+		{
+			"slug": "ukrainian",
+			"name": "Ukrainian",
+			"native_name": "Українська"
+		},
+		{
+			"slug": "urdu",
+			"name": "Urdu",
+			"native_name": "اردو"
+		},
+		{
+			"slug": "vietnamese",
+			"name": "Vietnamese",
+			"native_name": "Tiếng Việt"
+		},
+		{
+			"slug": "yoruba",
+			"name": "Yoruba",
+			"native_name": "Yorùbá"
+		},
+		{
+			"slug": "zulu",
+			"name": "Zulu",
+			"native_name": "isiZulu"
+		}
+	]
+}

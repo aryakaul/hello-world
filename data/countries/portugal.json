@@ -1,0 +1,35 @@
+{
+	"slug": "portugal",
+	"name": "Portugal",
+	"flag": "🇵🇹",
+	"iso": "PT",
+	"iso_num": "620",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "portuguese",
+			"guidance": "Official; the language file is Brazil-flavored — forms below are European.",
+			"overrides": {
+				"how_are_you": {
+					"native": "Como está?",
+					"respelling": "koo-MOO shTAH",
+					"status": "ai",
+					"note": "Formal está; casual is Como estás? (koo-MOO shTAHSH)",
+					"slang": null
+				},
+				"amazing": {
+					"native": "Que fixe!",
+					"respelling": "keh FEE-sheh",
+					"status": "ai",
+					"note": "European everyday word for great, not the Brazilian incrível",
+					"slang": {
+						"native": "Fixe!",
+						"respelling": "FEE-sheh",
+						"note": "Casual; safe with friends or a friendly stranger, not formal settings",
+						"status": "ai"
+					}
+				}
+			}
+		}
+	]
+}

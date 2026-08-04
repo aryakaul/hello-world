@@ -1,0 +1,22 @@
+{
+	"slug": "ethiopia",
+	"name": "Ethiopia",
+	"flag": "🇪🇹",
+	"iso": "ET",
+	"iso_num": "231",
+	"continent": "Africa",
+	"languages": [
+		{
+			"language": "amharic",
+			"guidance": "Working language; regional languages coexist."
+		},
+		{
+			"language": "oromo",
+			"guidance": "Largest first language; Oromia region."
+		},
+		{
+			"language": "tigrinya",
+			"guidance": "Tigray, in the north."
+		}
+	]
+}

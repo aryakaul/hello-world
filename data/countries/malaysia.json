@@ -1,0 +1,14 @@
+{
+	"slug": "malaysia",
+	"name": "Malaysia",
+	"flag": "🇲🇾",
+	"iso": "MY",
+	"iso_num": "458",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "malay",
+			"guidance": "National language; use everywhere."
+		}
+	]
+}

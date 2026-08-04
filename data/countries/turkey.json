@@ -1,0 +1,18 @@
+{
+	"slug": "turkey",
+	"name": "Turkey",
+	"flag": "🇹🇷",
+	"iso": "TR",
+	"iso_num": "792",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "turkish",
+			"guidance": "Official; use everywhere."
+		},
+		{
+			"language": "kurdish",
+			"guidance": "Largest minority language; the southeast."
+		}
+	]
+}

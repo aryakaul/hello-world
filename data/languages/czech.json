@@ -1,0 +1,66 @@
+{
+	"slug": "czech",
+	"name": "Czech",
+	"native_name": "Čeština",
+	"entries": {
+		"hello": {"native": "Dobrý den",
+			"respelling": "DOH-bree den", "status": "ai",
+			"note": "Formal, safe default; used any time of day.",
+			"slang": {
+				"native": "Ahoj",
+				"respelling": "AH-hoy",
+				"note": "Very casual hi/bye for friends and peers; signals ty-terms, skip with strangers in formal settings.",
+				"status": "ai"
+			}},
+		"good_morning": {"native": "Dobré ráno",
+			"respelling": "DOH-breh RAH-no", "status": "ai"},
+		"good_evening": {"native": "Dobrý večer",
+			"respelling": "DOH-bree VEH-cher", "status": "ai"},
+		"goodbye": {"native": "Na shledanou",
+			"respelling": "nah SKHLE-dah-noh", "status": "ai",
+			"slang": {
+				"native": "Čau",
+				"respelling": "CHOW",
+				"note": "Casual bye (borrowed from ciao); fine for friends and equals, too familiar for a boss or clerk.",
+				"status": "ai"
+			}},
+		"how_are_you": {"native": "Jak se máte?",
+			"respelling": "yak seh MAH-teh", "status": "ai",
+			"note": "Polite 'vy' form for someone you do not know."},
+		"thank_you": {"native": "Děkuji",
+			"respelling": "DYEH-koo-yi", "status": "ai"},
+		"no_problem": {"native": "Není zač",
+			"respelling": "NEH-nee zach", "status": "ai",
+			"note": "Literally 'not for what'; 'V pořádku' also works."},
+		"please": {"native": "Prosím",
+			"respelling": "PRO-seem", "status": "ai"},
+		"excuse_me": {"native": "Promiňte",
+			"respelling": "PRO-min-yteh", "status": "ai"},
+		"sorry": {"native": "Je mi to líto",
+			"respelling": "yeh mee toh LEE-toh", "status": "ai"},
+		"yes": {"native": "Ano",
+			"respelling": "AH-no", "status": "ai"},
+		"no": {"native": "Ne",
+			"respelling": "NEH", "status": "ai"},
+		"amazing": {"native": "Úžasné!",
+			"respelling": "OO-zhahs-neh", "status": "ai",
+			"slang": {
+				"native": "Paráda!",
+				"respelling": "pah-RAH-dah",
+				"note": "Upbeat everyday slang for 'awesome/great'; fine with anyone in a casual moment.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "Výborné!",
+			"respelling": "VEE-bor-neh", "status": "ai",
+			"note": "Literally 'excellent'; the standard way to praise tasty food or drink.",
+			"slang": {
+				"native": "Mňam!",
+				"respelling": "MNYAM",
+				"note": "Playful 'yum!' interjection said before or while eating; warm and kid-friendly, fine with anyone.",
+				"status": "ai"
+			}},
+		"cheers": {"native": "Na zdraví!",
+			"respelling": "nah ZDRAH-vee", "status": "ai",
+			"note": "Hold eye contact while clinking glasses; skipping it is considered bad luck."}
+	}
+}

@@ -1,0 +1,69 @@
+{
+	"slug": "swiss_german",
+	"name": "Swiss German",
+	"native_name": "Schwiizerdütsch",
+	"entries": {
+		"hello": {"native": "Grüezi",
+			"respelling": "GROO-eh-tsee", "status": "ai",
+			"note": "Formal, safe with anyone, including strangers and elders.",
+			"slang": {
+				"native": "Hoi",
+				"respelling": "HOY",
+				"note": "Casual hi, used with friends, peers, and younger people.",
+				"status": "ai"
+			}},
+		"good_morning": {"native": "Guete Morge",
+			"respelling": "GOO-eh-teh MOR-geh", "status": "ai"},
+		"good_evening": {"native": "Guete Naabig",
+			"respelling": "GOO-eh-teh NAH-big", "status": "ai",
+			"note": "Naabig is the Zurich-dialect shortening of Abend."},
+		"goodbye": {"native": "Uf Wiederluege",
+			"respelling": "oof VEE-der-loo-eh-geh", "status": "ai",
+			"note": "Literally 'until we see each other again'; polite and all-purpose.",
+			"slang": {
+				"native": "Tschau",
+				"respelling": "CHOW",
+				"note": "Casual, Italian-influenced; fine with friends, less so at work.",
+				"status": "ai"
+			}},
+		"how_are_you": {"native": "Wie gaht's Ihne?",
+			"respelling": "vee GAHTS EE-neh", "status": "ai",
+			"note": "Polite form for someone you don't know; casual: Wie gaht's dir?"},
+		"thank_you": {"native": "Merci vilmal",
+			"respelling": "mer-SEE FEEL-mahl", "status": "ai",
+			"note": "Merci alone also works; vilmal ('many times') adds warmth."},
+		"no_problem": {"native": "Gärn gscheh",
+			"respelling": "GAIRN geh-SHAY", "status": "ai"},
+		"please": {"native": "Bitte",
+			"respelling": "BIT-teh", "status": "ai"},
+		"excuse_me": {"native": "Äxgüsi",
+			"respelling": "EKS-goo-zee", "status": "ai",
+			"note": "Zurich-dialect softening of the French excusez; light and friendly."},
+		"sorry": {"native": "Es tuet mir leid",
+			"respelling": "ehs TOOT meer LYte", "status": "ai"},
+		"yes": {"native": "Ja",
+			"respelling": "YAH", "status": "ai"},
+		"no": {"native": "Nei",
+			"respelling": "NYE", "status": "ai"},
+		"amazing": {"native": "Fantastisch!",
+			"respelling": "fahn-TAHS-tish", "status": "ai",
+			"slang": {
+				"native": "Geil, Alte!",
+				"respelling": "GYLE AHL-teh",
+				"note": "Peer slang like 'Amazing, dude!'; Alte suits a woman or mixed group, Alter a man, Aute is the Bernese spelling. Best with people near your own age.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "Fein!",
+			"respelling": "FINE", "status": "ai",
+			"note": "Said about food you're enjoying; 'Das isch fein' means 'that's tasty.'"},
+		"cheers": {"native": "Proscht!",
+			"respelling": "PROHST", "status": "ai",
+			"note": "Meet people's eyes as you clink glasses, per Swiss custom.",
+			"slang": {
+				"native": "Pröschtli!",
+				"respelling": "PRERSHT-lee",
+				"note": "Cute diminutive; extra warm and casual, used with friends.",
+				"status": "ai"
+			}}
+	}
+}

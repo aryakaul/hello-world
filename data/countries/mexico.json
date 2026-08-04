@@ -1,0 +1,24 @@
+{
+	"slug": "mexico",
+	"name": "Mexico",
+	"flag": "🇲🇽",
+	"iso": "MX",
+	"iso_num": "484",
+	"continent": "North America",
+	"languages": [
+		{
+			"language": "spanish",
+			"guidance": "Official; use everywhere.",
+			"overrides": {
+				"amazing": {
+					"slang": {
+						"native": "¡Qué padre!",
+						"respelling": "KEH PAH-dreh",
+						"note": "Warm, casual; fine with friends or a friendly stranger",
+						"status": "ai"
+					}
+				}
+			}
+		}
+	]
+}

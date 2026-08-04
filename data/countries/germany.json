@@ -1,0 +1,14 @@
+{
+	"slug": "germany",
+	"name": "Germany",
+	"flag": "🇩🇪",
+	"iso": "DE",
+	"iso_num": "276",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "german",
+			"guidance": "Official; use everywhere."
+		}
+	]
+}

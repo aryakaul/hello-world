@@ -1,0 +1,28 @@
+{
+	"slug": "peru",
+	"name": "Peru",
+	"flag": "🇵🇪",
+	"iso": "PE",
+	"iso_num": "604",
+	"continent": "South America",
+	"languages": [
+		{
+			"language": "spanish",
+			"guidance": "Official; use everywhere.",
+			"overrides": {
+				"amazing": {
+					"slang": {
+						"native": "¡Qué bacán!",
+						"respelling": "keh bah-KAHN",
+						"note": "Warm, casual; fine with friends or a friendly stranger",
+						"status": "ai"
+					}
+				}
+			}
+		},
+		{
+			"language": "quechua",
+			"guidance": "Andean highlands around Cusco; a delight to attempt."
+		}
+	]
+}

@@ -1,0 +1,53 @@
+{
+	"slug": "hebrew",
+	"name": "Hebrew",
+	"native_name": "עברית",
+	"entries": {
+		"hello": {"native": "שלום",
+			"respelling": "shah-LOHM", "status": "ai"},
+		"good_morning": {"native": "בוקר טוב",
+			"respelling": "BOH-ker TOHV", "status": "ai"},
+		"good_evening": {"native": "ערב טוב",
+			"respelling": "EH-rev TOHV", "status": "ai"},
+		"goodbye": {"native": "להתראות",
+			"respelling": "leh-heet-rah-OHT", "status": "ai",
+			"note": "Casual parting: Yalla, bye (a mix of Hebrew and English)."},
+		"how_are_you": {"native": "מה שלומך?",
+			"respelling": "mah shlohm-KHAH", "status": "ai",
+			"note": "Shown in the masculine form; to a woman say mah shloh-MEKH."},
+		"thank_you": {"native": "תודה",
+			"respelling": "toh-DAH", "status": "ai"},
+		"no_problem": {"native": "אין בעיה",
+			"respelling": "eyn bah-ah-YAH", "status": "ai",
+			"slang": {
+				"native": "סבבה",
+				"respelling": "sah-BAH-bah",
+				"note": "Very casual and warm; fine with friendly strangers, all ages.",
+				"status": "ai"
+			}},
+		"please": {"native": "בבקשה",
+			"respelling": "beh-vah-kah-SHAH", "status": "ai"},
+		"excuse_me": {"native": "סליחה",
+			"respelling": "slee-KHAH", "status": "ai"},
+		"sorry": {"native": "אני מצטער",
+			"respelling": "ah-NEE meets-tah-EHR", "status": "ai",
+			"note": "Shown in the masculine form; a woman says meets-tah-EH-ret."},
+		"yes": {"native": "כן",
+			"respelling": "KEHN", "status": "ai"},
+		"no": {"native": "לא",
+			"respelling": "LOH", "status": "ai"},
+		"amazing": {"native": "נפלא!",
+			"respelling": "nif-LAH", "status": "ai",
+			"slang": {
+				"native": "אחלה!",
+				"respelling": "AKH-lah",
+				"note": "Casual, warm enthusiasm; safe with friendly strangers.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "טעים!",
+			"respelling": "tah-EEM", "status": "ai"},
+		"cheers": {"native": "לחיים!",
+			"respelling": "leh-khah-EEM", "status": "ai",
+			"note": "Literally 'to life'; said before drinking."}
+	}
+}

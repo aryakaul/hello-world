@@ -1,0 +1,14 @@
+{
+	"slug": "bangladesh",
+	"name": "Bangladesh",
+	"flag": "🇧🇩",
+	"iso": "BD",
+	"iso_num": "050",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "bengali",
+			"guidance": "Official and universal."
+		}
+	]
+}

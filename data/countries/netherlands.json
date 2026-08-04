@@ -1,0 +1,14 @@
+{
+	"slug": "netherlands",
+	"name": "Netherlands",
+	"flag": "🇳🇱",
+	"iso": "NL",
+	"iso_num": "528",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "dutch",
+			"guidance": "Official; nearly everyone also speaks English."
+		}
+	]
+}

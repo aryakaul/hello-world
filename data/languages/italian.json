@@ -1,0 +1,78 @@
+{
+	"slug": "italian",
+	"name": "Italian",
+	"native_name": "Italiano",
+	"entries": {
+		"hello": {"native": "Salve",
+			"respelling": "SAHL-veh", "status": "ai",
+			"note": "Polite all-purpose hello; Ciao (chow) is for friends.",
+			"slang": {
+				"native": "Ciao!",
+				"respelling": "CHOW",
+				"note": "Casual hi; friends, family, peers on tu terms.",
+				"status": "ai"
+			}},
+		"good_morning": {"native": "Buongiorno",
+			"respelling": "bwohn-JOR-noh", "status": "ai"},
+		"good_evening": {"native": "Buonasera",
+			"respelling": "bwoh-nah-SEH-rah", "status": "ai"},
+		"goodbye": {"native": "Arrivederci",
+			"respelling": "ah-ree-veh-DEHR-chee", "status": "ai",
+			"slang": {
+				"native": "A dopo!",
+				"respelling": "ah DOH-poh",
+				"note": "Casual 'see you later' same day; friends, family.",
+				"status": "ai"
+			}},
+		"how_are_you": {"native": "Come sta?",
+			"respelling": "KOH-meh STAH", "status": "ai",
+			"note": "Polite form; 'come stai' is for friends.",
+			"slang": {
+				"native": "Come va?",
+				"respelling": "KOH-meh VAH",
+				"note": "Casual check-in; friends, peers, even a barista.",
+				"status": "ai"
+			}},
+		"thank_you": {"native": "Grazie",
+			"respelling": "GRAH-tsyeh", "status": "ai",
+			"note": "Ends in 'tsyeh', not 'zee-ay'."},
+		"no_problem": {"native": "Prego",
+			"respelling": "PREH-goh", "status": "ai"},
+		"please": {"native": "Per favore",
+			"respelling": "pehr fah-VOH-reh", "status": "ai"},
+		"excuse_me": {"native": "Scusi",
+			"respelling": "SKOO-zee", "status": "ai",
+			"note": "Polite form; Permesso to squeeze past."},
+		"sorry": {"native": "Mi dispiace",
+			"respelling": "mee dees-PYAH-cheh", "status": "ai"},
+		"yes": {"native": "Sì",
+			"respelling": "SEE", "status": "ai"},
+		"no": {"native": "No",
+			"respelling": "NOH", "status": "ai"},
+		"amazing": {"native": "Fantastico!",
+			"respelling": "fahn-TAS-tee-koh", "status": "ai",
+			"slang": {
+				"native": "Che figata!",
+				"respelling": "keh fee-GAH-tah",
+				"note": "Playful, enthusiastic; friends and peers, not formal.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "Buonissimo!",
+			"respelling": "bwoh-NEES-see-moh", "status": "ai",
+			"slang": {
+				"native": "Da morire!",
+				"respelling": "dah moh-REE-reh",
+				"note": "Playful food praise, 'to die for'; friends, family.",
+				"status": "ai"
+			}},
+		"cheers": {"native": "Salute!",
+			"respelling": "sah-LOO-teh", "status": "ai",
+			"note": "Cin cin (cheen cheen) is the casual toast.",
+			"slang": {
+				"native": "Cin cin!",
+				"respelling": "cheen CHEEN",
+				"note": "Casual, friendly toast; aperitivo, any group of friends.",
+				"status": "ai"
+			}}
+	}
+}

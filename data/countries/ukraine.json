@@ -1,0 +1,14 @@
+{
+	"slug": "ukraine",
+	"name": "Ukraine",
+	"flag": "🇺🇦",
+	"iso": "UA",
+	"iso_num": "804",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "ukrainian",
+			"guidance": "Official; the warm choice everywhere."
+		}
+	]
+}

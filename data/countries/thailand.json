@@ -1,0 +1,14 @@
+{
+	"slug": "thailand",
+	"name": "Thailand",
+	"flag": "🇹🇭",
+	"iso": "TH",
+	"iso_num": "764",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "thai",
+			"guidance": "Official; use everywhere."
+		}
+	]
+}

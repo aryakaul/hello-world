@@ -1,0 +1,71 @@
+{
+	"slug": "hindi",
+	"name": "Hindi",
+	"native_name": "हिन्दी",
+	"entries": {
+		"hello": {"native": "नमस्ते",
+			"respelling": "nuh-MUS-tay", "status": "ai",
+			"note": "Palms together at the chest; works all day."},
+		"good_morning": {"native": "सुप्रभात",
+			"respelling": "soo-pruh-BHAAT", "status": "ai",
+			"note": "Formal; most people just say namaste."},
+		"good_evening": {"native": "शुभ संध्या",
+			"respelling": "shoobh SUN-dhyah", "status": "ai",
+			"note": "Literary; namaste is what you will hear."},
+		"goodbye": {"native": "फिर मिलेंगे",
+			"respelling": "feer mee-LEHN-gay", "status": "ai",
+			"note": "'See you again'; namaste also works.",
+			"slang": {
+				"native": "चलता हूँ",
+				"respelling": "chul-TAA hoon",
+				"note": "Casual 'I'm off'; male speaker, to friends. Female: chalti hoon.",
+				"status": "ai"
+			}},
+		"how_are_you": {"native": "आप कैसे हैं?",
+			"respelling": "aap KAY-say hehn", "status": "ai",
+			"note": "To a woman: aap KAY-see hehn. 'Hehn' is nasal.",
+			"slang": {
+				"native": "क्या हाल है?",
+				"respelling": "kyaa HAAL heh",
+				"note": "Casual; friends, peers, familiar shopkeepers.",
+				"status": "ai"
+			}},
+		"thank_you": {"native": "धन्यवाद",
+			"respelling": "DHUN-yuh-vaad", "status": "ai",
+			"note": "Formal; shukriya (shook-ree-YAH) is everyday."},
+		"no_problem": {"native": "कोई बात नहीं",
+			"respelling": "KOH-ee baat nuh-HEEN", "status": "ai"},
+		"please": {"native": "कृपया",
+			"respelling": "KRIP-yah", "status": "ai",
+			"note": "Rarely said aloud; politeness rides on tone."},
+		"excuse_me": {"native": "सुनिए",
+			"respelling": "SOO-nee-yeh", "status": "ai",
+			"note": "Literally 'please listen', to get attention."},
+		"sorry": {"native": "माफ़ कीजिए",
+			"respelling": "maaf KEE-jee-yeh", "status": "ai"},
+		"yes": {"native": "जी हाँ",
+			"respelling": "jee HAAN", "status": "ai",
+			"note": "The 'ji' adds respect; 'haan' is nasal."},
+		"no": {"native": "जी नहीं",
+			"respelling": "jee nuh-HEEN", "status": "ai"},
+		"amazing": {"native": "बहुत बढ़िया!",
+			"respelling": "buh-HOOT buh-DHEE-yah", "status": "ai",
+			"slang": {
+				"native": "झकास!",
+				"respelling": "jhuh-KAAS",
+				"note": "Mumbai-origin; casual and playful, with peers.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "बहुत स्वादिष्ट!",
+			"respelling": "buh-HOOT swaa-DISHT", "status": "ai",
+			"slang": {
+				"native": "मस्त!",
+				"respelling": "must",
+				"note": "Casual all-purpose praise; peers, not elders.",
+				"status": "ai"
+			}},
+		"cheers": {"native": "चियर्स!",
+			"respelling": "CHEERS", "status": "ai",
+			"note": "The English word is what people actually say."}
+	}
+}

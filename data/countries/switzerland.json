@@ -1,0 +1,26 @@
+{
+	"slug": "switzerland",
+	"name": "Switzerland",
+	"flag": "🇨🇭",
+	"iso": "CH",
+	"iso_num": "756",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "swiss_german",
+			"guidance": "Spoken daily in German cantons incl. Zurich."
+		},
+		{
+			"language": "german",
+			"guidance": "Standard German: understood everywhere, used in writing."
+		},
+		{
+			"language": "french",
+			"guidance": "Romandy: Geneva, Lausanne."
+		},
+		{
+			"language": "italian",
+			"guidance": "Ticino."
+		}
+	]
+}

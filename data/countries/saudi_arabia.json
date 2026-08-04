@@ -1,0 +1,14 @@
+{
+	"slug": "saudi_arabia",
+	"name": "Saudi Arabia",
+	"flag": "🇸🇦",
+	"iso": "SA",
+	"iso_num": "682",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "arabic_msa",
+			"guidance": "Understood everywhere; Gulf colloquial noted in entries."
+		}
+	]
+}

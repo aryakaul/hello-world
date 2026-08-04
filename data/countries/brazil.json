@@ -1,0 +1,14 @@
+{
+	"slug": "brazil",
+	"name": "Brazil",
+	"flag": "🇧🇷",
+	"iso": "BR",
+	"iso_num": "076",
+	"continent": "South America",
+	"languages": [
+		{
+			"language": "portuguese",
+			"guidance": "Official; use everywhere."
+		}
+	]
+}

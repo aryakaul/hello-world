@@ -1,0 +1,14 @@
+{
+	"slug": "russia",
+	"name": "Russia",
+	"flag": "🇷🇺",
+	"iso": "RU",
+	"iso_num": "643",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "russian",
+			"guidance": "Official; use everywhere."
+		}
+	]
+}

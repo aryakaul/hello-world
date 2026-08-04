@@ -1,0 +1,14 @@
+{
+	"slug": "philippines",
+	"name": "Philippines",
+	"flag": "🇵🇭",
+	"iso": "PH",
+	"iso_num": "608",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "tagalog",
+			"guidance": "Manila and Luzon; understood nationally as Filipino."
+		}
+	]
+}

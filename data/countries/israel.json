@@ -1,0 +1,14 @@
+{
+	"slug": "israel",
+	"name": "Israel",
+	"flag": "🇮🇱",
+	"iso": "IL",
+	"iso_num": "376",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "hebrew",
+			"guidance": "Official; English widely understood."
+		}
+	]
+}

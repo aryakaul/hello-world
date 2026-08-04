@@ -1,0 +1,62 @@
+{
+	"slug": "indonesian",
+	"name": "Indonesian",
+	"native_name": "Bahasa Indonesia",
+	"entries": {
+		"hello": {"native": "Halo",
+			"respelling": "HAH-loh", "status": "ai"},
+		"good_morning": {"native": "Selamat pagi",
+			"respelling": "seh-LAH-mat PAH-gee", "status": "ai"},
+		"good_evening": {"native": "Selamat malam",
+			"respelling": "seh-LAH-mat MAH-lam", "status": "ai",
+			"note": "From dusk; late afternoon is selamat sore."},
+		"goodbye": {"native": "Sampai jumpa",
+			"respelling": "SAHM-pie JOOM-pah", "status": "ai",
+			"note": "'See you again'; selamat tinggal is a final goodbye.",
+			"slang": {
+				"native": "Dadah!",
+				"respelling": "dah-DAH",
+				"note": "Cutesy 'bye-bye'; close friends and family, not formal.",
+				"status": "ai"
+			}},
+		"how_are_you": {"native": "Apa kabar?",
+			"respelling": "AH-pah KAH-bar", "status": "ai"},
+		"thank_you": {"native": "Terima kasih",
+			"respelling": "teh-REE-mah KAH-sih", "status": "ai"},
+		"no_problem": {"native": "Sama-sama",
+			"respelling": "SAH-mah SAH-mah", "status": "ai",
+			"note": "The reply to thanks; 'no worries' is tidak apa-apa."},
+		"please": {"native": "Tolong",
+			"respelling": "TOH-long", "status": "ai",
+			"note": "Tolong asks for help; silakan means 'go ahead'."},
+		"excuse_me": {"native": "Permisi",
+			"respelling": "per-MEE-see", "status": "ai"},
+		"sorry": {"native": "Maaf",
+			"respelling": "mah-AHF", "status": "ai"},
+		"yes": {"native": "Ya",
+			"respelling": "YAH", "status": "ai"},
+		"no": {"native": "Tidak",
+			"respelling": "TEE-dah", "status": "ai",
+			"note": "The final k is a soft catch, not a hard k."},
+		"amazing": {"native": "Luar biasa!",
+			"respelling": "LOO-ar bee-AH-sah", "status": "ai",
+			"slang": {
+				"native": "Mantap!",
+				"respelling": "mahn-TAHP",
+				"note": "Upbeat all-purpose praise; friends, strangers, service staff.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "Enak!",
+			"respelling": "eh-NAH", "status": "ai",
+			"note": "The final k is a soft catch, not a hard k.",
+			"slang": {
+				"native": "Endes!",
+				"respelling": "EHN-dess",
+				"note": "Playful youth slang for tasty food; casual, friends and peers.",
+				"status": "ai"
+			}},
+		"cheers": {"native": "Bersulang!",
+			"respelling": "ber-SOO-lang", "status": "ai",
+			"note": "Toasting is uncommon; many just say cheers."}
+	}
+}

@@ -1,0 +1,64 @@
+{
+	"slug": "swedish",
+	"name": "Swedish",
+	"native_name": "Svenska",
+	"entries": {
+		"hello": {"native": "Hej",
+			"respelling": "HAY", "status": "ai",
+			"slang": {
+				"native": "Tjena",
+				"respelling": "TYAY-nah",
+				"note": "Casual, popular with young people; friendly enough for anyone.",
+				"status": "ai"
+			}},
+		"good_morning": {"native": "God morgon",
+			"respelling": "goo MOR-ron", "status": "ai"},
+		"good_evening": {"native": "God kväll",
+			"respelling": "goo KVELL", "status": "ai"},
+		"goodbye": {"native": "Hej då",
+			"respelling": "hay DOH", "status": "ai",
+			"note": "Casual alternative: Vi ses (see you)."},
+		"how_are_you": {"native": "Hur mår du?",
+			"respelling": "hoor MOHR doo", "status": "ai",
+			"slang": {
+				"native": "Läget?",
+				"respelling": "LAY-geht",
+				"note": "Casual 'what's up'; common among friends and young people.",
+				"status": "ai"
+			}},
+		"thank_you": {"native": "Tack",
+			"respelling": "TAHK", "status": "ai"},
+		"no_problem": {"native": "Ingen fara",
+			"respelling": "ING-ehn FAH-rah", "status": "ai"},
+		"please": {"native": "Snälla",
+			"respelling": "SNELL-ah", "status": "ai",
+			"note": "Swedish has no direct 'please' — Swedes often just add tack (thanks) to a request instead, e.g. 'en kaffe, tack'."},
+		"excuse_me": {"native": "Ursäkta",
+			"respelling": "oor-SHEHK-tah", "status": "ai"},
+		"sorry": {"native": "Förlåt",
+			"respelling": "fur-LOHT", "status": "ai"},
+		"yes": {"native": "Ja",
+			"respelling": "YAH", "status": "ai"},
+		"no": {"native": "Nej",
+			"respelling": "NAY", "status": "ai"},
+		"amazing": {"native": "Fantastiskt!",
+			"respelling": "fan-TAS-tiskt", "status": "ai",
+			"slang": {
+				"native": "Grymt!",
+				"respelling": "GREWMT",
+				"note": "Casual intensifier meaning 'awesome'; safe with friends and strangers alike.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "Gott!",
+			"respelling": "GOTT", "status": "ai",
+			"slang": {
+				"native": "Mums!",
+				"respelling": "MOOMS",
+				"note": "Playful, almost childlike 'yum!'; warm and safe with anyone.",
+				"status": "ai"
+			}},
+		"cheers": {"native": "Skål!",
+			"respelling": "SKOHL", "status": "ai",
+			"note": "Make eye contact with everyone at the table when you clink glasses — Swedish tradition."}
+	}
+}

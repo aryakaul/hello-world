@@ -1,0 +1,63 @@
+{
+	"slug": "arabic_msa",
+	"name": "Arabic (Modern Standard)",
+	"native_name": "العربية الفصحى",
+	"entries": {
+		"hello": {"native": "مرحباً",
+			"respelling": "MAR-ha-ban", "status": "ai",
+			"slang": {
+				"native": "هلا والله",
+				"respelling": "HA-la wal-LAH",
+				"note": "Warm Gulf/Saudi greeting for someone you are glad to see; fine for a friendly stranger.",
+				"status": "ai"
+			}},
+		"good_morning": {"native": "صباح الخير",
+			"respelling": "sa-BAH al-KHAYR", "status": "ai",
+			"note": "Reply with sabah an-nur (صباح النور)."},
+		"good_evening": {"native": "مساء الخير",
+			"respelling": "ma-SAH al-KHAYR", "status": "ai",
+			"note": "Reply with masa an-nur (مساء النور)."},
+		"goodbye": {"native": "مع السلامة",
+			"respelling": "ma-ah as-sa-LA-ma", "status": "ai"},
+		"how_are_you": {"native": "كيف حالك؟",
+			"respelling": "kayf HA-lak", "status": "ai",
+			"note": "Shown for a man; to a woman say kayf haaluki (كيف حالكِ).",
+			"slang": {
+				"native": "شلونك؟",
+				"respelling": "shlo-NAK",
+				"note": "Everyday Gulf/Saudi casual greeting; to a woman say shlonich (شلونچ). Fine with acquaintances and friendly strangers.",
+				"status": "ai"
+			}},
+		"thank_you": {"native": "شكراً",
+			"respelling": "SHUK-ran", "status": "ai"},
+		"no_problem": {"native": "لا مشكلة",
+			"respelling": "la MUSH-ki-la", "status": "ai"},
+		"please": {"native": "من فضلك",
+			"respelling": "min FAD-lik", "status": "ai",
+			"note": "Shown for a man; to a woman say min fadliki (من فضلِك)."},
+		"excuse_me": {"native": "المعذرة",
+			"respelling": "al-MAH-dhi-ra", "status": "ai",
+			"note": "The more formal MSA choice for getting attention or passing by; afwan (عفواً) is the more casual everyday alternative and is also used as a reply to thanks."},
+		"sorry": {"native": "آسف",
+			"respelling": "AA-sif", "status": "ai",
+			"note": "Shown for a man; a woman says aasifa (آسفة)."},
+		"yes": {"native": "نعم",
+			"respelling": "NA-am", "status": "ai"},
+		"no": {"native": "لا",
+			"respelling": "LAA", "status": "ai"},
+		"amazing": {"native": "رائع",
+			"respelling": "RAA-i", "status": "ai",
+			"slang": {
+				"native": "يا سلام",
+				"respelling": "ya sa-LAAM",
+				"note": "Warm exclamation of delight or admiration; safe and common with anyone.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "لذيذ",
+			"respelling": "lah-DHEEDH", "status": "ai",
+			"note": "MSA dh (ذ) as in \"this\"; Gulf/Saudi colloquial speech often shifts this to z, heard as la-ZEEZ."},
+		"cheers": {"native": "صحتين وعافية",
+			"respelling": "sah-TAYN wa aa-FEE-ya", "status": "ai",
+			"note": "Said after a meal or drink (health, not alcohol); Saudi social norms are dry."}
+	}
+}

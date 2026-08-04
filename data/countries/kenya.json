@@ -1,0 +1,14 @@
+{
+	"slug": "kenya",
+	"name": "Kenya",
+	"flag": "🇰🇪",
+	"iso": "KE",
+	"iso_num": "404",
+	"continent": "Africa",
+	"languages": [
+		{
+			"language": "swahili",
+			"guidance": "National language; welcomed everywhere; English also works."
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+	"slug": "south_korea",
+	"name": "South Korea",
+	"flag": "🇰🇷",
+	"iso": "KR",
+	"iso_num": "410",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "korean",
+			"guidance": "Official; use everywhere."
+		}
+	]
+}

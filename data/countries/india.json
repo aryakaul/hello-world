@@ -1,0 +1,38 @@
+{
+	"slug": "india",
+	"name": "India",
+	"flag": "🇮🇳",
+	"iso": "IN",
+	"iso_num": "356",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "hindi",
+			"guidance": "Most spoken; strongest in the north; English is also widely understood."
+		},
+		{
+			"language": "bengali",
+			"guidance": "West Bengal and the east; second most spoken."
+		},
+		{
+			"language": "marathi",
+			"guidance": "Maharashtra, including Mumbai."
+		},
+		{
+			"language": "telugu",
+			"guidance": "Andhra Pradesh and Telangana."
+		},
+		{
+			"language": "tamil",
+			"guidance": "Tamil Nadu and Chennai."
+		},
+		{
+			"language": "gujarati",
+			"guidance": "Gujarat and much of the western coast."
+		},
+		{
+			"language": "urdu",
+			"guidance": "Across the north; near spoken Hindi."
+		}
+	]
+}

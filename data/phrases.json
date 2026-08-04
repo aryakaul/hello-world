@@ -1,0 +1,24 @@
+{
+	"phrases": [
+		{"id": "hello", "english": "Hello"},
+		{"id": "good_morning", "english": "Good morning"},
+		{"id": "good_evening", "english": "Good evening"},
+		{"id": "goodbye", "english": "Goodbye"},
+		{"id": "how_are_you", "english": "How are you?"},
+		{"id": "thank_you", "english": "Thank you"},
+		{"id": "no_problem",
+		 "english": "You're welcome / No problem"},
+		{"id": "please", "english": "Please"},
+		{"id": "excuse_me", "english": "Excuse me",
+		 "context": "getting attention or passing by"},
+		{"id": "sorry", "english": "Sorry"},
+		{"id": "yes", "english": "Yes"},
+		{"id": "no", "english": "No"},
+		{"id": "amazing", "english": "Amazing!",
+		 "context": "delight or admiration"},
+		{"id": "delicious", "english": "Delicious!",
+		 "context": "compliment the food"},
+		{"id": "cheers", "english": "Cheers!",
+		 "context": "toast when drinking"}
+	]
+}

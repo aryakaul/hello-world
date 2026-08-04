@@ -1,0 +1,287 @@
+@font-face {
+	font-family: "Noto Sans Ethiopic";
+	src: url("vendor/noto-sans-ethiopic.woff2")
+		format("woff2");
+	font-display: swap;
+	unicode-range: U+030E, U+1200-1399, U+2D80-2DDE,
+		U+AB01-AB2E, U+1E7E0-1E7E6, U+1E7E8-1E7EB,
+		U+1E7ED-1E7EE, U+1E7F0-1E7FE;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+[hidden] {
+	display: none !important;
+}
+
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, "Segoe UI",
+		Roboto, "Noto Sans Ethiopic", sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+	color: #1c1c1c;
+	background: #fafaf7;
+}
+
+#app {
+	max-width: 40rem;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+.home-header h1 {
+	font-size: 1.5rem;
+	margin: 0.5rem 0;
+}
+
+.search {
+	width: 100%;
+	min-height: 44px;
+	padding: 0.5rem 0.75rem;
+	font-size: 1rem;
+	border: 2px solid #bbb;
+	border-radius: 8px;
+}
+
+.back-link {
+	display: inline-block;
+	min-height: 44px;
+	padding: 0.5rem 0;
+	color: #0a58ca;
+	text-decoration: none;
+}
+
+.language-section {
+	margin: 1rem 0 2rem;
+}
+
+.language-section h2 {
+	font-size: 1.2rem;
+	margin: 0 0 0.25rem;
+}
+
+.guidance {
+	margin: 0 0 0.75rem;
+	color: #555;
+	font-size: 0.9rem;
+}
+
+.phrase-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.phrase-table td {
+	padding: 0.6rem 0.4rem;
+	border-top: 1px solid #e5e5e0;
+	vertical-align: top;
+}
+
+.phrase-table .english {
+	width: 30%;
+	color: #555;
+	font-size: 0.9rem;
+}
+
+.phrase-table .context {
+	font-size: 0.75rem;
+	color: #999;
+}
+
+.phrase-table .native {
+	width: 30%;
+	font-size: 1.05rem;
+}
+
+.phrase-table .respelling {
+	font-weight: 600;
+}
+
+.phrase-table .note {
+	font-weight: 400;
+	font-size: 0.8rem;
+	color: #666;
+}
+
+.badge {
+	display: inline-block;
+	margin-left: 0.4rem;
+	padding: 0 0.4rem;
+	font-size: 0.65rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #8a6d00;
+	background: #fdf3cf;
+	border-radius: 999px;
+	vertical-align: middle;
+}
+
+.phrase-table .slang-native,
+.phrase-table .slang-resp {
+	margin-top: 0.35rem;
+	padding-top: 0.35rem;
+	border-top: 1px dashed #ddd;
+}
+
+.chip-slang {
+	display: inline-block;
+	margin-left: 0.4rem;
+	padding: 0 0.4rem;
+	font-size: 0.65rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #1c5e8a;
+	background: #ddeffb;
+	border-radius: 999px;
+	vertical-align: middle;
+}
+
+.not-found {
+	text-align: center;
+	padding: 3rem 0;
+}
+
+.site-footer {
+	margin-top: 2.5rem;
+	padding-top: 1rem;
+	border-top: 1px solid #e5e5e0;
+	font-size: 0.85rem;
+	color: #777;
+}
+
+.globe-slot {
+	min-height: 20rem;
+}
+
+.globe-wrap {
+	display: flex;
+	justify-content: center;
+	margin: 1rem 0 0.5rem;
+	position: relative;
+}
+
+.globe-canvas {
+	touch-action: none;
+	cursor: grab;
+	max-width: 100%;
+	aspect-ratio: 1;
+	border-radius: 50%;
+}
+
+.globe-hint {
+	text-align: center;
+	color: #666;
+	font-size: 0.85rem;
+	margin: 0.25rem 0;
+}
+
+.globe-toast {
+	text-align: center;
+	color: #8a6d00;
+	background: #fdf3cf;
+	border-radius: 8px;
+	padding: 0.5rem;
+	margin: 0.5rem auto;
+	max-width: 20rem;
+}
+
+.globe-tooltip {
+	position: absolute;
+	pointer-events: none;
+	max-width: 16rem;
+	padding: 0.4rem 0.6rem;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+	font-size: 0.85rem;
+}
+
+.globe-tooltip .tip-name {
+	font-weight: 600;
+}
+
+.globe-tooltip .tip-langs {
+	color: #666;
+	font-size: 0.8rem;
+}
+
+.search-wrap {
+	position: relative;
+}
+
+.search-results {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	margin-top: 0.25rem;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+	max-height: 50vh;
+	overflow-y: auto;
+}
+
+.result-row {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	min-height: 44px;
+	padding: 0.5rem 0.75rem;
+	text-decoration: none;
+	color: inherit;
+}
+
+.result-row:hover {
+	background: #f2f2ee;
+}
+
+.result-empty {
+	margin: 0;
+	padding: 0.5rem 0.75rem;
+	color: #666;
+}
+
+.lang-section > h2 {
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #666;
+	margin: 1.25rem 0 0.5rem;
+}
+
+.lang-list {
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fill, minmax(9.5rem, 1fr));
+	gap: 0.5rem;
+}
+
+.lang-pill {
+	display: flex;
+	flex-direction: column;
+	min-height: 44px;
+	padding: 0.6rem;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	background: #fff;
+	text-decoration: none;
+	color: inherit;
+}
+
+.lang-pill .lang-name {
+	font-weight: 600;
+}
+
+.lang-pill .lang-native {
+	font-size: 0.8rem;
+	color: #666;
+}

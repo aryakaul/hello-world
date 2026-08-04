@@ -1,0 +1,36 @@
+{
+	"slug": "argentina",
+	"name": "Argentina",
+	"flag": "🇦🇷",
+	"iso": "AR",
+	"iso_num": "032",
+	"continent": "South America",
+	"languages": [
+		{
+			"language": "spanish",
+			"guidance": "Official; use everywhere.",
+			"overrides": {
+				"how_are_you": {
+					"native": "¿Cómo andás?",
+					"respelling": "KOH-moh ahn-DAHS",
+					"status": "ai",
+					"note": "Argentines use vos forms",
+					"slang": {
+						"native": "¿Todo piola?",
+						"respelling": "TOH-doh PYOH-lah",
+						"note": "Casual; fine with friends or a friendly stranger",
+						"status": "ai"
+					}
+				},
+				"amazing": {
+					"slang": {
+						"native": "¡Qué copado!",
+						"respelling": "KEH koh-PAH-doh",
+						"note": "Warm, casual; fine with friends or a friendly stranger",
+						"status": "ai"
+					}
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+	"slug": "cambodia",
+	"name": "Cambodia",
+	"flag": "🇰🇭",
+	"iso": "KH",
+	"iso_num": "116",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "khmer",
+			"guidance": "Official everywhere."
+		}
+	]
+}

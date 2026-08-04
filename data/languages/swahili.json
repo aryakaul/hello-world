@@ -1,0 +1,72 @@
+{
+	"slug": "swahili",
+	"name": "Swahili",
+	"native_name": "Kiswahili",
+	"entries": {
+		"hello": {"native": "Jambo",
+			"respelling": "JAHM-boh", "status": "ai",
+			"note": "To an elder, say Shikamoo (shee-kah-MOH).",
+			"slang": {
+				"native": "Mambo!",
+				"respelling": "MAHM-boh",
+				"note": "Casual 'what's up'; peers, not elders.",
+				"status": "ai"
+			}},
+		"good_morning": {"native": "Habari za asubuhi",
+			"respelling": "hah-BAH-ree zah ah-soo-BOO-hee",
+			"status": "ai"},
+		"good_evening": {"native": "Habari za jioni",
+			"respelling": "hah-BAH-ree zah jee-OH-nee",
+			"status": "ai"},
+		"goodbye": {"native": "Kwaheri",
+			"respelling": "kwah-HEH-ree", "status": "ai",
+			"slang": {
+				"native": "Baadaye!",
+				"respelling": "bah-ah-DAH-yeh",
+				"note": "Casual 'later'; friends and family only.",
+				"status": "ai"
+			}},
+		"how_are_you": {"native": "Habari yako?",
+			"respelling": "hah-BAH-ree YAH-koh", "status": "ai",
+			"note": "The expected reply is nzuri (n-ZOO-ree).",
+			"slang": {
+				"native": "Vipi?",
+				"respelling": "VEE-pee",
+				"note": "Casual 'what's up?'; friends, not elders.",
+				"status": "ai"
+			}},
+		"thank_you": {"native": "Asante",
+			"respelling": "ah-SAHN-teh", "status": "ai",
+			"note": "Asante sana (SAH-nah) is 'thank you very much'."},
+		"no_problem": {"native": "Karibu",
+			"respelling": "kah-REE-boo", "status": "ai",
+			"note": "Also means 'welcome'; the reply to asante."},
+		"please": {"native": "Tafadhali",
+			"respelling": "tah-fah-DHAH-lee", "status": "ai",
+			"note": "The 'dh' is a soft th, as in 'this'."},
+		"excuse_me": {"native": "Samahani",
+			"respelling": "sah-mah-HAH-nee", "status": "ai",
+			"note": "One word for 'excuse me' and a real apology."},
+		"sorry": {"native": "Samahani",
+			"respelling": "sah-mah-HAH-nee", "status": "ai",
+			"note": "Pole (POH-leh) is sympathy for another's mishap."},
+		"yes": {"native": "Ndiyo",
+			"respelling": "n-DEE-yoh", "status": "ai"},
+		"no": {"native": "Hapana",
+			"respelling": "hah-PAH-nah", "status": "ai"},
+		"amazing": {"native": "Nzuri sana!",
+			"respelling": "n-ZOO-ree SAH-nah", "status": "ai",
+			"note": "Safi sana (SAH-fee) is the streetwise version.",
+			"slang": {
+				"native": "Poa!",
+				"respelling": "POH-ah",
+				"note": "Casual 'cool'; the standard reply to Mambo.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "Tamu sana!",
+			"respelling": "TAH-moo SAH-nah", "status": "ai"},
+		"cheers": {"native": "Afya!",
+			"respelling": "AH-fyah", "status": "ai",
+			"note": "'To your health'; many people just say cheers."}
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"slug": "egypt",
+	"name": "Egypt",
+	"flag": "🇪🇬",
+	"iso": "EG",
+	"iso_num": "818",
+	"continent": "Africa",
+	"languages": [
+		{
+			"language": "arabic_egyptian",
+			"guidance": "Official; use everywhere."
+		},
+		{
+			"language": "french",
+			"guidance": "Understood by older and educated generations."
+		}
+	]
+}

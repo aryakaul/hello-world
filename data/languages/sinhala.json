@@ -1,0 +1,52 @@
+{
+	"slug": "sinhala",
+	"name": "Sinhala",
+	"native_name": "සිංහල",
+	"entries": {
+		"hello": {"native": "ආයුබෝවන්",
+			"respelling": "ah-yoo-BOH-wahn", "status": "ai",
+			"note": "Literally 'may you live long'; also used for goodbye."},
+		"good_morning": {"native": "සුභ උදෑසනක්",
+			"respelling": "SOO-bah oo-DAY-sah-nahk", "status": "ai"},
+		"good_evening": {"native": "සුභ සන්ධ්‍යාවක්",
+			"respelling": "SOO-bah sahn-DYAH-wahk", "status": "ai"},
+		"goodbye": {"native": "ගිහින් එන්නම්",
+			"respelling": "gee-HEEN EHN-nahm", "status": "ai",
+			"note": "Casual: literally 'I'll go and come back'."},
+		"how_are_you": {"native": "ඔයාට කොහොමද?",
+			"respelling": "oh-YAH-tah koh-HOH-mah-dah", "status": "ai",
+			"slang": {
+				"native": "කොහොමද මචං?",
+				"respelling": "koh-HOH-mah-dah mah-CHANG",
+				"note": "Casual peer term like 'mate/buddy', used by all genders with friends or same-age/rank peers; skip with elders or in formal settings.",
+				"status": "ai"
+			}},
+		"thank_you": {"native": "ස්තුතියි",
+			"respelling": "STOO-tee-yee", "status": "ai"},
+		"no_problem": {"native": "කමක් නෑ",
+			"respelling": "KAH-mahk nay", "status": "ai"},
+		"please": {"native": "කරුණාකර",
+			"respelling": "kah-roo-NAH-kah-rah", "status": "ai"},
+		"excuse_me": {"native": "සමාවෙන්න",
+			"respelling": "sah-MAH-vehn-nah", "status": "ai"},
+		"sorry": {"native": "කණගාටුයි",
+			"respelling": "kah-nah-GAH-too-yee", "status": "ai"},
+		"yes": {"native": "ඔව්",
+			"respelling": "OH-vu", "status": "ai"},
+		"no": {"native": "නැහැ",
+			"respelling": "NAH-hah", "status": "ai"},
+		"amazing": {"native": "සුපිරි!",
+			"respelling": "soo-PEE-ree", "status": "ai",
+			"slang": {
+				"native": "එළකිරි!",
+				"respelling": "eh-lah-KEE-ree",
+				"note": "Playful, wide youth use; fine with friendly strangers.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "රසයි!",
+			"respelling": "RAH-sah-yee", "status": "ai"},
+		"cheers": {"native": "ජයවේවා!",
+			"respelling": "jah-yah-WAY-wah", "status": "ai",
+			"note": "Traditional toast meaning 'may you triumph'."}
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"slug": "indonesia",
+	"name": "Indonesia",
+	"flag": "🇮🇩",
+	"iso": "ID",
+	"iso_num": "360",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "indonesian",
+			"guidance": "National lingua franca across the islands."
+		},
+		{
+			"language": "javanese",
+			"guidance": "Largest regional language; Central and East Java."
+		}
+	]
+}

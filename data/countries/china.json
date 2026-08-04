@@ -1,0 +1,18 @@
+{
+	"slug": "china",
+	"name": "China",
+	"flag": "🇨🇳",
+	"iso": "CN",
+	"iso_num": "156",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "mandarin",
+			"guidance": "Official everywhere; regional languages coexist."
+		},
+		{
+			"language": "cantonese",
+			"guidance": "Guangdong, Hong Kong and Macau."
+		}
+	]
+}

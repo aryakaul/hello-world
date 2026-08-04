@@ -1,0 +1,80 @@
+{
+	"slug": "thai",
+	"name": "Thai",
+	"native_name": "ภาษาไทย",
+	"entries": {
+		"hello": {"native": "สวัสดีครับ/ค่ะ",
+			"respelling": "sa-wat-dee khrap/kha", "status": "ai",
+			"note": "Men end with khrap, women with kha.",
+			"slang": {
+				"native": "หวัดดี",
+				"respelling": "wat-dee",
+				"note": "Casual; friends and peers your own age.",
+				"status": "ai"
+			}},
+		"good_morning": {"native": "สวัสดีครับ/ค่ะ",
+			"respelling": "sa-wat-dee khrap/kha", "status": "ai",
+			"note": "Thai has no separate morning greeting."},
+		"good_evening": {"native": "สวัสดีครับ/ค่ะ",
+			"respelling": "sa-wat-dee khrap/kha", "status": "ai",
+			"note": "Sawatdee works at any hour, evening included."},
+		"goodbye": {"native": "ลาก่อนครับ/ค่ะ",
+			"respelling": "la gorn khrap/kha", "status": "ai",
+			"note": "Formal farewell; day to day, sawatdee again.",
+			"slang": {
+				"native": "บายบาย",
+				"respelling": "bai bai",
+				"note": "Casual 'bye bye'; friends and peers.",
+				"status": "ai"
+			}},
+		"how_are_you": {"native": "สบายดีไหมครับ/คะ",
+			"respelling": "sa-bai dee mai khrap/kha",
+			"status": "ai",
+			"note": "Literally 'are you well?'"},
+		"thank_you": {"native": "ขอบคุณครับ/ค่ะ",
+			"respelling": "kop kun khrap/kha", "status": "ai",
+			"note": "Final k sounds are soft, almost swallowed."},
+		"no_problem": {"native": "ไม่เป็นไรครับ/ค่ะ",
+			"respelling": "mai pen rai khrap/kha",
+			"status": "ai"},
+		"please": {"native": "กรุณา",
+			"respelling": "ga-ru-na", "status": "ai",
+			"note": "Formal; khrap/kha carries the politeness."},
+		"excuse_me": {"native": "ขอโทษครับ/ค่ะ",
+			"respelling": "kor toht khrap/kha", "status": "ai"},
+		"sorry": {"native": "ขอโทษครับ/ค่ะ",
+			"respelling": "kor toht khrap/kha", "status": "ai",
+			"note": "One phrase covers 'excuse me' and 'sorry'."},
+		"yes": {"native": "ใช่ครับ/ค่ะ",
+			"respelling": "chai khrap/kha", "status": "ai"},
+		"no": {"native": "ไม่ครับ/ค่ะ",
+			"respelling": "mai khrap/kha", "status": "ai",
+			"note": "Say 'mai' with a falling tone, like a firm 'my'."},
+		"amazing": {"native": "สุดยอด",
+			"respelling": "sut yot", "status": "ai",
+			"note": "Literally 'the peak'; a warm compliment.",
+			"slang": {
+				"native": "เจ๋ง",
+				"respelling": "jeng",
+				"note": "Casual 'cool/awesome'; friends and peers.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "อร่อยครับ/ค่ะ",
+			"respelling": "a-roi khrap/kha", "status": "ai",
+			"slang": {
+				"native": "ฟินมาก",
+				"respelling": "fin mak",
+				"note": "Casual 'so satisfying'; friends and peers.",
+				"status": "ai"
+			}},
+		"cheers": {"native": "ไชโย",
+			"respelling": "chai yo", "status": "ai",
+			"note": "Many people simply clink and say 'chon kaew'.",
+			"slang": {
+				"native": "ชนแก้ว",
+				"respelling": "chon gaew",
+				"note": "Everyday toast at drinks with friends.",
+				"status": "ai"
+			}}
+	}
+}

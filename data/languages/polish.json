@@ -1,0 +1,84 @@
+{
+	"slug": "polish",
+	"name": "Polish",
+	"native_name": "Polski",
+	"entries": {
+		"hello": {"native": "Cześć",
+			"respelling": "CHESHCH", "status": "ai",
+			"note": "One syllable; to strangers use Dzień dobry.",
+			"slang": {
+				"native": "Siema!",
+				"respelling": "SHEH-mah",
+				"note": "Casual peer greeting; skip with elders or strangers.",
+				"status": "ai"
+			}},
+		"good_morning": {"native": "Dzień dobry",
+			"respelling": "jen DOH-brih", "status": "ai",
+			"note": "Also the daytime hello; dz sounds like English j."},
+		"good_evening": {"native": "Dobry wieczór",
+			"respelling": "DOH-brih VYEH-choor",
+			"status": "ai"},
+		"goodbye": {"native": "Do widzenia",
+			"respelling": "doh vee-DZEH-nyah", "status": "ai",
+			"note": "dz here is the ds in 'kids', not a plain z.",
+			"slang": {
+				"native": "Nara!",
+				"respelling": "NAH-rah",
+				"note": "Clipped from na razie; friends and peers only.",
+				"status": "ai"
+			}},
+		"how_are_you": {"native": "Jak się masz?",
+			"respelling": "yahk sheh MAHSH", "status": "ai",
+			"note": "ś is a soft, hissy sh. Formal: Jak się pan ma? (pahn mah).",
+			"slang": {
+				"native": "Co słychać?",
+				"respelling": "tsoh SWIH-hahch",
+				"note": "Everyday casual check-in; fine among friends.",
+				"status": "ai"
+			}},
+		"thank_you": {"native": "Dziękuję",
+			"respelling": "jen-KOO-yeh", "status": "ai",
+			"note": "ę is nasal: hum the n of 'jen' through the nose."},
+		"no_problem": {"native": "Nie ma za co",
+			"respelling": "nyeh mah ZAH tsoh", "status": "ai"},
+		"please": {"native": "Proszę",
+			"respelling": "PROH-sheh", "status": "ai"},
+		"excuse_me": {"native": "Przepraszam",
+			"respelling": "psheh-PRAH-shahm", "status": "ai",
+			"note": "prze comes out 'psheh'; it doubles as 'sorry'."},
+		"sorry": {"native": "Bardzo przepraszam",
+			"respelling": "BAR-dzoh psheh-PRAH-shahm",
+			"status": "ai",
+			"note": "'I'm very sorry'; dz sounds like j; Przepraszam OK too."},
+		"yes": {"native": "Tak",
+			"respelling": "TAHK", "status": "ai"},
+		"no": {"native": "Nie",
+			"respelling": "NYEH", "status": "ai"},
+		"amazing": {"native": "Niesamowite!",
+			"respelling": "nyeh-sah-moh-VEE-teh",
+			"status": "ai",
+			"slang": {
+				"native": "Ekstra!",
+				"respelling": "EK-strah",
+				"note": "Casual, upbeat; fine with friends or strangers.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "Pyszne!",
+			"respelling": "PISH-neh", "status": "ai",
+			"note": "y is the short i of 'bit', so PISH, not 'peesh'.",
+			"slang": {
+				"native": "Pycha!",
+				"respelling": "PIH-hah",
+				"note": "Playful, kid-friendly; fine with anyone at the table.",
+				"status": "ai"
+			}},
+		"cheers": {"native": "Na zdrowie!",
+			"respelling": "nah ZDROH-vyeh", "status": "ai",
+			"slang": {
+				"native": "Zdrówko!",
+				"respelling": "ZDROOF-koh",
+				"note": "Cute, casual toast; friends and family.",
+				"status": "ai"
+			}}
+	}
+}

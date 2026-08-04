@@ -1,0 +1,24 @@
+{
+	"slug": "colombia",
+	"name": "Colombia",
+	"flag": "🇨🇴",
+	"iso": "CO",
+	"iso_num": "170",
+	"continent": "South America",
+	"languages": [
+		{
+			"language": "spanish",
+			"guidance": "Official; use everywhere.",
+			"overrides": {
+				"amazing": {
+					"slang": {
+						"native": "¡Qué chévere!",
+						"respelling": "keh CHEH-veh-reh",
+						"note": "Warm, casual; fine with friends or a friendly stranger",
+						"status": "ai"
+					}
+				}
+			}
+		}
+	]
+}

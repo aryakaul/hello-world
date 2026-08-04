@@ -1,0 +1,14 @@
+{
+	"slug": "greece",
+	"name": "Greece",
+	"flag": "🇬🇷",
+	"iso": "GR",
+	"iso_num": "300",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "greek",
+			"guidance": "Official; warmly received everywhere."
+		}
+	]
+}

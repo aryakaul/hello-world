@@ -1,0 +1,24 @@
+{
+	"slug": "chile",
+	"name": "Chile",
+	"flag": "🇨🇱",
+	"iso": "CL",
+	"iso_num": "152",
+	"continent": "South America",
+	"languages": [
+		{
+			"language": "spanish",
+			"guidance": "Official; Chilean Spanish is famously fast.",
+			"overrides": {
+				"amazing": {
+					"slang": {
+						"native": "¡Qué bacán!",
+						"respelling": "keh bah-KAHN",
+						"note": "Warm, casual; fine with friends or a friendly stranger",
+						"status": "ai"
+					}
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+	"slug": "papua_new_guinea",
+	"name": "Papua New Guinea",
+	"flag": "🇵🇬",
+	"iso": "PG",
+	"iso_num": "598",
+	"continent": "Oceania",
+	"languages": [
+		{
+			"language": "tok_pisin",
+			"guidance": "The lingua franca across 800+ languages."
+		}
+	]
+}

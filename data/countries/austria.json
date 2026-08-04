@@ -1,0 +1,30 @@
+{
+	"slug": "austria",
+	"name": "Austria",
+	"flag": "🇦🇹",
+	"iso": "AT",
+	"iso_num": "040",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "german",
+			"guidance": "Official; Austrian greetings differ from Germany's.",
+			"overrides": {
+				"hello": {
+					"native": "Servus",
+					"respelling": "SEHR-voos",
+					"status": "ai",
+					"note": "Casual, universal Austrian greeting; formal is Grüß Gott (grewss GOHT)"
+				},
+				"amazing": {
+					"slang": {
+						"native": "Leiwand!",
+						"respelling": "LY-vahnt",
+						"note": "Casual; strongest in Vienna, understood countrywide, fine with friends or a friendly stranger",
+						"status": "ai"
+					}
+				}
+			}
+		}
+	]
+}

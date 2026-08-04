@@ -1,0 +1,28 @@
+{
+	"slug": "spain",
+	"name": "Spain",
+	"flag": "🇪🇸",
+	"iso": "ES",
+	"iso_num": "724",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "spanish",
+			"guidance": "Official; use everywhere.",
+			"overrides": {
+				"amazing": {
+					"slang": {
+						"native": "¡Qué guay!",
+						"respelling": "keh GWY",
+						"note": "Casual; safe with friends or a friendly stranger, not formal settings",
+						"status": "ai"
+					}
+				}
+			}
+		},
+		{
+			"language": "catalan",
+			"guidance": "Co-official in Catalonia, Valencia, Balearics; a delight in Barcelona."
+		}
+	]
+}

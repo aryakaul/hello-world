@@ -1,0 +1,5 @@
+__pycache__/
+AGENT*.md
+.superpowers/
+.playwright-mcp/
+.DS_Store

@@ -1,0 +1,14 @@
+{
+	"slug": "tanzania",
+	"name": "Tanzania",
+	"flag": "🇹🇿",
+	"iso": "TZ",
+	"iso_num": "834",
+	"continent": "Africa",
+	"languages": [
+		{
+			"language": "swahili",
+			"guidance": "National language; use everywhere."
+		}
+	]
+}

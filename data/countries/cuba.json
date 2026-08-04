@@ -1,0 +1,24 @@
+{
+	"slug": "cuba",
+	"name": "Cuba",
+	"flag": "🇨🇺",
+	"iso": "CU",
+	"iso_num": "192",
+	"continent": "North America",
+	"languages": [
+		{
+			"language": "spanish",
+			"guidance": "Official; use everywhere.",
+			"overrides": {
+				"how_are_you": {
+					"slang": {
+						"native": "¿Qué bolá?",
+						"respelling": "keh boh-LAH",
+						"note": "Casual; fine with friends or a friendly stranger",
+						"status": "ai"
+					}
+				}
+			}
+		}
+	]
+}

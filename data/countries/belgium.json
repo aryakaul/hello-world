@@ -1,0 +1,18 @@
+{
+	"slug": "belgium",
+	"name": "Belgium",
+	"flag": "🇧🇪",
+	"iso": "BE",
+	"iso_num": "056",
+	"continent": "Europe",
+	"languages": [
+		{
+			"language": "dutch",
+			"guidance": "Flanders: Antwerp, Ghent, Bruges."
+		},
+		{
+			"language": "french",
+			"guidance": "Wallonia and Brussels."
+		}
+	]
+}

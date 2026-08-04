@@ -1,0 +1,31 @@
+{
+	"slug": "canada",
+	"name": "Canada",
+	"flag": "🇨🇦",
+	"iso": "CA",
+	"iso_num": "124",
+	"continent": "North America",
+	"languages": [
+		{
+			"language": "french",
+			"guidance": "Quebec and francophone communities; English elsewhere.",
+			"overrides": {
+				"how_are_you": {
+					"native": "Ça va-tu?",
+					"respelling": "sah vah-TU",
+					"status": "ai",
+					"note": "Quebec informal -tu question tag; everyday casual",
+					"slang": null
+				},
+				"amazing": {
+					"slang": {
+						"native": "C'est écœurant!",
+						"respelling": "seh ay-kuh-RAHN",
+						"note": "Quebec slang; literal word means disgusting but said with enthusiasm it flips to high praise, safe with friends or a friendly stranger",
+						"status": "ai"
+					}
+				}
+			}
+		}
+	]
+}

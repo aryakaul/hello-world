@@ -1,0 +1,77 @@
+{
+	"slug": "portuguese",
+	"name": "Portuguese",
+	"native_name": "Português",
+	"entries": {
+		"hello": {"native": "Olá",
+			"respelling": "oh-LAH", "status": "ai",
+			"note": "Oi (oy) is the everyday casual hello.",
+			"slang": {
+				"native": "Oi",
+				"respelling": "OY",
+				"note": "Casual; the default everyday hello, fine for anyone.",
+				"status": "ai"
+			}},
+		"good_morning": {"native": "Bom dia",
+			"respelling": "bohn JEE-ah", "status": "ai",
+			"note": "Brazilian 'di' sounds like 'jee'."},
+		"good_evening": {"native": "Boa noite",
+			"respelling": "BOH-ah NOY-chee", "status": "ai",
+			"note": "Final '-te' softens to 'chee' in Brazil."},
+		"goodbye": {"native": "Tchau",
+			"respelling": "CHOW", "status": "ai",
+			"slang": {
+				"native": "Falou!",
+				"respelling": "fah-LOH",
+				"note": "Casual; friends and peers, like 'see ya'.",
+				"status": "ai"
+			}},
+		"how_are_you": {"native": "Tudo bem?",
+			"respelling": "TOO-doo BENG", "status": "ai",
+			"note": "Nasal ending; hum it through your nose.",
+			"slang": {
+				"native": "Beleza?",
+				"respelling": "beh-LEH-zah",
+				"note": "Casual; friends and peers, like 'all good?'.",
+				"status": "ai"
+			}},
+		"thank_you": {"native": "Obrigado",
+			"respelling": "oh-bree-GAH-doo", "status": "ai",
+			"note": "Women say obrigada (oh-bree-GAH-dah)."},
+		"no_problem": {"native": "De nada",
+			"respelling": "jee NAH-dah", "status": "ai",
+			"note": "Brazilian 'de' sounds like 'jee'."},
+		"please": {"native": "Por favor",
+			"respelling": "poor fah-VOR", "status": "ai"},
+		"excuse_me": {"native": "Com licença",
+			"respelling": "kohn lee-SEHN-sah", "status": "ai"},
+		"sorry": {"native": "Desculpe",
+			"respelling": "jees-KOOW-pee", "status": "ai",
+			"note": "The l vocalises to 'w', as in incrível."},
+		"yes": {"native": "Sim",
+			"respelling": "SEENG", "status": "ai",
+			"note": "Nasal; the g is a hum, not a hard sound."},
+		"no": {"native": "Não",
+			"respelling": "NOWNG", "status": "ai",
+			"note": "Nasal; like 'now' with a hum on the end."},
+		"amazing": {"native": "Que incrível!",
+			"respelling": "kee een-KREE-vew", "status": "ai",
+			"note": "A final l sounds like 'w' in Brazil.",
+			"slang": {
+				"native": "Que legal!",
+				"respelling": "kee leh-GAHW",
+				"note": "Casual; upbeat everyday word, safe with anyone.",
+				"status": "ai"
+			}},
+		"delicious": {"native": "Que delícia!",
+			"respelling": "kee deh-LEE-syah", "status": "ai"},
+		"cheers": {"native": "Saúde!",
+			"respelling": "sah-OO-jee", "status": "ai",
+			"slang": {
+				"native": "Tim-tim!",
+				"respelling": "teem-TEEM",
+				"note": "Casual; friends clinking glasses, festive.",
+				"status": "ai"
+			}}
+	}
+}

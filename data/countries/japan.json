@@ -1,0 +1,14 @@
+{
+	"slug": "japan",
+	"name": "Japan",
+	"flag": "🇯🇵",
+	"iso": "JP",
+	"iso_num": "392",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "japanese",
+			"guidance": "Official; use everywhere."
+		}
+	]
+}

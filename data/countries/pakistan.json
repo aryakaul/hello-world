@@ -1,0 +1,14 @@
+{
+	"slug": "pakistan",
+	"name": "Pakistan",
+	"flag": "🇵🇰",
+	"iso": "PK",
+	"iso_num": "586",
+	"continent": "Asia",
+	"languages": [
+		{
+			"language": "urdu",
+			"guidance": "National lingua franca."
+		}
+	]
+}
