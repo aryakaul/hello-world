@@ -311,7 +311,9 @@
 			"continent": "Africa",
 			"languages": [
 				"Nigerian Pidgin",
-				"Yoruba"
+				"Hausa",
+				"Yoruba",
+				"Igbo"
 			]
 		},
 		{
@@ -585,6 +587,11 @@
 			"native_name": "ગુજરાતી"
 		},
 		{
+			"slug": "hausa",
+			"name": "Hausa",
+			"native_name": "Harshen Hausa"
+		},
+		{
 			"slug": "hebrew",
 			"name": "Hebrew",
 			"native_name": "עברית"
@@ -593,6 +600,11 @@
 			"slug": "hindi",
 			"name": "Hindi",
 			"native_name": "हिन्दी"
+		},
+		{
+			"slug": "igbo",
+			"name": "Igbo",
+			"native_name": "Asụsụ Igbo"
 		},
 		{
 			"slug": "indonesian",

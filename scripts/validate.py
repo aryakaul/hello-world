@@ -37,6 +37,12 @@ SCRIPT_RANGES = {
 	"yoruba": ((0x41, 0x5A), (0x61, 0x7A),
 		(0xC0, 0x24F), (0x1E00, 0x1EFF),
 		(0x300, 0x36F)),
+	"igbo": ((0x41, 0x5A), (0x61, 0x7A),
+		(0xC0, 0x24F), (0x1E00, 0x1EFF),
+		(0x300, 0x36F)),
+	"hausa": ((0x41, 0x5A), (0x61, 0x7A),
+		(0xC0, 0x24F), (0x1E00, 0x1EFF),
+		(0x250, 0x2AF)),
 }
 
 LANG_SCRIPT = {
@@ -46,6 +52,7 @@ LANG_SCRIPT = {
 	"hindi": "devanagari", "marathi": "devanagari",
 	"tamil": "tamil", "telugu": "telugu",
 	"thai": "thai", "greek": "greek",
+	"hausa": "hausa", "igbo": "igbo",
 	"russian": "cyrillic", "korean": "hangul",
 	"mandarin": "cjk", "cantonese": "cjk",
 	"japanese": "japanese",

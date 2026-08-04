@@ -11,8 +11,16 @@
 			"guidance": "The bridge language everyone shares; casual by nature."
 		},
 		{
+			"language": "hausa",
+			"guidance": "Largest by speakers; the north: Kano, Kaduna, Sokoto."
+		},
+		{
 			"language": "yoruba",
 			"guidance": "Lagos and the southwest."
+		},
+		{
+			"language": "igbo",
+			"guidance": "The southeast: Enugu, Onitsha, Aba."
 		}
 	]
 }
