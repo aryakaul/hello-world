@@ -239,6 +239,7 @@ async function renderHome(app) {
 	app.append(slot);
 
 	const countrySection = el("section", "lang-section");
+	countrySection.id = "home-countries";
 	countrySection.append(el("h2", null, "Countries"));
 	const countryList = el("div", "lang-list");
 	const countries = index.countries.slice().sort(
@@ -258,6 +259,7 @@ async function renderHome(app) {
 	app.append(countrySection);
 
 	const langSection = el("section", "lang-section");
+	langSection.id = "home-languages";
 	langSection.append(el("h2", null, "Languages"));
 	const langList = el("div", "lang-list");
 	const langs = index.languages.slice().sort(
@@ -284,6 +286,10 @@ async function renderHome(app) {
 	}
 	app.append(langSection);
 	app.append(renderFooter());
+	app.append(jumpControl([
+		{id: "home-countries", label: "Countries"},
+		{id: "home-languages", label: "Languages"}
+	]));
 
 	let options = [];
 	let active = -1;
@@ -424,6 +430,141 @@ async function renderHome(app) {
 		slot.replaceChildren(el("p", "globe-hint",
 			"Globe failed to load."));
 	});
+}
+
+// A page-level control for long pages. The sticky h2 already
+// answers "which language am I in"; this answers "get me
+// somewhere else", which was otherwise impossible below the
+// first screen of a 20,000px page.
+function jumpControl(entries) {
+	const wrap = el("div", "jump");
+	const toTop = function () {
+		window.scrollTo(0, 0);
+		const h1 = document.querySelector("#app h1");
+		if (h1) {
+			h1.tabIndex = -1;
+			h1.focus();
+		}
+	};
+
+	if (!entries.length) {
+		const only = el("button", "jump-toggle", "Back to top");
+		only.type = "button";
+		only.addEventListener("click", toTop);
+		wrap.append(only);
+	} else {
+		const toggle = el("button", "jump-toggle", "Jump to…");
+		toggle.type = "button";
+		toggle.setAttribute("aria-expanded", "false");
+		toggle.setAttribute("aria-controls", "jump-panel");
+		const panel = el("div", "jump-panel");
+		panel.id = "jump-panel";
+		panel.hidden = true;
+		const list = el("ul", "jump-list");
+
+		const close = function (refocus) {
+			panel.hidden = true;
+			toggle.setAttribute("aria-expanded", "false");
+			if (refocus) {
+				toggle.focus();
+			}
+		};
+		const addItem = function (label, run) {
+			const li = el("li");
+			const btn = el("button", null, label);
+			btn.type = "button";
+			btn.addEventListener("click", function () {
+				close(false);
+				run();
+			});
+			li.append(btn);
+			list.append(li);
+		};
+
+		addItem("Back to top", toTop);
+		for (const entry of entries) {
+			addItem(entry.label, function () {
+				const target = document.getElementById(
+					entry.id);
+				if (!target) {
+					return;
+				}
+				target.scrollIntoView({block: "start"});
+				const link = target.querySelector(
+					"h2 a, h2");
+				if (link) {
+					link.tabIndex = -1;
+					link.focus();
+				}
+			});
+		}
+		panel.append(list);
+		toggle.addEventListener("click", function () {
+			const open = panel.hidden;
+			panel.hidden = !open;
+			toggle.setAttribute("aria-expanded",
+				open ? "true" : "false");
+			if (open) {
+				const first = panel.querySelector("button");
+				if (first) {
+					first.focus();
+				}
+			}
+		});
+		wrap.addEventListener("keydown", function (ev) {
+			if (ev.key === "Escape" && !panel.hidden) {
+				close(true);
+			}
+		});
+		document.addEventListener("pointerdown",
+			function (ev) {
+				if (!wrap.isConnected) {
+					return;
+				}
+				if (!panel.hidden
+						&& !wrap.contains(ev.target)) {
+					close(false);
+				}
+			});
+		wrap.append(panel, toggle);
+	}
+
+	// Listener removes itself once this render is replaced, so
+	// route changes cannot accumulate handlers.
+	let ticking = false;
+	const onScroll = function () {
+		if (!wrap.isConnected) {
+			window.removeEventListener("scroll", onScroll);
+			return;
+		}
+		if (ticking) {
+			return;
+		}
+		ticking = true;
+		window.requestAnimationFrame(function () {
+			ticking = false;
+			const show =
+				window.scrollY > window.innerHeight * 1.5;
+			// Closing on the way out matters: a display:none
+			// element cannot hold focus, so leaving the panel
+			// open while the control hides would strand it.
+			if (!show && wrap.contains(document.activeElement)) {
+				document.activeElement.blur();
+			}
+			if (!show) {
+				const panel = wrap.querySelector(".jump-panel");
+				const toggle = wrap.querySelector(".jump-toggle");
+				if (panel && !panel.hidden) {
+					panel.hidden = true;
+					toggle.setAttribute("aria-expanded",
+						"false");
+				}
+			}
+			wrap.classList.toggle("is-visible", show);
+		});
+	};
+	window.addEventListener("scroll", onScroll, {passive: true});
+	return wrap;
 }
 
 function backLink() {
@@ -718,6 +859,10 @@ async function renderCountry(app, slug) {
 		app.append(section);
 	});
 	app.append(renderFooter());
+	app.append(jumpControl(languages.map(function (language) {
+		return {id: "lang-" + language.slug,
+			label: language.name};
+	})));
 }
 
 async function renderLanguage(app, slug) {
@@ -770,6 +915,7 @@ async function renderLanguage(app, slug) {
 		{hideDraftBadge: allAi}));
 	app.append(sectionActions(language));
 	app.append(renderFooter());
+	app.append(jumpControl([]));
 }
 
 async function route() {
