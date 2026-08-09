@@ -97,11 +97,44 @@ body {
 	scroll-margin-top: 0.5rem;
 }
 
-.language-section h2 a {
-	display: inline-block;
+.section-toggle {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
 	min-height: 44px;
 	padding: 0.55rem 0;
-	color: #0a58ca;
+	border: 0;
+	background: none;
+	font: inherit;
+	/* Not link-blue: it toggles, it does not navigate. */
+	color: #1c1c1c;
+	text-align: left;
+	cursor: pointer;
+}
+
+.section-toggle:hover {
+	color: #0a4bb0;
+}
+
+.chevron {
+	flex: none;
+	transform-origin: center;
+	transition: transform 120ms ease-out;
+}
+
+.is-collapsed .chevron {
+	transform: rotate(-90deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.chevron {
+		transition: none;
+	}
+}
+
+.is-collapsed .guidance {
+	margin-bottom: 0;
 }
 
 .language-section h2 {
@@ -251,6 +284,9 @@ body {
 }
 
 .section-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 1.25rem;
 	margin: 0.75rem 0 0;
 	font-size: 0.8rem;
 }

@@ -101,6 +101,27 @@ function flag(emoji) {
 	return span;
 }
 
+// Drawn, not a glyph: "▾" is a text character that inherits font
+// quirks and cannot be rotated cleanly.
+function chevron() {
+	const NS = "http://www.w3.org/2000/svg";
+	const svg = document.createElementNS(NS, "svg");
+	svg.setAttribute("class", "chevron");
+	svg.setAttribute("viewBox", "0 0 12 12");
+	svg.setAttribute("width", "12");
+	svg.setAttribute("height", "12");
+	svg.setAttribute("aria-hidden", "true");
+	const path = document.createElementNS(NS, "path");
+	path.setAttribute("d", "M2 4.5 L6 8.5 L10 4.5");
+	path.setAttribute("fill", "none");
+	path.setAttribute("stroke", "currentColor");
+	path.setAttribute("stroke-width", "2");
+	path.setAttribute("stroke-linecap", "round");
+	path.setAttribute("stroke-linejoin", "round");
+	svg.append(path);
+	return svg;
+}
+
 // "Tagalog (Tagalog)" reads as a mistake.
 function languageTitle(language) {
 	if (!language.native_name
@@ -525,11 +546,23 @@ function jumpControl(entries) {
 					return;
 				}
 				target.scrollIntoView({block: "start"});
-				const link = target.querySelector(
-					"h2 a, h2");
-				if (link) {
-					link.tabIndex = -1;
-					link.focus();
+				// Jumping to a section the reader collapsed
+				// would land them on a bare heading, so open
+				// it on the way in.
+				const toggle = target.querySelector(
+					".section-toggle");
+				if (toggle) {
+					if (toggle.getAttribute(
+							"aria-expanded") === "false") {
+						toggle.click();
+					}
+					toggle.focus();
+					return;
+				}
+				const head = target.querySelector("h2");
+				if (head) {
+					head.tabIndex = -1;
+					head.focus();
 				}
 			});
 		}
@@ -681,8 +714,14 @@ function entryActions(langSlug, phraseId, current) {
 	return actions;
 }
 
-function sectionActions(language) {
+function sectionActions(language, linkToLanguage) {
 	const p = el("p", "section-actions");
+	if (linkToLanguage) {
+		const all = el("a", null,
+			"See all " + language.name + " phrases →");
+		all.href = "#/lang/" + language.slug;
+		p.append(all);
+	}
 	const verify = el("a", null,
 		"I speak " + language.name +
 		" — help verify these →");
@@ -895,19 +934,36 @@ async function renderCountry(app, slug) {
 		const language = languages[i];
 		const section = el("section", "language-section");
 		section.id = "lang-" + language.slug;
-		const title = languageTitle(language);
 		const heading = el("h2");
-		const link = el("a", null, title);
-		link.href = "#/lang/" + language.slug;
-		heading.append(link);
+		const toggle = el("button", "section-toggle");
+		toggle.type = "button";
+		toggle.setAttribute("aria-expanded", "true");
+		toggle.setAttribute("aria-controls",
+			"body-" + language.slug);
+		toggle.append(chevron(),
+			el("span", null, languageTitle(language)));
+		heading.append(toggle);
 		section.append(heading);
+		// Guidance stays outside the collapsed region: which
+		// language to use with whom is exactly what you want
+		// while scanning a collapsed country.
 		section.append(el("p", "guidance", item.guidance));
+		const body = el("div", "language-body");
+		body.id = "body-" + language.slug;
 		const audioMap = (index.audio
 			&& index.audio[item.language]) || {};
-		section.append(phraseTable(phrases, language,
+		body.append(phraseTable(phrases, language,
 			item.overrides || {}, audioMap,
 			{hideDraftBadge: allAi}));
-		section.append(sectionActions(language));
+		body.append(sectionActions(language, true));
+		section.append(body);
+		toggle.addEventListener("click", function () {
+			const open = body.hidden;
+			body.hidden = !open;
+			toggle.setAttribute("aria-expanded",
+				open ? "true" : "false");
+			section.classList.toggle("is-collapsed", !open);
+		});
 		app.append(section);
 	});
 }
@@ -961,7 +1017,7 @@ async function renderLanguage(app, slug) {
 		&& index.audio[slug]) || {};
 	app.append(phraseTable(phrases, language, {}, audioMap,
 		{hideDraftBadge: allAi}));
-	app.append(sectionActions(language));
+	app.append(sectionActions(language, false));
 }
 
 async function route() {
