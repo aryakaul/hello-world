@@ -158,11 +158,53 @@ function renderNotFound(app, msg) {
 	announce("Page not found.");
 }
 
+// Accents are decoration in Latin, Greek and Cyrillic, so
+// "francais" should find Français. They are not decoration in
+// Devanagari or Khmer, where stripping the virama rewrites the
+// word — so folding is limited to scripts whose base letter says
+// it is safe, and every other script is matched byte for byte.
+const FOLDABLE_BASE = /[A-Za-zͰ-ϿЀ-ӿ]/;
+
+function foldChar(ch) {
+	const decomposed = ch.normalize("NFD");
+	if (!FOLDABLE_BASE.test(decomposed[0])) {
+		return ch.toLowerCase();
+	}
+	return decomposed.replace(/\p{Diacritic}/gu, "")
+		.toLowerCase();
+}
+
+function fold(text) {
+	let out = "";
+	for (const ch of text) {
+		out += foldChar(ch);
+	}
+	return out;
+}
+
+// Folding can change length, so highlighting needs to map a
+// position in the folded string back to the original.
+function foldWithMap(text) {
+	let out = "";
+	const map = [];
+	let at = 0;
+	for (const ch of text) {
+		const folded = foldChar(ch);
+		for (let i = 0; i < folded.length; i += 1) {
+			map.push(at);
+		}
+		out += folded;
+		at += ch.length;
+	}
+	map.push(text.length);
+	return {folded: out, map: map};
+}
+
 // Ranked so the fastest path — type a few letters, press
 // Enter — cannot land on a country that merely speaks a
 // matching language. Lower rank wins.
 function matchRank(name, q) {
-	const n = name.toLowerCase();
+	const n = fold(name);
 	if (n === q) {
 		return 0;
 	}
@@ -182,16 +224,17 @@ function matchRank(name, q) {
 
 function highlight(text, q) {
 	const frag = document.createDocumentFragment();
-	const at = text.toLowerCase().indexOf(q);
+	const mapped = foldWithMap(text);
+	const at = mapped.folded.indexOf(q);
 	if (at === -1) {
 		frag.append(document.createTextNode(text));
 		return frag;
 	}
-	frag.append(document.createTextNode(text.slice(0, at)));
-	const hit = el("mark", null, text.slice(at, at + q.length));
-	frag.append(hit);
-	frag.append(document.createTextNode(
-		text.slice(at + q.length)));
+	const start = mapped.map[at];
+	const end = mapped.map[at + q.length];
+	frag.append(document.createTextNode(text.slice(0, start)));
+	frag.append(el("mark", null, text.slice(start, end)));
+	frag.append(document.createTextNode(text.slice(end)));
 	return frag;
 }
 
@@ -430,7 +473,7 @@ async function renderHome(app) {
 	}
 
 	search.addEventListener("input", function () {
-		const q = search.value.trim().toLowerCase();
+		const q = fold(search.value.trim());
 		if (q === "") {
 			closeResults();
 			return;
