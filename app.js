@@ -329,13 +329,12 @@ async function renderHome(app) {
 	announce("Home. Search countries or languages.");
 	const header = el("header", "home-header");
 	header.append(el("h1", null, "hello, world"));
-	// The surface never said what it was; the first prose a
-	// visitor met was the footer's AI-draft caveat. Counts are
-	// read from the index so this cannot drift.
+	// Same sentence as the meta description, the manifest, and
+	// the share card, so the page and its preview say the same
+	// thing.
 	header.append(el("p", "tagline",
-		"Say hello, thank you and cheers in the languages of " +
-		index.countries.length + " countries — written the way" +
-		" they sound."));
+		"A simple, user-contributed phrasebook for" +
+		" communicating across the world."));
 	const searchWrap = el("div", "search-wrap");
 	const search = el("input", "search");
 	search.type = "search";
