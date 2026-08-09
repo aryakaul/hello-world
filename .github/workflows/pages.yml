@@ -34,7 +34,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: python3 scripts/validate.py data
-      - run: python3 -m unittest tests.test_validate -v
+      - run: python3 -m unittest discover tests -v
 
   deploy:
     needs: validate

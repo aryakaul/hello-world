@@ -150,6 +150,147 @@ class ValidateTests(unittest.TestCase):
 			"slang" in e and "script" in e
 			for e in validate(self.root)))
 
+	def _make_verified(self):
+		path = self.root / "languages" / "spanish.json"
+		lang = json.loads(path.read_text(encoding="utf-8"))
+		lang["entries"]["hello"]["status"] = "verified"
+		lang["entries"]["hello"]["verified_by"] = {
+			"handle": "adri", "note": "native, Madrid"}
+		write(path, lang)
+		return path
+
+	def test_verified_entry_with_attribution_ok(self):
+		self._make_verified()
+		self.assertEqual(validate(self.root), [])
+
+	def test_verified_entry_without_handle_rejected(self):
+		path = self._make_verified()
+		lang = json.loads(path.read_text(encoding="utf-8"))
+		del lang["entries"]["hello"]["verified_by"]
+		write(path, lang)
+		self.assertTrue(any(
+			"verified_by" in e for e in validate(self.root)))
+
+	def test_verified_entry_empty_handle_rejected(self):
+		path = self._make_verified()
+		lang = json.loads(path.read_text(encoding="utf-8"))
+		lang["entries"]["hello"]["verified_by"] = {
+			"handle": ""}
+		write(path, lang)
+		self.assertTrue(any(
+			"verified_by" in e for e in validate(self.root)))
+
+	def test_ai_entry_with_verified_by_rejected(self):
+		path = self.root / "languages" / "spanish.json"
+		lang = json.loads(path.read_text(encoding="utf-8"))
+		lang["entries"]["hello"]["verified_by"] = {
+			"handle": "adri"}
+		write(path, lang)
+		self.assertTrue(any(
+			"verified_by" in e for e in validate(self.root)))
+
+	def test_verified_slang_requires_attribution(self):
+		path = self.root / "languages" / "spanish.json"
+		lang = json.loads(path.read_text(encoding="utf-8"))
+		lang["entries"]["hello"]["slang"] = {
+			"native": "¡Qué onda!",
+			"respelling": "keh OHN-dah",
+			"note": "casual", "status": "verified"}
+		write(path, lang)
+		self.assertTrue(any(
+			"verified_by" in e for e in validate(self.root)))
+
+	def _add_audio(self, phrase="hello", ext="opus",
+			data=b"x" * 100, lang="spanish"):
+		path = (self.root / "audio" / lang /
+			(phrase + "." + ext))
+		path.parent.mkdir(parents=True, exist_ok=True)
+		path.write_bytes(data)
+		return path
+
+	def _set_index_audio(self, audio):
+		path = self.root / "index.json"
+		idx = json.loads(path.read_text(encoding="utf-8"))
+		idx["audio"] = audio
+		write(path, idx)
+
+	def test_audio_in_sync_ok(self):
+		self._add_audio()
+		self._set_index_audio({
+			"spanish": {"hello": {"ext": "opus"}}})
+		self.assertEqual(validate(self.root), [])
+
+	def test_audio_missing_from_index_rejected(self):
+		self._add_audio()
+		self.assertTrue(any(
+			"audio" in e for e in validate(self.root)))
+
+	def test_audio_unknown_language_rejected(self):
+		self._add_audio(lang="klingon")
+		self._set_index_audio({
+			"klingon": {"hello": {"ext": "opus"}}})
+		self.assertTrue(any(
+			"audio" in e and "klingon" in e
+			for e in validate(self.root)))
+
+	def test_audio_unknown_phrase_rejected(self):
+		self._add_audio(phrase="wat")
+		self._set_index_audio({
+			"spanish": {"wat": {"ext": "opus"}}})
+		self.assertTrue(any(
+			"audio" in e and "wat" in e
+			for e in validate(self.root)))
+
+	def test_audio_bad_extension_rejected(self):
+		self._add_audio(ext="wav")
+		self._set_index_audio({
+			"spanish": {"hello": {"ext": "wav"}}})
+		self.assertTrue(any(
+			"audio" in e for e in validate(self.root)))
+
+	def test_audio_oversize_rejected(self):
+		self._add_audio(data=b"x" * (200 * 1024))
+		self._set_index_audio({
+			"spanish": {"hello": {"ext": "opus"}}})
+		self.assertTrue(any(
+			"audio" in e and "large" in e.lower()
+			for e in validate(self.root)))
+
+	def test_audio_credits_ok(self):
+		self._add_audio()
+		write(self.root / "audio" / "spanish" /
+			"credits.json", {"hello": {"by": "adri"}})
+		self._set_index_audio({
+			"spanish": {"hello": {"ext": "opus",
+				"by": "adri"}}})
+		self.assertEqual(validate(self.root), [])
+
+	def test_audio_root_readme_allowed(self):
+		self._add_audio()
+		(self.root / "audio" / "README.md").write_text(
+			"# Audio", encoding="utf-8")
+		self._set_index_audio({
+			"spanish": {"hello": {"ext": "opus"}}})
+		self.assertEqual(validate(self.root), [])
+
+	def test_audio_root_stray_file_rejected(self):
+		self._add_audio()
+		(self.root / "audio" / "notes.txt").write_text(
+			"x", encoding="utf-8")
+		self._set_index_audio({
+			"spanish": {"hello": {"ext": "opus"}}})
+		self.assertTrue(any(
+			"stray" in e for e in validate(self.root)))
+
+	def test_audio_credits_orphan_rejected(self):
+		self._add_audio()
+		write(self.root / "audio" / "spanish" /
+			"credits.json", {"thank_you": {"by": "x"}})
+		self._set_index_audio({
+			"spanish": {"hello": {"ext": "opus"}}})
+		self.assertTrue(any(
+			"credits" in e for e in validate(self.root)))
+
 
 if __name__ == "__main__":
 	unittest.main()

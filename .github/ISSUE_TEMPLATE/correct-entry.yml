@@ -1,0 +1,43 @@
+name: Correct a phrase
+description: A translation, respelling, or note is wrong or unnatural.
+title: "Correction: "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Thanks for helping get this right. The language and phrase
+        may already be filled in if you came from the site.
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: Language name or slug (e.g. spanish).
+    validations:
+      required: true
+  - type: input
+    id: phrase
+    attributes:
+      label: Phrase
+      description: Which phrase (e.g. hello, thank_you, cheers).
+    validations:
+      required: true
+  - type: input
+    id: current
+    attributes:
+      label: Current entry
+      description: What the site shows now (if known).
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested correction
+      description: >
+        The correct native text and/or respelling, and anything
+        a traveler should know (register, region, when to use it).
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Sources, dialect notes, or context (optional).

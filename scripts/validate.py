@@ -9,6 +9,8 @@ from pathlib import Path
 VALID_STATUS = {"ai", "verified"}
 ENTRY_REQUIRED = ("native", "respelling", "status")
 SLANG_REQUIRED = ("native", "respelling", "note", "status")
+AUDIO_EXTS = {"opus", "ogg", "mp3"}
+MAX_AUDIO_BYTES = 50 * 1024
 
 SCRIPT_RANGES = {
 	"latin": ((0x41, 0x5A), (0x61, 0x7A),
@@ -114,6 +116,19 @@ def _load(path, errors):
 		return None
 
 
+def _check_verified_by(where, obj, status, errors):
+	vb = obj.get("verified_by")
+	if status == "verified":
+		if not isinstance(vb, dict) or not vb.get("handle"):
+			errors.append(
+				f"{where}: verified needs a non-empty"
+				f" verified_by.handle")
+	elif vb is not None:
+		errors.append(
+			f"{where}: verified_by only allowed when"
+			f" status is verified")
+
+
 def _check_entry(where, entry, errors):
 	if not isinstance(entry, dict):
 		errors.append(f"{where}: entry is not an object")
@@ -124,6 +139,7 @@ def _check_entry(where, entry, errors):
 	status = entry.get("status")
 	if status and status not in VALID_STATUS:
 		errors.append(f"{where}: bad status {status!r}")
+	_check_verified_by(where, entry, status, errors)
 	_check_slang(where, entry, errors)
 
 
@@ -142,6 +158,7 @@ def _check_slang(where, entry, errors):
 	if sstatus and sstatus not in VALID_STATUS:
 		errors.append(
 			f"{where}: bad slang status {sstatus!r}")
+	_check_verified_by(f"{where}:slang", slang, sstatus, errors)
 
 
 def _check_override(where, entry, errors):
@@ -278,8 +295,88 @@ def _check_countries(data_dir, pid_set, lang_names, errors):
 	return rows
 
 
+def _check_audio(data_dir, pid_set, lang_slugs, errors):
+	"""Validate data/audio/ and return the expected manifest.
+
+	Manifest shape: {lang_slug: {phrase_id: {"ext": str,
+	optional "by": str}}}. build_index.py emits the same map
+	into index.json; the index-sync check compares them.
+	"""
+	audio_dir = data_dir / "audio"
+	expected = {}
+	if not audio_dir.is_dir():
+		return expected
+	for lang_path in sorted(audio_dir.iterdir()):
+		slug = lang_path.name
+		if not lang_path.is_dir():
+			if slug != "README.md":
+				errors.append(
+					f"audio: stray file '{slug}'")
+			continue
+		if slug not in lang_slugs:
+			errors.append(
+				f"audio: unknown language '{slug}'")
+			continue
+		clips = {}
+		for f in sorted(lang_path.iterdir()):
+			if f.name == "credits.json":
+				continue
+			if not f.is_file():
+				errors.append(
+					f"audio: stray dir '{slug}/{f.name}'")
+				continue
+			ext = f.suffix.lstrip(".").lower()
+			if ext not in AUDIO_EXTS:
+				errors.append(
+					f"audio: bad extension"
+					f" '{slug}/{f.name}'")
+				continue
+			if f.stem not in pid_set:
+				errors.append(
+					f"audio: unknown phrase '{f.stem}'"
+					f" in '{slug}'")
+				continue
+			size = f.stat().st_size
+			if size > MAX_AUDIO_BYTES:
+				errors.append(
+					f"audio: '{slug}/{f.name}' too large"
+					f" ({size} bytes > {MAX_AUDIO_BYTES})")
+				continue
+			clips[f.stem] = {"ext": ext}
+		_check_credits(lang_path, slug, clips, errors)
+		if clips:
+			expected[slug] = clips
+	return expected
+
+
+def _check_credits(lang_path, slug, clips, errors):
+	credits_path = lang_path / "credits.json"
+	if not credits_path.is_file():
+		return
+	data = _load(credits_path, errors)
+	if not isinstance(data, dict):
+		if data is not None:
+			errors.append(
+				f"audio: '{slug}/credits.json' not an"
+				f" object")
+		return
+	for pid, info in data.items():
+		if pid not in clips:
+			errors.append(
+				f"audio: credits '{pid}' in '{slug}' has"
+				f" no matching clip")
+			continue
+		by = info.get("by") if isinstance(info, dict) else None
+		if not by:
+			errors.append(
+				f"audio: credits '{pid}' in '{slug}'"
+				f" missing 'by'")
+			continue
+		clips[pid]["by"] = by
+
+
 def _check_index(data_dir, country_rows, lang_names,
-		native_names, errors):
+		native_names, expected_audio, errors):
 	index = _load(data_dir / "index.json", errors)
 	if index is None:
 		return
@@ -315,6 +412,8 @@ def _check_index(data_dir, country_rows, lang_names,
 		for slug in lang_names}
 	if idx_langs != want:
 		errors.append("index.json: languages list mismatch")
+	if index.get("audio", {}) != expected_audio:
+		errors.append("index.json: audio map mismatch")
 
 
 def validate(data_dir):
@@ -338,8 +437,10 @@ def validate(data_dir):
 		data_dir, pid_set, errors)
 	country_rows = _check_countries(
 		data_dir, pid_set, lang_names, errors)
+	expected_audio = _check_audio(
+		data_dir, pid_set, set(lang_names), errors)
 	_check_index(data_dir, country_rows, lang_names,
-		native_names, errors)
+		native_names, expected_audio, errors)
 	return errors
 
 

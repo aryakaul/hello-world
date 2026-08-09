@@ -61,4 +61,7 @@ python3 scripts/build_index.py        # rebuild data/index.json
 
 ## Contributing
 
-TBD.
+Every phrase started as an AI draft awaiting native-speaker
+review. If you speak one of these languages, you can correct a
+phrase, verify a draft, add your language, or record audio —
+all through GitHub. See [CONTRIBUTING.md](CONTRIBUTING.md).

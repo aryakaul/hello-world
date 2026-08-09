@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Add your language
+    url: https://github.com/aryakaul/hello-world/blob/main/CONTRIBUTING.md#3-add-your-language
+    about: New languages come in as a short pull request — here's how.
+  - name: Record audio
+    url: https://github.com/aryakaul/hello-world/blob/main/CONTRIBUTING.md#4-record-audio
+    about: Contribute a pronunciation clip via pull request.

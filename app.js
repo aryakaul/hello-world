@@ -54,8 +54,9 @@ function renderFooter() {
 	if (REPO_URL !== "") {
 		const p = el("p");
 		const link = el("a", null,
-			"Spot an error? Fix it on GitHub");
-		link.href = REPO_URL;
+			"Spot an error? Help fix it on GitHub");
+		link.href = REPO_URL +
+			"/blob/main/CONTRIBUTING.md";
 		p.append(link);
 		footer.append(p);
 	}
@@ -113,6 +114,15 @@ async function renderHome(app) {
 		langList.append(pill);
 	}
 	langSection.append(langList);
+	if (REPO_URL !== "") {
+		const cta = el("p", "add-lang-cta");
+		const link = el("a", null,
+			"Don’t see your language? Add it →");
+		link.href = REPO_URL +
+			"/blob/main/CONTRIBUTING.md#3-add-your-language";
+		cta.append(link);
+		langSection.append(cta);
+	}
 	app.append(langSection);
 	app.append(renderFooter());
 
@@ -192,8 +202,78 @@ function backLink() {
 	return link;
 }
 
-function phraseTable(phrases, language, overrides) {
+function issueUrl(template, params) {
+	const p = new URLSearchParams();
+	p.set("template", template);
+	for (const key of Object.keys(params)) {
+		if (params[key]) {
+			p.set(key, params[key]);
+		}
+	}
+	return REPO_URL + "/issues/new?" + p.toString();
+}
+
+function statusBadge(status, verifiedBy) {
+	if (status === "ai") {
+		return el("span", "badge", "unverified");
+	}
+	if (status === "verified" && verifiedBy
+			&& verifiedBy.handle) {
+		const badge = el("span", "badge badge-verified");
+		badge.append(document.createTextNode("verified by "));
+		const handle = verifiedBy.handle;
+		if (/^[A-Za-z0-9-]+$/.test(handle)) {
+			const link = el("a", null, "@" + handle);
+			link.href = "https://github.com/" + handle;
+			badge.append(link);
+		} else {
+			badge.append(document.createTextNode(handle));
+		}
+		if (verifiedBy.note) {
+			badge.title = verifiedBy.note;
+		}
+		return badge;
+	}
+	return null;
+}
+
+function audioButton(langSlug, phraseId, clip) {
+	const btn = el("button", "audio-btn", "▶");
+	btn.type = "button";
+	btn.setAttribute("aria-label",
+		"Play pronunciation of " + phraseId + " in "
+		+ langSlug);
+	if (clip.by) {
+		btn.title = "recorded by " + clip.by;
+	}
+	const src = "data/audio/" + langSlug + "/" + phraseId
+		+ "." + clip.ext;
+	btn.addEventListener("click", function () {
+		new Audio(src).play().catch(function () {});
+	});
+	return btn;
+}
+
+function entryActions(langSlug, phraseId, current, status) {
+	const actions = el("div", "entry-actions");
+	const fix = el("a", "entry-action", "suggest a fix");
+	fix.href = issueUrl("correct-entry.yml", {
+		language: langSlug, phrase: phraseId,
+		current: current});
+	actions.append(fix);
+	if (status === "ai") {
+		const verify = el("a", "entry-action",
+			"I speak this — verify it");
+		verify.href = issueUrl("verify-entry.yml", {
+			language: langSlug, phrase: phraseId});
+		actions.append(verify);
+	}
+	return actions;
+}
+
+function phraseTable(phrases, language, overrides, audioMap) {
 	const table = el("table", "phrase-table");
+	const audio = audioMap || {};
 	for (const phrase of phrases.phrases) {
 		const base = language.entries[phrase.id];
 		const over = overrides[phrase.id];
@@ -210,14 +290,20 @@ function phraseTable(phrases, language, overrides) {
 				phrase.context));
 		}
 		const native = el("td", "native", entry.native);
+		const clip = audio[phrase.id];
+		if (clip) {
+			native.append(audioButton(
+				language.slug, phrase.id, clip));
+		}
 		const resp = el("td", "respelling",
 			entry.respelling);
 		if (entry.note) {
 			resp.append(el("div", "note", entry.note));
 		}
-		if (entry.status === "ai") {
-			resp.append(el("span", "badge",
-				"unverified"));
+		const badge = statusBadge(
+			entry.status, entry.verified_by);
+		if (badge) {
+			resp.append(badge);
 		}
 		if (entry.slang) {
 			native.append(el("div", "slang-native",
@@ -226,9 +312,11 @@ function phraseTable(phrases, language, overrides) {
 				entry.slang.respelling);
 			sl.append(el("span", "chip-slang",
 				"slang"));
-			if (entry.slang.status === "ai") {
-				sl.append(el("span", "badge",
-					"unverified"));
+			const sBadge = statusBadge(
+				entry.slang.status,
+				entry.slang.verified_by);
+			if (sBadge) {
+				sl.append(sBadge);
 			}
 			if (entry.slang.note) {
 				sl.append(el("div", "note",
@@ -236,6 +324,9 @@ function phraseTable(phrases, language, overrides) {
 			}
 			resp.append(sl);
 		}
+		resp.append(entryActions(
+			language.slug, phrase.id, entry.native,
+			entry.status));
 		row.append(eng, native, resp);
 		table.append(row);
 	}
@@ -281,8 +372,10 @@ async function renderCountry(app, slug) {
 		heading.append(link);
 		section.append(heading);
 		section.append(el("p", "guidance", item.guidance));
+		const audioMap = (index.audio
+			&& index.audio[item.language]) || {};
 		section.append(phraseTable(phrases, language,
-			item.overrides || {}));
+			item.overrides || {}, audioMap));
 		app.append(section);
 	}
 	app.append(renderFooter());
@@ -331,7 +424,9 @@ async function renderLanguage(app, slug) {
 		});
 		app.append(p);
 	}
-	app.append(phraseTable(phrases, language, {}));
+	const audioMap = (index.audio
+		&& index.audio[slug]) || {};
+	app.append(phraseTable(phrases, language, {}, audioMap));
 	app.append(renderFooter());
 }
 

@@ -1,0 +1,23 @@
+# Validates data and runs the test suite on pull requests.
+# (Push-to-main validation lives in pages.yml, gating deploy.)
+
+name: CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Index is in sync
+        run: |
+          python3 scripts/build_index.py data
+          git diff --exit-code data/index.json
+      - run: python3 scripts/validate.py data
+      - run: python3 -m unittest discover tests -v

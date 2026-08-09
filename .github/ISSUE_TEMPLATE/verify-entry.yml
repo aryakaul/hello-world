@@ -1,0 +1,45 @@
+name: Verify a phrase
+description: Confirm an AI-drafted entry is correct as written.
+title: "Verify: "
+labels: ["verification"]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        If you're a native or fluent speaker and the entry is
+        right, this flips its badge from "unverified" to
+        "verified". The language and phrase may already be filled
+        in if you came from the site.
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: Language name or slug (e.g. spanish).
+    validations:
+      required: true
+  - type: input
+    id: phrase
+    attributes:
+      label: Phrase
+      description: Which phrase (e.g. hello, thank_you, cheers).
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I'm a native or fluent speaker and this entry is correct as written.
+          required: true
+  - type: input
+    id: credit
+    attributes:
+      label: How should we credit you? (optional)
+      description: >
+        A name or handle to record in verified_by. Leave blank to
+        stay anonymous.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Region, register, or a caveat (optional).
