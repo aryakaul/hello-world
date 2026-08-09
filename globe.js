@@ -91,20 +91,54 @@ async function mountGlobe(container) {
 	toast.hidden = true;
 	container.append(toast);
 
-	const size = Math.min(
-		container.clientWidth || 360, 480);
-	const dpr = window.devicePixelRatio || 1;
-	canvas.width = size * dpr;
-	canvas.height = size * dpr;
-	canvas.style.width = size + "px";
-	canvas.style.height = size + "px";
 	const ctx = canvas.getContext("2d");
-
-	const projection = d3.geoOrthographic().fitExtent(
-		[[8, 8], [size - 8, size - 8]],
-		{type: "Sphere"});
-	const baseScale = projection.scale();
+	const projection = d3.geoOrthographic();
 	const geoPath = d3.geoPath(projection, ctx);
+	let size = 0;
+	let dpr = 0;
+	let baseScale = 0;
+
+	// Capped by height as well as width: rotating a phone to
+	// landscape makes the container wide and the viewport short,
+	// and a globe sized on width alone would be taller than the
+	// screen.
+	function measure() {
+		return Math.max(160, Math.min(
+			container.clientWidth || 360,
+			480,
+			Math.round(window.innerHeight * 0.7)));
+	}
+
+	// Returns true when something actually changed, so the
+	// observer can skip redundant redraws. Rotation is untouched
+	// and the zoom level is carried across as a ratio of the new
+	// base scale, so a resize does not throw away where the
+	// reader was looking or how far in they were.
+	function layout() {
+		const nextSize = measure();
+		const nextDpr = window.devicePixelRatio || 1;
+		if (nextSize === size && nextDpr === dpr) {
+			return false;
+		}
+		const zoom = baseScale > 0
+			? projection.scale() / baseScale
+			: 1;
+		size = nextSize;
+		dpr = nextDpr;
+		canvas.width = size * dpr;
+		canvas.height = size * dpr;
+		canvas.style.width = size + "px";
+		canvas.style.height = size + "px";
+		projection.fitExtent(
+			[[8, 8], [size - 8, size - 8]],
+			{type: "Sphere"});
+		baseScale = projection.scale();
+		projection.scale(Math.max(baseScale,
+			Math.min(baseScale * 6, baseScale * zoom)));
+		return true;
+	}
+
+	layout();
 
 	function draw() {
 		ctx.save();
@@ -370,6 +404,36 @@ async function mountGlobe(container) {
 			Math.pow(1.002, -ev.deltaY));
 	}, {passive: false});
 
+	// Without this the canvas keeps its mount-time bitmap while
+	// CSS max-width squeezes the element, so rotating a phone
+	// left a distorted ellipse with hit-testing mis-registered
+	// against it. Observing the slot also covers window resize
+	// and orientation change, since both change its width.
+	let resizeRaf = 0;
+	if (typeof ResizeObserver !== "undefined") {
+		const observer = new ResizeObserver(function () {
+			if (!canvas.isConnected) {
+				observer.disconnect();
+				return;
+			}
+			if (resizeRaf) {
+				return;
+			}
+			resizeRaf = requestAnimationFrame(function () {
+				resizeRaf = 0;
+				if (!canvas.isConnected) {
+					observer.disconnect();
+					return;
+				}
+				if (layout()) {
+					hideTip();
+					draw();
+				}
+			});
+		});
+		observer.observe(container);
+	}
+
 	window.hwGlobe = {
 		rotateTo: function (lon, lat) {
 			projection.rotate([-lon, -lat]);
@@ -382,7 +446,9 @@ async function mountGlobe(container) {
 			showTip(x, y);
 		},
 		projection: projection,
-		size: size
+		get size() {
+			return size;
+		}
 	};
 
 	draw();
