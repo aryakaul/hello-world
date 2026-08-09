@@ -8,13 +8,23 @@ web
 
 ## Users
 
-**Primary — travelers and conversers.** Someone standing in a country,
-or in conversation with a native speaker, who wants to greet, thank, or
-compliment that person in their own language. The defining situation is
-physical: a phone held out in front of another human being, seconds
-available, one hand, possibly no signal. The job is not "learn a
-language" — it is "get from pocket to a phrase I can say out loud,
-right now, without embarrassing myself."
+**Primary — travellers preparing.** Someone who expects to meet
+speakers of a language and wants to arrive able to greet, thank, and
+compliment them in it. They look this up **beforehand** — planning at
+home, or in transit shortly before: hotel, plane, taxi. They are not
+under time pressure and no one is waiting on them, so they read,
+browse, and compare at leisure.
+
+**This is deliberately not an in-the-moment tool** (ruling
+2026-08-09). There is no stranger standing there, so the product owes
+nothing to a "phone held toward a person" scenario: no teleprompter or
+enlarged phrase view, no hand-over mode, no race from pocket to
+pronunciation. Design work must not reintroduce that framing — an
+earlier version of this record and of `AGENT_PROJECT.md` asserted it,
+and it generated wrong conclusions.
+
+The job is "learn a few of these well enough to use later," not
+"retrieve one right now."
 
 **Secondary — native-speaker contributors** (confirmed 2026-08-08).
 Speakers of a covered language who correct a wrong entry, verify an AI
@@ -26,13 +36,16 @@ path for the primary user's attention.
 
 ## Product Purpose
 
-A phone-first quick reference for courteous phrases across the world's
-languages. It exists because phrasebooks and translation apps are too
-slow for the moment of need — the user has already made eye contact.
+A phone-first reference for courteous phrases across the world's
+languages, read before you need them. It exists because a phrasebook
+asks you to carry it and a translation app asks you to trust it, and
+neither lets you browse what a country actually speaks and decide which
+few phrases are worth arriving with.
 
-Success is a phrase said out loud, correctly enough to land, in the
-seconds before the moment passes. Secondary success is the data getting
-truer over time as native speakers correct what AI drafted.
+Success is a traveller who arrives with two or three phrases they can
+use, and who understood which language to use them in and with whom.
+Secondary success is the data getting truer over time as native
+speakers correct what AI drafted.
 
 ## Positioning
 
@@ -40,10 +53,11 @@ Three things a neighboring product could not truthfully copy without
 becoming this one:
 
 - **Country-first, not language-first.** The user knows where they are
-  standing, not which languages are spoken there. Search a country, get
-  its languages ordered by prevalence with one-line usage guidance
+  going, not which languages are spoken there. Search a country, get its
+  languages ordered by prevalence with one-line usage guidance
   ("official; use everywhere"), then phrase tables. A globe serves the
-  same lookup by browse rather than by name.
+  same lookup by browse rather than by name — and browsing is the
+  primary mode, not a detour.
 - **Pronunciation optimized for saying, not for linguistics.**
   Anglicized respelling with stressed syllables capitalized ("Gracias"
   → GRAH-see-ahs), native script alongside. Deliberately not IPA.
@@ -53,8 +67,13 @@ becoming this one:
 
 ## Operating Context
 
-- Used one-handed, at arm's length, often outdoors, sometimes offline.
-  Works fully offline and makes no external requests at runtime.
+- Read at leisure, most often on a phone, sometimes on a laptop while
+  planning. Unhurried: reading, comparing, and scrolling are normal, and
+  long pages are acceptable if they stay navigable.
+- Makes no external requests at runtime, so nothing is tracked and
+  nothing breaks when a CDN does. It is **not** installable and does not
+  survive a cold load without a connection; offline resilience is a
+  nice-to-have, not a promise the product currently makes.
 - Static site served from the repo root via GitHub Pages; hash routes
   (`#/`, `#/<country-slug>`, `#/lang/<language-slug>`, not-found).
 - Data authored as JSON in the repo. Languages own phrases; countries
@@ -123,8 +142,10 @@ slang variants, each web-attested against two or more sources, with a
 
 ## Product Principles
 
-1. **The moment is the constraint.** Every decision answers to a person
-   holding a phone toward a stranger. Depth that costs speed loses.
+1. **Browsing is the job.** The reader has time and is deciding what to
+   learn, not retrieving one thing under pressure. Navigability,
+   comparison, and orientation across a lot of content matter more than
+   shaving seconds off a lookup.
 2. **Warmth is the point.** The phrase set is courtesies — greetings,
    thanks, compliments, toasts. The product exists to make a small
    human gesture possible, not to teach grammar.
@@ -135,14 +156,22 @@ slang variants, each web-attested against two or more sources, with a
    starting point by design; contribution paths exist so native
    speakers can correct it, and attribution is honest by construction.
 5. **Nothing between the user and the phrase.** No accounts, no
-   network, no build, no framework. Constraints that keep it instant
-   and offline are product features.
+   tracking, no build, no framework, no runtime network calls. These
+   constraints are product features, not limitations to engineer
+   around.
 
 ## Accessibility & Inclusion
 
 No formal external standard is adopted (decided 2026-08-08). The
 practical commitments already proven in the code stand as the bar:
-mobile-first layout, large tap targets, phrase tables legible at arm's
-length, an `aria-live` app region for route changes, and vendored font
-subsets plus per-language Unicode script-range validation so no covered
-script renders as tofu on any device.
+mobile-first layout, a 44px minimum on every interactive element, all
+text at 4.5:1 or better and interactive borders at 3:1, a visible focus
+ring on every control, a dedicated `role="status"` region announcing
+route changes (not a live region wrapping the whole app), `dir` derived
+from the text so RTL scripts render correctly, and vendored font subsets
+plus per-language Unicode script-range validation so no covered script
+renders as tofu on any device.
+
+Known gap: native-script content carries no `lang` attribute, so screen
+readers pronounce it with an English voice. Fixing this needs a BCP-47
+code per language in the data schema, validator-enforced.
