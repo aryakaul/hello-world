@@ -158,6 +158,30 @@ function renderNotFound(app, msg) {
 	announce("Page not found.");
 }
 
+// A failed fetch is not a missing page. Telling someone their
+// connection dropped that we "haven't covered that yet" sends
+// them off to add a language that already exists.
+function renderLoadError(app) {
+	app.replaceChildren();
+	const box = el("div", "not-found");
+	box.append(el("h1", null, "We couldn’t load that page"));
+	box.append(el("p", null,
+		"Something went wrong fetching it — most likely the" +
+		" connection. The page itself is fine."));
+	const retry = el("button", "retry-btn", "Try again");
+	retry.type = "button";
+	retry.addEventListener("click", function () {
+		route();
+	});
+	box.append(retry);
+	const home = el("a", "back-link", "← Search from home");
+	home.href = "#/";
+	box.append(home);
+	app.append(box);
+	setTitle("Couldn’t load");
+	announce("Couldn’t load that page. Try again.");
+}
+
 // Accents are decoration in Latin, Greek and Cyrillic, so
 // "francais" should find Français. They are not decoration in
 // Devanagari or Khmer, where stripping the virama rewrites the
@@ -537,13 +561,27 @@ async function renderHome(app) {
 		}
 	});
 
-	mountGlobe(slot).catch(function () {
+	// Names the way out: the Countries list below is the same
+	// set of links, so a failed globe is a degraded page rather
+	// than a blocked one.
+	function globeFailed() {
 		if (gen !== navGen) {
 			return;
 		}
-		slot.replaceChildren(el("p", "globe-hint",
-			"Globe failed to load."));
-	});
+		const box = el("div", "globe-error");
+		box.append(el("p", "globe-hint",
+			"The globe didn’t load. Every country is in the" +
+			" list below."));
+		const again = el("button", "retry-btn", "Try again");
+		again.type = "button";
+		again.addEventListener("click", function () {
+			slot.replaceChildren();
+			mountGlobe(slot).catch(globeFailed);
+		});
+		box.append(again);
+		slot.replaceChildren(box);
+	}
+	mountGlobe(slot).catch(globeFailed);
 }
 
 // A page-level control for long pages. The sticky h2 already
@@ -1053,8 +1091,7 @@ async function route() {
 		}
 	} catch (err) {
 		if (gen === navGen) {
-			renderNotFound(app,
-				"We couldn’t load that page");
+			renderLoadError(app);
 		}
 	} finally {
 		clearTimeout(slow);

@@ -322,6 +322,29 @@ body {
 	padding: 3rem 0;
 }
 
+.retry-btn {
+	display: inline-block;
+	min-height: 44px;
+	margin: 0.5rem 0 1rem;
+	padding: 0.6rem 1.25rem;
+	border: 1px solid #1c1c1c;
+	border-radius: 999px;
+	background: #fff;
+	font: inherit;
+	font-size: 0.95rem;
+	color: #1c1c1c;
+	cursor: pointer;
+}
+
+.retry-btn:hover {
+	background: #f2f2ee;
+}
+
+.globe-error {
+	padding: 2rem 0;
+	text-align: center;
+}
+
 .site-footer {
 	max-width: 40rem;
 	margin: 2.5rem auto 0;
