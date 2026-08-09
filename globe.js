@@ -128,8 +128,16 @@ async function mountGlobe(container) {
 			ctx.lineWidth = isCovered ? 1.25 : 0.5;
 			ctx.stroke();
 		}
+		// Ring the visible disc rather than the sphere path.
+		// Zoomed in, the sphere is wider than the canvas, so
+		// its own outline sits off-screen and the globe loses
+		// its edge; pinning the radius to the canvas keeps the
+		// border at every zoom level. Zoomed out the two are
+		// the same circle, so nothing changes there.
+		const centre = projection.translate();
+		const edge = Math.min(projection.scale(), size / 2 - 1);
 		ctx.beginPath();
-		geoPath({type: "Sphere"});
+		ctx.arc(centre[0], centre[1], edge, 0, Math.PI * 2);
 		ctx.strokeStyle = GLOBE_COLORS.border;
 		ctx.lineWidth = 1;
 		ctx.stroke();
@@ -352,10 +360,14 @@ async function mountGlobe(container) {
 	canvas.addEventListener("pointercancel", endPointer);
 	canvas.addEventListener("pointerleave", hideTip);
 
+	// 1.002 doubles the previous rate: a wheel notch moves ~22%
+	// instead of ~10%, so base to full zoom is about 9 notches
+	// rather than 18. Pinch stays ratio-based against finger
+	// distance, which should track 1:1 and is left alone.
 	canvas.addEventListener("wheel", function (ev) {
 		ev.preventDefault();
 		setScale(projection.scale() *
-			Math.pow(1.001, -ev.deltaY));
+			Math.pow(1.002, -ev.deltaY));
 	}, {passive: false});
 
 	window.hwGlobe = {
