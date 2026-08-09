@@ -71,9 +71,17 @@ becoming this one:
   planning. Unhurried: reading, comparing, and scrolling are normal, and
   long pages are acceptable if they stay navigable.
 - Makes no external requests at runtime, so nothing is tracked and
-  nothing breaks when a CDN does. It is **not** installable and does not
-  survive a cold load without a connection; offline resilience is a
-  nice-to-have, not a promise the product currently makes.
+  nothing breaks when a CDN does. Icons, a web manifest, and Open Graph
+  tags ship so a shared link previews properly and a home-screen
+  shortcut looks right.
+- **Deliberately not an installable app** (ruling 2026-08-09). The
+  manifest declares `display: "browser"` and there is no
+  `apple-mobile-web-app-capable`, so a home-screen shortcut opens in
+  the browser with its URL bar rather than posing as an app. Without a
+  service worker the site does not survive a cold load offline, and an
+  installed icon that opens to a broken page is worse than a bookmark.
+  Adding a service worker is the prerequisite for changing this — do
+  not switch `display` to `standalone` on its own.
 - Static site served from the repo root via GitHub Pages; hash routes
   (`#/`, `#/<country-slug>`, `#/lang/<language-slug>`, not-found).
 - Data authored as JSON in the repo. Languages own phrases; countries
