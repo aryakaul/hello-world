@@ -172,6 +172,12 @@ from the text so RTL scripts render correctly, and vendored font subsets
 plus per-language Unicode script-range validation so no covered script
 renders as tofu on any device.
 
-Known gap: native-script content carries no `lang` attribute, so screen
-readers pronounce it with an English voice. Fixing this needs a BCP-47
-code per language in the data schema, validator-enforced.
+**Ruled out 2026-08-09: per-language `lang` attributes.** Native-script
+content carries no `lang`, so a screen reader applies an English voice
+to it. Doing this properly needs a BCP-47 code per language in the data
+schema — a slug cannot be converted to a code by rule (`swiss_german`
+is `gsw`, not `de-CH`; `northern_thai` is `nod`; `punjabi` is `pa-Arab`
+because this data is Shahmukhi) — so it means 68 hand-researched codes
+plus validation plus a new required field in the contributor
+scaffolder. The user declined the work. This is a deliberate decision,
+not an oversight: do not re-raise it as a finding.
