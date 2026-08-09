@@ -71,8 +71,14 @@ function announce(text) {
 	}
 }
 
-function renderFooter() {
-	const footer = el("footer", "site-footer");
+// The footer lives outside <main> in the shell so it is a real
+// contentinfo landmark and survives route re-renders. Filled
+// once; routes no longer append their own copy.
+function fillFooter() {
+	const footer = document.getElementById("site-footer");
+	if (!footer || footer.childElementCount) {
+		return;
+	}
 	footer.append(el("p", null,
 		"Every phrase here began as an AI draft." +
 		" Native speakers are reviewing them."));
@@ -85,7 +91,23 @@ function renderFooter() {
 		p.append(link);
 		footer.append(p);
 	}
-	return footer;
+}
+
+// Flags are decoration next to the name they accompany; left
+// unhidden a screen reader reads "flag of India India".
+function flag(emoji) {
+	const span = el("span", "flag", emoji);
+	span.setAttribute("aria-hidden", "true");
+	return span;
+}
+
+// "Tagalog (Tagalog)" reads as a mistake.
+function languageTitle(language) {
+	if (!language.native_name
+			|| language.native_name === language.name) {
+		return language.name;
+	}
+	return language.name + " (" + language.native_name + ")";
 }
 
 function renderNotFound(app, msg) {
@@ -111,7 +133,6 @@ function renderNotFound(app, msg) {
 	home.href = "#/";
 	box.append(home);
 	app.append(box);
-	app.append(renderFooter());
 	setTitle("Not found");
 	announce("Page not found.");
 }
@@ -205,6 +226,13 @@ async function renderHome(app) {
 	announce("Home. Search countries or languages.");
 	const header = el("header", "home-header");
 	header.append(el("h1", null, "hello, world"));
+	// The surface never said what it was; the first prose a
+	// visitor met was the footer's AI-draft caveat. Counts are
+	// read from the index so this cannot drift.
+	header.append(el("p", "tagline",
+		"Say hello, thank you and cheers in the languages of " +
+		index.countries.length + " countries — written the way" +
+		" they sound."));
 	const searchWrap = el("div", "search-wrap");
 	const search = el("input", "search");
 	search.type = "search";
@@ -234,6 +262,14 @@ async function renderHome(app) {
 	searchWrap.append(search, results);
 	header.append(searchWrap);
 	app.append(header);
+	// Early in the DOM so a keyboard user reaches it in a few
+	// tabs once it appears, rather than after every link on
+	// the page. It is position:fixed, so order costs nothing
+	// visually.
+	app.append(jumpControl([
+		{id: "home-countries", label: "Countries"},
+		{id: "home-languages", label: "Languages"}
+	]));
 
 	const slot = el("div", "globe-slot");
 	app.append(slot);
@@ -249,8 +285,10 @@ async function renderHome(app) {
 	for (const c of countries) {
 		const pill = el("a", "lang-pill");
 		pill.href = "#/" + c.slug;
-		pill.append(el("span", "lang-name",
-			c.flag + " " + c.name));
+		const pillName = el("span", "lang-name");
+		pillName.append(flag(c.flag),
+			document.createTextNode(" " + c.name));
+		pill.append(pillName);
 		pill.append(el("span", "pill-sub",
 			c.languages.join(", ")));
 		countryList.append(pill);
@@ -285,11 +323,6 @@ async function renderHome(app) {
 		langSection.append(cta);
 	}
 	app.append(langSection);
-	app.append(renderFooter());
-	app.append(jumpControl([
-		{id: "home-countries", label: "Countries"},
-		{id: "home-languages", label: "Languages"}
-	]));
 
 	let options = [];
 	let active = -1;
@@ -342,7 +375,9 @@ async function renderHome(app) {
 			row.setAttribute("role", "option");
 			row.setAttribute("aria-selected", "false");
 			row.tabIndex = -1;
-			row.append(el("span", "flag", hit.flag));
+			if (hit.flag) {
+				row.append(flag(hit.flag));
+			}
 			const name = el("span");
 			name.append(highlight(hit.label, q));
 			row.append(name);
@@ -567,8 +602,14 @@ function jumpControl(entries) {
 	return wrap;
 }
 
-function backLink() {
-	const link = el("a", "back-link", "← All countries");
+// Home lists both directories, so the label names whichever one
+// the visitor came from instead of claiming "countries" on a
+// language page.
+function backLink(kind) {
+	const link = el("a", "back-link",
+		kind === "languages"
+			? "← All languages"
+			: "← All countries");
 	link.href = "#/";
 	return link;
 }
@@ -798,9 +839,15 @@ async function renderCountry(app, slug) {
 	setTitle(country.name);
 	announce(country.name + ", " + languages.length +
 		(languages.length === 1 ? " language." : " languages."));
-	app.append(backLink());
-	app.append(el("h1", null,
-		country.flag + " " + country.name));
+	app.append(backLink("countries"));
+	app.append(jumpControl(languages.map(function (language) {
+		return {id: "lang-" + language.slug,
+			label: language.name};
+	})));
+	const countryTitle = el("h1");
+	countryTitle.append(flag(country.flag),
+		document.createTextNode(" " + country.name));
+	app.append(countryTitle);
 
 	const allAi = country.languages.every(
 		function (item, i) {
@@ -810,9 +857,10 @@ async function renderCountry(app, slug) {
 	app.append(pageNote(allAi));
 
 	if (languages.length > 1) {
-		const nav = el("ul", "lang-nav");
-		nav.setAttribute("aria-label",
+		const navWrap = el("nav", "lang-nav-wrap");
+		navWrap.setAttribute("aria-label",
 			"Languages on this page");
+		const nav = el("ul", "lang-nav");
 		// Buttons, not anchors: an in-page "#lang-x" hash
 		// would be read by the router as a country slug
 		// and render not-found.
@@ -820,6 +868,10 @@ async function renderCountry(app, slug) {
 			const li = el("li");
 			const btn = el("button", null, language.name);
 			btn.type = "button";
+			// Distinguishes it from the h2 link of the same
+			// name, which navigates away instead.
+			btn.setAttribute("aria-label",
+				"Scroll to " + language.name);
 			btn.addEventListener("click", function () {
 				const target = document.getElementById(
 					"lang-" + language.slug);
@@ -835,15 +887,15 @@ async function renderCountry(app, slug) {
 			li.append(btn);
 			nav.append(li);
 		});
-		app.append(nav);
+		navWrap.append(nav);
+		app.append(navWrap);
 	}
 
 	country.languages.forEach(function (item, i) {
 		const language = languages[i];
 		const section = el("section", "language-section");
 		section.id = "lang-" + language.slug;
-		const title = language.name +
-			" (" + language.native_name + ")";
+		const title = languageTitle(language);
 		const heading = el("h2");
 		const link = el("a", null, title);
 		link.href = "#/lang/" + language.slug;
@@ -858,11 +910,6 @@ async function renderCountry(app, slug) {
 		section.append(sectionActions(language));
 		app.append(section);
 	});
-	app.append(renderFooter());
-	app.append(jumpControl(languages.map(function (language) {
-		return {id: "lang-" + language.slug,
-			label: language.name};
-	})));
 }
 
 async function renderLanguage(app, slug) {
@@ -886,9 +933,9 @@ async function renderLanguage(app, slug) {
 	app.replaceChildren();
 	setTitle(language.name);
 	announce(language.name + " phrases.");
-	app.append(backLink());
-	app.append(el("h1", null, language.name +
-		" (" + language.native_name + ")"));
+	app.append(backLink("languages"));
+	app.append(jumpControl([]));
+	app.append(el("h1", null, languageTitle(language)));
 	const spoken = index.countries.filter(function (c) {
 		return c.languages.indexOf(language.name) !== -1;
 	});
@@ -900,8 +947,9 @@ async function renderLanguage(app, slug) {
 				p.append(document.createTextNode(
 					", "));
 			}
-			const link = el("a", null,
-				c.flag + " " + c.name);
+			const link = el("a", null);
+			link.append(flag(c.flag),
+				document.createTextNode(" " + c.name));
 			link.href = "#/" + c.slug;
 			p.append(link);
 		});
@@ -914,8 +962,6 @@ async function renderLanguage(app, slug) {
 	app.append(phraseTable(phrases, language, {}, audioMap,
 		{hideDraftBadge: allAi}));
 	app.append(sectionActions(language));
-	app.append(renderFooter());
-	app.append(jumpControl([]));
 }
 
 async function route() {
@@ -923,6 +969,7 @@ async function route() {
 	const gen = navGen;
 	const hash = location.hash.replace(/^#\/?/, "");
 	const app = document.getElementById("app");
+	fillFooter();
 	// Only if the fetch is slow enough to notice, so a warm
 	// cache never flashes a placeholder.
 	const slow = setTimeout(function () {
