@@ -46,11 +46,36 @@ function el(tag, className, text) {
 	return node;
 }
 
+const RTL_RE = /[֐-׿؀-ۿ܀-ݏݐ-ݿࢠ-ࣿיִ-﷿ﹰ-﻿]/;
+
+// Direction is read off the text, not off a slug list, so a
+// language added by a contributor renders correctly with no
+// change here.
+function applyDirection(node, text) {
+	if (RTL_RE.test(text)) {
+		node.setAttribute("dir", "rtl");
+	}
+	return node;
+}
+
+function setTitle(text) {
+	document.title = text
+		? text + " · hello, world"
+		: "hello, world";
+}
+
+function announce(text) {
+	const status = document.getElementById("route-status");
+	if (status) {
+		status.textContent = text;
+	}
+}
+
 function renderFooter() {
 	const footer = el("footer", "site-footer");
 	footer.append(el("p", null,
-		"Pronunciations marked “unverified” were" +
-		" AI-generated and await native-speaker review."));
+		"Every phrase here began as an AI draft." +
+		" Native speakers are reviewing them."));
 	if (REPO_URL !== "") {
 		const p = el("p");
 		const link = el("a", null,
@@ -66,11 +91,107 @@ function renderFooter() {
 function renderNotFound(app, msg) {
 	app.replaceChildren();
 	const box = el("div", "not-found");
-	box.append(el("p", null, msg || "Page not found."));
-	const home = el("a", "back-link", "← Home");
+	box.append(el("h1", null, msg || "We don’t have that page"));
+	const lead = el("p");
+	lead.append(document.createTextNode(
+		"It may be a country or language we haven’t" +
+		" covered yet. Search from the home page, or "));
+	if (REPO_URL !== "") {
+		const add = el("a", null, "add the language yourself");
+		add.href = REPO_URL +
+			"/blob/main/CONTRIBUTING.md#3-add-your-language";
+		lead.append(add);
+		lead.append(document.createTextNode("."));
+	} else {
+		lead.append(document.createTextNode(
+			"try a different spelling."));
+	}
+	box.append(lead);
+	const home = el("a", "back-link", "← Search from home");
 	home.href = "#/";
 	box.append(home);
 	app.append(box);
+	app.append(renderFooter());
+	setTitle("Not found");
+	announce("Page not found.");
+}
+
+// Ranked so the fastest path — type a few letters, press
+// Enter — cannot land on a country that merely speaks a
+// matching language. Lower rank wins.
+function matchRank(name, q) {
+	const n = name.toLowerCase();
+	if (n === q) {
+		return 0;
+	}
+	if (n.startsWith(q)) {
+		return 1;
+	}
+	if (n.split(/[\s-]+/).some(function (w) {
+		return w.startsWith(q);
+	})) {
+		return 2;
+	}
+	if (n.includes(q)) {
+		return 3;
+	}
+	return -1;
+}
+
+function highlight(text, q) {
+	const frag = document.createDocumentFragment();
+	const at = text.toLowerCase().indexOf(q);
+	if (at === -1) {
+		frag.append(document.createTextNode(text));
+		return frag;
+	}
+	frag.append(document.createTextNode(text.slice(0, at)));
+	const hit = el("mark", null, text.slice(at, at + q.length));
+	frag.append(hit);
+	frag.append(document.createTextNode(
+		text.slice(at + q.length)));
+	return frag;
+}
+
+const MAX_RESULTS = 8;
+
+function searchMatches(index, q) {
+	const hits = [];
+	for (const c of index.countries) {
+		const rank = matchRank(c.name, q);
+		if (rank !== -1) {
+			hits.push({rank: rank, label: c.name,
+				flag: c.flag, href: "#/" + c.slug,
+				why: ""});
+			continue;
+		}
+		const via = c.languages.find(function (l) {
+			return matchRank(l, q) !== -1;
+		});
+		if (via) {
+			hits.push({rank: 5, label: c.name,
+				flag: c.flag, href: "#/" + c.slug,
+				why: "speaks " + via});
+		}
+	}
+	for (const l of index.languages) {
+		let rank = matchRank(l.name, q);
+		let why = "language";
+		if (rank === -1 && l.native_name) {
+			rank = matchRank(l.native_name, q);
+			why = l.native_name;
+		}
+		if (rank !== -1) {
+			hits.push({rank: rank + 0.5, label: l.name,
+				flag: "", href: "#/lang/" + l.slug,
+				why: why});
+		}
+	}
+	hits.sort(function (a, b) {
+		return a.rank - b.rank ||
+			a.label.localeCompare(b.label);
+	});
+	return hits;
 }
 
 async function renderHome(app) {
@@ -80,6 +201,8 @@ async function renderHome(app) {
 		return;
 	}
 	app.replaceChildren();
+	setTitle("");
+	announce("Home. Search countries or languages.");
 	const header = el("header", "home-header");
 	header.append(el("h1", null, "hello, world"));
 	const searchWrap = el("div", "search-wrap");
@@ -89,7 +212,16 @@ async function renderHome(app) {
 		"Search countries or languages…";
 	search.setAttribute("aria-label",
 		"Search countries or languages");
+	search.setAttribute("enterkeyhint", "search");
+	search.setAttribute("autocomplete", "off");
+	search.setAttribute("role", "combobox");
+	search.setAttribute("aria-expanded", "false");
+	search.setAttribute("aria-controls", "search-results");
+	search.setAttribute("aria-autocomplete", "list");
 	const results = el("div", "search-results");
+	results.id = "search-results";
+	results.setAttribute("role", "listbox");
+	results.setAttribute("aria-label", "Search results");
 	results.hidden = true;
 	searchWrap.append(search, results);
 	header.append(searchWrap);
@@ -97,6 +229,25 @@ async function renderHome(app) {
 
 	const slot = el("div", "globe-slot");
 	app.append(slot);
+
+	const countrySection = el("section", "lang-section");
+	countrySection.append(el("h2", null, "Countries"));
+	const countryList = el("div", "lang-list");
+	const countries = index.countries.slice().sort(
+		function (a, b) {
+			return a.name.localeCompare(b.name);
+		});
+	for (const c of countries) {
+		const pill = el("a", "lang-pill");
+		pill.href = "#/" + c.slug;
+		pill.append(el("span", "lang-name",
+			c.flag + " " + c.name));
+		pill.append(el("span", "pill-sub",
+			c.languages.join(", ")));
+		countryList.append(pill);
+	}
+	countrySection.append(countryList);
+	app.append(countrySection);
 
 	const langSection = el("section", "lang-section");
 	langSection.append(el("h2", null, "Languages"));
@@ -126,65 +277,122 @@ async function renderHome(app) {
 	app.append(langSection);
 	app.append(renderFooter());
 
+	let options = [];
+	let active = -1;
+
+	function setActive(next) {
+		if (options[active]) {
+			options[active].classList.remove("is-active");
+			options[active].setAttribute("aria-selected",
+				"false");
+		}
+		active = next;
+		const row = options[active];
+		if (!row) {
+			search.removeAttribute("aria-activedescendant");
+			return;
+		}
+		row.classList.add("is-active");
+		row.setAttribute("aria-selected", "true");
+		search.setAttribute("aria-activedescendant", row.id);
+		row.scrollIntoView({block: "nearest"});
+	}
+
+	function closeResults() {
+		results.hidden = true;
+		search.setAttribute("aria-expanded", "false");
+		search.removeAttribute("aria-activedescendant");
+		options = [];
+		active = -1;
+	}
+
 	function fillResults(q) {
 		results.replaceChildren();
-		for (const c of index.countries) {
-			const hay = (c.name + " " +
-				c.languages.join(" "))
-				.toLowerCase();
-			if (!hay.includes(q)) {
-				continue;
-			}
+		options = [];
+		active = -1;
+		const hits = searchMatches(index, q);
+		for (const hit of hits.slice(0, MAX_RESULTS)) {
 			const row = el("a", "result-row");
-			row.href = "#/" + c.slug;
-			row.append(el("span", "flag", c.flag));
-			row.append(el("span", null, c.name));
-			results.append(row);
-		}
-		for (const l of index.languages) {
-			if (!l.name.toLowerCase().includes(q)) {
-				continue;
+			row.id = "result-" + options.length;
+			row.href = hit.href;
+			row.setAttribute("role", "option");
+			row.setAttribute("aria-selected", "false");
+			row.tabIndex = -1;
+			row.append(el("span", "flag", hit.flag));
+			const name = el("span");
+			name.append(highlight(hit.label, q));
+			row.append(name);
+			if (hit.why) {
+				row.append(el("span", "match-why",
+					hit.why));
 			}
-			const row = el("a", "result-row");
-			row.href = "#/lang/" + l.slug;
-			row.append(el("span", "flag", "🗣"));
-			row.append(el("span", null, l.name));
 			results.append(row);
+			options.push(row);
 		}
-		if (!results.children.length) {
+		if (!options.length) {
 			results.append(el("p", "result-empty",
-				"No matches."));
+				"No countries or languages match “" +
+				search.value.trim() + "”. Try a country" +
+				" name, or a language like “Tamil”."));
+		} else {
+			if (hits.length > MAX_RESULTS) {
+				results.append(el("p", "result-empty",
+					"Showing the closest " +
+					MAX_RESULTS + " of " +
+					hits.length + " matches."));
+			}
+			setActive(0);
 		}
 	}
 
 	search.addEventListener("input", function () {
 		const q = search.value.trim().toLowerCase();
 		if (q === "") {
-			results.hidden = true;
+			closeResults();
 			return;
 		}
 		fillResults(q);
 		results.hidden = false;
+		search.setAttribute("aria-expanded", "true");
 	});
 	search.addEventListener("keydown", function (ev) {
-		if (ev.key === "Enter" && !results.hidden) {
-			const first =
-				results.querySelector("a");
-			if (first) {
-				first.click();
+		if (results.hidden || !options.length) {
+			if (ev.key === "Escape") {
+				closeResults();
+			}
+			return;
+		}
+		if (ev.key === "ArrowDown") {
+			ev.preventDefault();
+			setActive((active + 1) % options.length);
+		} else if (ev.key === "ArrowUp") {
+			ev.preventDefault();
+			setActive((active - 1 + options.length) %
+				options.length);
+		} else if (ev.key === "Home") {
+			ev.preventDefault();
+			setActive(0);
+		} else if (ev.key === "End") {
+			ev.preventDefault();
+			setActive(options.length - 1);
+		} else if (ev.key === "Enter") {
+			ev.preventDefault();
+			const row = options[active] || options[0];
+			if (row) {
+				closeResults();
+				row.click();
 			}
 		} else if (ev.key === "Escape") {
-			results.hidden = true;
+			closeResults();
 		}
 	});
-	results.addEventListener("pointerdown",
-		function (ev) {
-			ev.preventDefault();
-		});
-	search.addEventListener("blur", function () {
-		setTimeout(function () {
-			results.hidden = true;
-		}, 150);
+	// focusout with relatedTarget, not blur+timeout: a
+	// keyboard user moving into the list must not have it
+	// closed underneath them.
+	searchWrap.addEventListener("focusout", function (ev) {
+		if (!searchWrap.contains(ev.relatedTarget)) {
+			closeResults();
+		}
 	});
 
 	mountGlobe(slot).catch(function () {
@@ -254,26 +462,60 @@ function audioButton(langSlug, phraseId, clip) {
 	return btn;
 }
 
-function entryActions(langSlug, phraseId, current, status) {
+// One quiet affordance per row. The verify path moved to the
+// section footer: contribution must not out-shout the phrase
+// the visitor came to say.
+function entryActions(langSlug, phraseId, current) {
 	const actions = el("div", "entry-actions");
 	const fix = el("a", "entry-action", "suggest a fix");
 	fix.href = issueUrl("correct-entry.yml", {
 		language: langSlug, phrase: phraseId,
 		current: current});
+	fix.setAttribute("aria-label",
+		"Suggest a fix for " + phraseId + " in " + langSlug);
 	actions.append(fix);
-	if (status === "ai") {
-		const verify = el("a", "entry-action",
-			"I speak this — verify it");
-		verify.href = issueUrl("verify-entry.yml", {
-			language: langSlug, phrase: phraseId});
-		actions.append(verify);
-	}
 	return actions;
 }
 
-function phraseTable(phrases, language, overrides, audioMap) {
+function sectionActions(language) {
+	const p = el("p", "section-actions");
+	const verify = el("a", null,
+		"I speak " + language.name +
+		" — help verify these →");
+	verify.href = issueUrl("verify-entry.yml", {
+		language: language.slug});
+	p.append(verify);
+	return p;
+}
+
+function allDrafts(phrases, language, overrides) {
+	return phrases.phrases.every(function (phrase) {
+		const base = language.entries[phrase.id];
+		const over = overrides[phrase.id];
+		const entry = over && base
+			? Object.assign({}, base, over)
+			: (over || base);
+		return !entry || entry.status === "ai";
+	});
+}
+
+function phraseTable(phrases, language, overrides, audioMap,
+		opts) {
 	const table = el("table", "phrase-table");
 	const audio = audioMap || {};
+	const options = opts || {};
+	const head = el("thead", "sr-only");
+	const headRow = el("tr");
+	for (const label of ["English", "In " + language.name,
+			"How to say it"]) {
+		const th = el("th", null, label);
+		th.setAttribute("scope", "col");
+		headRow.append(th);
+	}
+	head.append(headRow);
+	table.append(head);
+	const body = el("tbody");
+	table.append(body);
 	for (const phrase of phrases.phrases) {
 		const base = language.entries[phrase.id];
 		const over = overrides[phrase.id];
@@ -290,6 +532,7 @@ function phraseTable(phrases, language, overrides, audioMap) {
 				phrase.context));
 		}
 		const native = el("td", "native", entry.native);
+		applyDirection(native, entry.native);
 		const clip = audio[phrase.id];
 		if (clip) {
 			native.append(audioButton(
@@ -300,23 +543,31 @@ function phraseTable(phrases, language, overrides, audioMap) {
 		if (entry.note) {
 			resp.append(el("div", "note", entry.note));
 		}
-		const badge = statusBadge(
-			entry.status, entry.verified_by);
-		if (badge) {
-			resp.append(badge);
+		if (!options.hideDraftBadge
+				|| entry.status !== "ai") {
+			const badge = statusBadge(
+				entry.status, entry.verified_by);
+			if (badge) {
+				resp.append(badge);
+			}
 		}
 		if (entry.slang) {
-			native.append(el("div", "slang-native",
-				entry.slang.native));
+			const sn = el("div", "slang-native",
+				entry.slang.native);
+			applyDirection(sn, entry.slang.native);
+			native.append(sn);
 			const sl = el("div", "slang-resp",
 				entry.slang.respelling);
 			sl.append(el("span", "chip-slang",
 				"slang"));
-			const sBadge = statusBadge(
-				entry.slang.status,
-				entry.slang.verified_by);
-			if (sBadge) {
-				sl.append(sBadge);
+			if (!options.hideDraftBadge
+					|| entry.slang.status !== "ai") {
+				const sBadge = statusBadge(
+					entry.slang.status,
+					entry.slang.verified_by);
+				if (sBadge) {
+					sl.append(sBadge);
+				}
 			}
 			if (entry.slang.note) {
 				sl.append(el("div", "note",
@@ -325,12 +576,31 @@ function phraseTable(phrases, language, overrides, audioMap) {
 			resp.append(sl);
 		}
 		resp.append(entryActions(
-			language.slug, phrase.id, entry.native,
-			entry.status));
+			language.slug, phrase.id, entry.native));
 		row.append(eng, native, resp);
-		table.append(row);
+		body.append(row);
 	}
 	return table;
+}
+
+function pageNote(allAi) {
+	const note = el("div", "page-note");
+	const legend = el("p", "legend");
+	legend.append(document.createTextNode(
+		"Say the syllables in "));
+	legend.append(el("b", null, "CAPS"));
+	legend.append(document.createTextNode(
+		" a little louder — that’s where the stress" +
+		" goes."));
+	note.append(legend);
+	if (allAi) {
+		note.append(el("p", null,
+			"These drafts were written by AI and" +
+			" cross-checked against Google Translate." +
+			" No native speaker has reviewed them yet," +
+			" so treat them as close, not certain."));
+	}
+	return note;
 }
 
 async function renderCountry(app, slug) {
@@ -346,24 +616,69 @@ async function renderCountry(app, slug) {
 		renderNotFound(app);
 		return;
 	}
-	const country = await loadCountry(slug);
+	// Fetched together, not one after another: the old page
+	// stays on screen for the length of the slowest request,
+	// so a 7-language country must not cost 7 round trips.
+	const [country, phrases] = await Promise.all([
+		loadCountry(slug), loadPhrases()]);
 	if (gen !== navGen) {
 		return;
 	}
-	const phrases = await loadPhrases();
+	const languages = await Promise.all(
+		country.languages.map(function (item) {
+			return loadLanguage(item.language);
+		}));
 	if (gen !== navGen) {
 		return;
 	}
 	app.replaceChildren();
+	setTitle(country.name);
+	announce(country.name + ", " + languages.length +
+		" languages.");
 	app.append(backLink());
 	app.append(el("h1", null,
 		country.flag + " " + country.name));
-	for (const item of country.languages) {
-		const language = await loadLanguage(item.language);
-		if (gen !== navGen) {
-			return;
-		}
+
+	const allAi = country.languages.every(
+		function (item, i) {
+			return allDrafts(phrases, languages[i],
+				item.overrides || {});
+		});
+	app.append(pageNote(allAi));
+
+	if (languages.length > 1) {
+		const nav = el("ul", "lang-nav");
+		nav.setAttribute("aria-label",
+			"Languages on this page");
+		// Buttons, not anchors: an in-page "#lang-x" hash
+		// would be read by the router as a country slug
+		// and render not-found.
+		languages.forEach(function (language) {
+			const li = el("li");
+			const btn = el("button", null, language.name);
+			btn.type = "button";
+			btn.addEventListener("click", function () {
+				const target = document.getElementById(
+					"lang-" + language.slug);
+				if (target) {
+					target.scrollIntoView({
+						block: "start"});
+					const h = target.querySelector("h2 a");
+					if (h) {
+						h.focus();
+					}
+				}
+			});
+			li.append(btn);
+			nav.append(li);
+		});
+		app.append(nav);
+	}
+
+	country.languages.forEach(function (item, i) {
+		const language = languages[i];
 		const section = el("section", "language-section");
+		section.id = "lang-" + language.slug;
 		const title = language.name +
 			" (" + language.native_name + ")";
 		const heading = el("h2");
@@ -375,9 +690,11 @@ async function renderCountry(app, slug) {
 		const audioMap = (index.audio
 			&& index.audio[item.language]) || {};
 		section.append(phraseTable(phrases, language,
-			item.overrides || {}, audioMap));
+			item.overrides || {}, audioMap,
+			{hideDraftBadge: allAi}));
+		section.append(sectionActions(language));
 		app.append(section);
-	}
+	});
 	app.append(renderFooter());
 }
 
@@ -394,15 +711,14 @@ async function renderLanguage(app, slug) {
 		renderNotFound(app);
 		return;
 	}
-	const language = await loadLanguage(slug);
-	if (gen !== navGen) {
-		return;
-	}
-	const phrases = await loadPhrases();
+	const [language, phrases] = await Promise.all([
+		loadLanguage(slug), loadPhrases()]);
 	if (gen !== navGen) {
 		return;
 	}
 	app.replaceChildren();
+	setTitle(language.name);
+	announce(language.name + " phrases.");
 	app.append(backLink());
 	app.append(el("h1", null, language.name +
 		" (" + language.native_name + ")"));
@@ -424,9 +740,13 @@ async function renderLanguage(app, slug) {
 		});
 		app.append(p);
 	}
+	const allAi = allDrafts(phrases, language, {});
+	app.append(pageNote(allAi));
 	const audioMap = (index.audio
 		&& index.audio[slug]) || {};
-	app.append(phraseTable(phrases, language, {}, audioMap));
+	app.append(phraseTable(phrases, language, {}, audioMap,
+		{hideDraftBadge: allAi}));
+	app.append(sectionActions(language));
 	app.append(renderFooter());
 }
 
@@ -435,6 +755,15 @@ async function route() {
 	const gen = navGen;
 	const hash = location.hash.replace(/^#\/?/, "");
 	const app = document.getElementById("app");
+	// Only if the fetch is slow enough to notice, so a warm
+	// cache never flashes a placeholder.
+	const slow = setTimeout(function () {
+		if (gen === navGen) {
+			app.replaceChildren(
+				el("p", "loading", "Loading…"));
+			announce("Loading…");
+		}
+	}, 150);
 	try {
 		if (hash === "") {
 			await renderHome(app);
@@ -445,8 +774,11 @@ async function route() {
 		}
 	} catch (err) {
 		if (gen === navGen) {
-			renderNotFound(app);
+			renderNotFound(app,
+				"We couldn’t load that page");
 		}
+	} finally {
+		clearTimeout(slow);
 	}
 	if (gen === navGen) {
 		window.scrollTo(0, 0);

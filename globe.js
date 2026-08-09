@@ -6,10 +6,14 @@ const GLOBE_LIBS = [
 	"vendor/topojson-client.min.js"
 ];
 
+// Covered countries differ from land by luminance (3.2:1), not
+// only by hue: the globe is used one-handed outdoors, where a
+// pale mint fill washes out to the same gray as everything else.
 const GLOBE_COLORS = {
-	ocean: "#dbeafe",
+	ocean: "#cbdff7",
 	land: "#e7e5e4",
-	covered: "#86efac",
+	covered: "#3d8f5c",
+	coveredEdge: "#1f5c38",
 	border: "#78716c"
 };
 
@@ -67,6 +71,14 @@ async function mountGlobe(container) {
 	container.replaceChildren();
 	const wrap = el("div", "globe-wrap");
 	const canvas = el("canvas", "globe-canvas");
+	// The Countries list below is this canvas's keyboard and
+	// screen-reader equivalent, so it is labelled rather than
+	// made focusable.
+	canvas.setAttribute("role", "img");
+	canvas.setAttribute("aria-label",
+		"Globe. " + index.countries.length +
+		" countries are covered, shown in green." +
+		" The Countries list below has the same links.");
 	wrap.append(canvas);
 	const tip = el("div", "globe-tooltip");
 	tip.hidden = true;
@@ -103,14 +115,17 @@ async function mountGlobe(container) {
 		ctx.fillStyle = GLOBE_COLORS.ocean;
 		ctx.fill();
 		for (const f of countries) {
+			const isCovered = Boolean(slugByIsoNum[f.id]);
 			ctx.beginPath();
 			geoPath(f);
-			ctx.fillStyle = slugByIsoNum[f.id]
+			ctx.fillStyle = isCovered
 				? GLOBE_COLORS.covered
 				: GLOBE_COLORS.land;
 			ctx.fill();
-			ctx.strokeStyle = GLOBE_COLORS.border;
-			ctx.lineWidth = 0.5;
+			ctx.strokeStyle = isCovered
+				? GLOBE_COLORS.coveredEdge
+				: GLOBE_COLORS.border;
+			ctx.lineWidth = isCovered ? 1.25 : 0.5;
 			ctx.stroke();
 		}
 		ctx.beginPath();
