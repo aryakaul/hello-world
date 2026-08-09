@@ -85,8 +85,8 @@ async function mountGlobe(container) {
 	wrap.append(tip);
 	container.append(wrap);
 	container.append(el("p", "globe-hint",
-		"Green countries have phrases. Drag to spin · " +
-		"pinch or scroll to zoom · tap one to open it"));
+		"Drag to spin · pinch or scroll to zoom · " +
+		"tap a green country"));
 	const toast = el("p", "globe-toast");
 	toast.hidden = true;
 	container.append(toast);

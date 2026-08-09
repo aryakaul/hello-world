@@ -789,22 +789,9 @@ function sectionActions(language, linkToLanguage) {
 	return p;
 }
 
-function allDrafts(phrases, language, overrides) {
-	return phrases.phrases.every(function (phrase) {
-		const base = language.entries[phrase.id];
-		const over = overrides[phrase.id];
-		const entry = over && base
-			? Object.assign({}, base, over)
-			: (over || base);
-		return !entry || entry.status === "ai";
-	});
-}
-
-function phraseTable(phrases, language, overrides, audioMap,
-		opts) {
+function phraseTable(phrases, language, overrides, audioMap) {
 	const table = el("table", "phrase-table");
 	const audio = audioMap || {};
-	const options = opts || {};
 	const head = el("thead", "sr-only");
 	const headRow = el("tr");
 	for (const label of ["English", "In " + language.name,
@@ -844,13 +831,10 @@ function phraseTable(phrases, language, overrides, audioMap,
 		if (entry.note) {
 			resp.append(el("div", "note", entry.note));
 		}
-		if (!options.hideDraftBadge
-				|| entry.status !== "ai") {
-			const badge = statusBadge(
-				entry.status, entry.verified_by);
-			if (badge) {
-				resp.append(badge);
-			}
+		const badge = statusBadge(
+			entry.status, entry.verified_by);
+		if (badge) {
+			resp.append(badge);
 		}
 		if (entry.slang) {
 			const sn = el("div", "slang-native",
@@ -861,14 +845,11 @@ function phraseTable(phrases, language, overrides, audioMap,
 				entry.slang.respelling);
 			sl.append(el("span", "chip-slang",
 				"slang"));
-			if (!options.hideDraftBadge
-					|| entry.slang.status !== "ai") {
-				const sBadge = statusBadge(
-					entry.slang.status,
-					entry.slang.verified_by);
-				if (sBadge) {
-					sl.append(sBadge);
-				}
+			const sBadge = statusBadge(
+				entry.slang.status,
+				entry.slang.verified_by);
+			if (sBadge) {
+				sl.append(sBadge);
 			}
 			if (entry.slang.note) {
 				sl.append(el("div", "note",
@@ -882,26 +863,6 @@ function phraseTable(phrases, language, overrides, audioMap,
 		body.append(row);
 	}
 	return table;
-}
-
-function pageNote(allAi) {
-	const note = el("div", "page-note");
-	const legend = el("p", "legend");
-	legend.append(document.createTextNode(
-		"Say the syllables in "));
-	legend.append(el("b", null, "CAPS"));
-	legend.append(document.createTextNode(
-		" a little louder — that’s where the stress" +
-		" goes."));
-	note.append(legend);
-	if (allAi) {
-		note.append(el("p", null,
-			"These drafts were written by AI and" +
-			" cross-checked against Google Translate." +
-			" No native speaker has reviewed them yet," +
-			" so treat them as close, not certain."));
-	}
-	return note;
 }
 
 async function renderCountry(app, slug) {
@@ -945,13 +906,6 @@ async function renderCountry(app, slug) {
 	countryTitle.append(flag(country.flag),
 		document.createTextNode(" " + country.name));
 	app.append(countryTitle);
-
-	const allAi = country.languages.every(
-		function (item, i) {
-			return allDrafts(phrases, languages[i],
-				item.overrides || {});
-		});
-	app.append(pageNote(allAi));
 
 	if (languages.length > 1) {
 		const navWrap = el("nav", "lang-nav-wrap");
@@ -1011,8 +965,7 @@ async function renderCountry(app, slug) {
 		const audioMap = (index.audio
 			&& index.audio[item.language]) || {};
 		body.append(phraseTable(phrases, language,
-			item.overrides || {}, audioMap,
-			{hideDraftBadge: allAi}));
+			item.overrides || {}, audioMap));
 		body.append(sectionActions(language, true));
 		section.append(body);
 		toggle.addEventListener("click", function () {
@@ -1069,12 +1022,9 @@ async function renderLanguage(app, slug) {
 		});
 		app.append(p);
 	}
-	const allAi = allDrafts(phrases, language, {});
-	app.append(pageNote(allAi));
 	const audioMap = (index.audio
 		&& index.audio[slug]) || {};
-	app.append(phraseTable(phrases, language, {}, audioMap,
-		{hideDraftBadge: allAi}));
+	app.append(phraseTable(phrases, language, {}, audioMap));
 	app.append(sectionActions(language, false));
 }
 

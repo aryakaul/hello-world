@@ -99,6 +99,12 @@ must not break these):
 - **Honest provenance.** AI drafts always render "unverified";
   `verified` status always requires a real contributor handle, enforced
   by the validator. Verification and attribution are never fabricated.
+  **Per-entry, always** (ruling 2026-08-09): the badge sits on every
+  row, including when every entry on the page is a draft. A design pass
+  once replaced the repeated badges with a single page-level statement
+  and the user reverted it. Repetition here is the point — the status
+  belongs to the entry, not to the page. Do not propose collapsing,
+  deduplicating, or summarising these badges again.
 
 **Coverage rule** (institutionalized 2026-08-04): a country lists every
 language with ~10%+ national speaker share or major official/regional

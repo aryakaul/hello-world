@@ -504,29 +504,6 @@ body {
 	color: #5f5f5f;
 }
 
-.page-note {
-	margin: 0.75rem 0 1.25rem;
-	padding: 0.75rem 0.9rem;
-	background: #fff;
-	border: 1px solid #d8d8d2;
-	border-radius: 10px;
-	font-size: 0.85rem;
-	color: #3d3d3d;
-}
-
-.page-note p {
-	margin: 0;
-}
-
-.page-note p + p {
-	margin-top: 0.4rem;
-}
-
-.page-note .legend b {
-	font-weight: 700;
-	letter-spacing: 0.03em;
-}
-
 .lang-nav {
 	display: flex;
 	flex-wrap: wrap;
