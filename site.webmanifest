@@ -1,7 +1,7 @@
 {
 	"name": "hello, world",
 	"short_name": "hello, world",
-	"description": "Say hello, thank you and cheers in the languages of 49 countries. Anglicised pronunciations you can read out loud.",
+	"description": "A simple, user-contributed phrasebook for communicating across the world.",
 	"lang": "en",
 	"start_url": "./",
 	"scope": "./",

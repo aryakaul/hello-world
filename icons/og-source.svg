@@ -20,9 +20,9 @@
         font-size="82" font-weight="700" fill="#1c1c1c">hello, world</text>
 
   <text x="90" y="320" font-family="Helvetica Neue, Helvetica, Arial"
-        font-size="34" fill="#3d3d3d">Say hello, thank you and cheers in</text>
+        font-size="34" fill="#3d3d3d">A simple, user-contributed phrasebook</text>
   <text x="90" y="366" font-family="Helvetica Neue, Helvetica, Arial"
-        font-size="34" fill="#3d3d3d">the languages of 49 countries.</text>
+        font-size="34" fill="#3d3d3d">for communicating across the world.</text>
 
   <text x="90" y="470" font-family="Helvetica Neue, Helvetica, Arial"
         font-size="27" fill="#5f5f5f">GRAH-see-ahs  ·  DHUN-yuh-vaad  ·  ah-ree-GAH-toh</text>
