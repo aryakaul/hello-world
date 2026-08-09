@@ -5,6 +5,10 @@
 	"iso": "MA",
 	"iso_num": "504",
 	"continent": "Africa",
+	"aliases": [
+		"Maroc",
+		"المغرب"
+	],
 	"languages": [
 		{
 			"language": "arabic_moroccan",

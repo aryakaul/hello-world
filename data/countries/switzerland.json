@@ -5,6 +5,11 @@
 	"iso": "CH",
 	"iso_num": "756",
 	"continent": "Europe",
+	"aliases": [
+		"Schweiz",
+		"Suisse",
+		"Svizzera"
+	],
 	"languages": [
 		{
 			"language": "swiss_german",

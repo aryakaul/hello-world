@@ -5,6 +5,9 @@
 	"iso": "SE",
 	"iso_num": "752",
 	"continent": "Europe",
+	"aliases": [
+		"Sverige"
+	],
 	"languages": [
 		{
 			"language": "swedish",

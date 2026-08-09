@@ -5,6 +5,9 @@
 	"iso": "BR",
 	"iso_num": "076",
 	"continent": "South America",
+	"aliases": [
+		"Brasil"
+	],
 	"languages": [
 		{
 			"language": "portuguese",

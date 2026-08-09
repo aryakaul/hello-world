@@ -5,6 +5,10 @@
 	"iso": "NZ",
 	"iso_num": "554",
 	"continent": "Oceania",
+	"aliases": [
+		"Aotearoa",
+		"NZ"
+	],
 	"languages": [
 		{
 			"language": "maori",

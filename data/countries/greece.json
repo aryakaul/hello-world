@@ -5,6 +5,10 @@
 	"iso": "GR",
 	"iso_num": "300",
 	"continent": "Europe",
+	"aliases": [
+		"Hellas",
+		"Ελλάδα"
+	],
 	"languages": [
 		{
 			"language": "greek",

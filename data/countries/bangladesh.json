@@ -5,6 +5,9 @@
 	"iso": "BD",
 	"iso_num": "050",
 	"continent": "Asia",
+	"aliases": [
+		"বাংলাদেশ"
+	],
 	"languages": [
 		{
 			"language": "bengali",

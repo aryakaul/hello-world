@@ -5,6 +5,10 @@
 	"iso": "RU",
 	"iso_num": "643",
 	"continent": "Europe",
+	"aliases": [
+		"Rossiya",
+		"Россия"
+	],
 	"languages": [
 		{
 			"language": "russian",

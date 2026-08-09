@@ -5,6 +5,9 @@
 	"iso": "VN",
 	"iso_num": "704",
 	"continent": "Asia",
+	"aliases": [
+		"Việt Nam"
+	],
 	"languages": [
 		{
 			"language": "vietnamese",

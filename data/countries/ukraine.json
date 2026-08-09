@@ -5,6 +5,10 @@
 	"iso": "UA",
 	"iso_num": "804",
 	"continent": "Europe",
+	"aliases": [
+		"Ukraina",
+		"Україна"
+	],
 	"languages": [
 		{
 			"language": "ukrainian",

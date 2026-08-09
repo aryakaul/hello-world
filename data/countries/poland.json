@@ -5,6 +5,9 @@
 	"iso": "PL",
 	"iso_num": "616",
 	"continent": "Europe",
+	"aliases": [
+		"Polska"
+	],
 	"languages": [
 		{
 			"language": "polish",

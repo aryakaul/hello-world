@@ -5,6 +5,9 @@
 	"iso": "PH",
 	"iso_num": "608",
 	"continent": "Asia",
+	"aliases": [
+		"Pilipinas"
+	],
 	"languages": [
 		{
 			"language": "tagalog",

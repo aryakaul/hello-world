@@ -5,6 +5,9 @@
 	"iso": "PG",
 	"iso_num": "598",
 	"continent": "Oceania",
+	"aliases": [
+		"PNG"
+	],
 	"languages": [
 		{
 			"language": "tok_pisin",

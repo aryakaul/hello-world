@@ -4,6 +4,7 @@
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 VALID_STATUS = {"ai", "verified"}
@@ -226,6 +227,63 @@ def _check_languages(data_dir, pid_set, errors):
 	return names, native_names
 
 
+# Mirrors fold() in app.js: accents are stripped only when the
+# decomposed base letter is Latin, Greek or Cyrillic, so an alias
+# that differs from another only by an accent is redundant, while
+# scripts whose marks are load-bearing compare intact.
+_FOLDABLE_BASE = re.compile("[A-Za-zͰ-ϿЀ-ӿ]")
+
+
+def _fold(text):
+	out = []
+	for ch in text:
+		decomposed = unicodedata.normalize("NFD", ch)
+		if _FOLDABLE_BASE.match(decomposed[0]):
+			out.append("".join(
+				c for c in decomposed
+				if not unicodedata.combining(c)))
+		else:
+			out.append(ch)
+	return "".join(out).casefold().strip()
+
+
+def _check_aliases(label, country, errors):
+	"""Optional search-only alternative names for a country.
+
+	Aliases are matching hints, never displayed, so they carry no
+	status field. They still have to be well formed: non-empty
+	strings, no duplicates, and not a restatement of the name the
+	country already matches on.
+	"""
+	aliases = country.get("aliases")
+	if aliases is None:
+		return
+	if not isinstance(aliases, list) or not aliases:
+		errors.append(
+			f"{label}: aliases must be a non-empty list"
+			f" when present")
+		return
+	name = _fold(country.get("name") or "")
+	seen = set()
+	for alias in aliases:
+		if not isinstance(alias, str) or not alias.strip():
+			errors.append(
+				f"{label}: alias must be a non-empty string")
+			continue
+		# Compared folded: search folds too, so "Espana"
+		# alongside "España" would never match anything the
+		# accented form did not already match.
+		key = _fold(alias)
+		if key == name:
+			errors.append(
+				f"{label}: alias '{alias}' repeats the"
+				f" country name")
+		if key in seen:
+			errors.append(
+				f"{label}: duplicate alias '{alias}'")
+		seen.add(key)
+
+
 def _check_countries(data_dir, pid_set, lang_names, errors):
 	rows = {}
 	iso_num_map = {}
@@ -254,6 +312,7 @@ def _check_countries(data_dir, pid_set, lang_names, errors):
 					f" duplicates {iso_num_map[iso_num]}")
 			else:
 				iso_num_map[iso_num] = path.name
+		_check_aliases(path.name, country, errors)
 		langs = country.get("languages")
 		if not langs:
 			errors.append(
@@ -290,6 +349,7 @@ def _check_countries(data_dir, pid_set, lang_names, errors):
 			"flag": country.get("flag"),
 			"iso_num": country.get("iso_num"),
 			"continent": country.get("continent"),
+			"aliases": list(country.get("aliases") or []),
 			"languages": display,
 		}
 	return rows
@@ -403,6 +463,11 @@ def _check_index(data_dir, country_rows, lang_names,
 			errors.append(
 				f"index.json: '{slug}' languages"
 				f" mismatch")
+		# Absent and empty mean the same thing: build_index
+		# omits the key when a country has no aliases.
+		if list(row.get("aliases") or []) != want["aliases"]:
+			errors.append(
+				f"index.json: '{slug}' aliases mismatch")
 	idx_langs = {
 		l.get("slug"): (l.get("name"),
 			l.get("native_name"))

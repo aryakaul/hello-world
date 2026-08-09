@@ -5,6 +5,9 @@
 	"iso": "ES",
 	"iso_num": "724",
 	"continent": "Europe",
+	"aliases": [
+		"España"
+	],
 	"languages": [
 		{
 			"language": "spanish",

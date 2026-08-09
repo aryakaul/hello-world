@@ -5,6 +5,10 @@
 	"iso": "IR",
 	"iso_num": "364",
 	"continent": "Asia",
+	"aliases": [
+		"Persia",
+		"ایران"
+	],
 	"languages": [
 		{
 			"language": "persian",

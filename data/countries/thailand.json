@@ -5,6 +5,10 @@
 	"iso": "TH",
 	"iso_num": "764",
 	"continent": "Asia",
+	"aliases": [
+		"Siam",
+		"ประเทศไทย"
+	],
 	"languages": [
 		{
 			"language": "thai",

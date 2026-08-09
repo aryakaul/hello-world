@@ -5,6 +5,10 @@
 	"iso": "ZA",
 	"iso_num": "710",
 	"continent": "Africa",
+	"aliases": [
+		"RSA",
+		"Suid-Afrika"
+	],
 	"languages": [
 		{
 			"language": "zulu",

@@ -5,6 +5,10 @@
 	"iso": "LK",
 	"iso_num": "144",
 	"continent": "Asia",
+	"aliases": [
+		"Ceylon",
+		"ශ්‍රී ලංකා"
+	],
 	"languages": [
 		{
 			"language": "sinhala",

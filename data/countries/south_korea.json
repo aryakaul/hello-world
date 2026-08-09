@@ -5,6 +5,12 @@
 	"iso": "KR",
 	"iso_num": "410",
 	"continent": "Asia",
+	"aliases": [
+		"Korea",
+		"Hanguk",
+		"한국",
+		"Republic of Korea"
+	],
 	"languages": [
 		{
 			"language": "korean",

@@ -5,6 +5,9 @@
 	"iso": "AT",
 	"iso_num": "040",
 	"continent": "Europe",
+	"aliases": [
+		"Österreich"
+	],
 	"languages": [
 		{
 			"language": "german",

@@ -5,6 +5,10 @@
 	"iso": "EG",
 	"iso_num": "818",
 	"continent": "Africa",
+	"aliases": [
+		"Misr",
+		"مصر"
+	],
 	"languages": [
 		{
 			"language": "arabic_egyptian",

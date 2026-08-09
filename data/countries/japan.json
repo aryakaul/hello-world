@@ -5,6 +5,11 @@
 	"iso": "JP",
 	"iso_num": "392",
 	"continent": "Asia",
+	"aliases": [
+		"Nippon",
+		"Nihon",
+		"日本"
+	],
 	"languages": [
 		{
 			"language": "japanese",

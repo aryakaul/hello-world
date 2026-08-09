@@ -55,7 +55,7 @@ def build(data_dir):
 			(data_dir / "countries").glob("*.json")):
 		c = json.loads(
 			path.read_text(encoding="utf-8"))
-		countries.append({
+		row = {
 			"slug": c["slug"], "name": c["name"],
 			"flag": c["flag"],
 			"iso_num": c["iso_num"],
@@ -63,7 +63,12 @@ def build(data_dir):
 			"languages": [
 				langs[l["language"]]["name"]
 				for l in c["languages"]],
-		})
+		}
+		# Search-only: omitted when empty so the index does not
+		# carry 49 empty lists.
+		if c.get("aliases"):
+			row["aliases"] = list(c["aliases"])
+		countries.append(row)
 	index = {
 		"countries": countries,
 		"languages": [

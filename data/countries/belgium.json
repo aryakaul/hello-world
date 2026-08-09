@@ -5,6 +5,11 @@
 	"iso": "BE",
 	"iso_num": "056",
 	"continent": "Europe",
+	"aliases": [
+		"België",
+		"Belgique",
+		"Belgien"
+	],
 	"languages": [
 		{
 			"language": "dutch",

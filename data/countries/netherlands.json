@@ -5,6 +5,10 @@
 	"iso": "NL",
 	"iso_num": "528",
 	"continent": "Europe",
+	"aliases": [
+		"Holland",
+		"Nederland"
+	],
 	"languages": [
 		{
 			"language": "dutch",

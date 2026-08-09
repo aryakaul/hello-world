@@ -5,6 +5,11 @@
 	"iso": "CN",
 	"iso_num": "156",
 	"continent": "Asia",
+	"aliases": [
+		"中国",
+		"Zhongguo",
+		"PRC"
+	],
 	"languages": [
 		{
 			"language": "mandarin",

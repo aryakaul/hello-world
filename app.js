@@ -243,11 +243,26 @@ const MAX_RESULTS = 8;
 function searchMatches(index, q) {
 	const hits = [];
 	for (const c of index.countries) {
-		const rank = matchRank(c.name, q);
+		let rank = matchRank(c.name, q);
+		let why = "";
+		// An alias sits just behind the same quality of match
+		// on the country's own name, so "korea" still prefers a
+		// country actually called Korea if one existed, while
+		// "deutschland" and "espana" reach Germany and Spain.
+		for (const alias of c.aliases || []) {
+			const aliasRank = matchRank(alias, q);
+			if (aliasRank === -1) {
+				continue;
+			}
+			if (rank === -1 || aliasRank + 0.25 < rank) {
+				rank = aliasRank + 0.25;
+				why = alias;
+			}
+		}
 		if (rank !== -1) {
 			hits.push({rank: rank, label: c.name,
 				flag: c.flag, href: "#/" + c.slug,
-				why: ""});
+				why: why});
 			continue;
 		}
 		const via = c.languages.find(function (l) {

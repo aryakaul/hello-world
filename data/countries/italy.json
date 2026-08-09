@@ -5,6 +5,9 @@
 	"iso": "IT",
 	"iso_num": "380",
 	"continent": "Europe",
+	"aliases": [
+		"Italia"
+	],
 	"languages": [
 		{
 			"language": "italian",

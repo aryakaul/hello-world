@@ -5,6 +5,9 @@
 	"iso": "ET",
 	"iso_num": "231",
 	"continent": "Africa",
+	"aliases": [
+		"ኢትዮጵያ"
+	],
 	"languages": [
 		{
 			"language": "amharic",

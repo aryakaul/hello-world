@@ -5,6 +5,9 @@
 	"iso": "IL",
 	"iso_num": "376",
 	"continent": "Asia",
+	"aliases": [
+		"ישראל"
+	],
 	"languages": [
 		{
 			"language": "hebrew",

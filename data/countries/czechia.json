@@ -5,6 +5,11 @@
 	"iso": "CZ",
 	"iso_num": "203",
 	"continent": "Europe",
+	"aliases": [
+		"Czech Republic",
+		"Czech",
+		"Česko"
+	],
 	"languages": [
 		{
 			"language": "czech",

@@ -5,6 +5,10 @@
 	"iso": "KH",
 	"iso_num": "116",
 	"continent": "Asia",
+	"aliases": [
+		"Kampuchea",
+		"កម្ពុជា"
+	],
 	"languages": [
 		{
 			"language": "khmer",

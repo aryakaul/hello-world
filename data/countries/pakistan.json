@@ -5,6 +5,9 @@
 	"iso": "PK",
 	"iso_num": "586",
 	"continent": "Asia",
+	"aliases": [
+		"پاکستان"
+	],
 	"languages": [
 		{
 			"language": "urdu",

@@ -5,6 +5,10 @@
 	"iso": "SA",
 	"iso_num": "682",
 	"continent": "Asia",
+	"aliases": [
+		"KSA",
+		"السعودية"
+	],
 	"languages": [
 		{
 			"language": "arabic_msa",

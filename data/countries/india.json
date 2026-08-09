@@ -5,6 +5,10 @@
 	"iso": "IN",
 	"iso_num": "356",
 	"continent": "Asia",
+	"aliases": [
+		"Bharat",
+		"भारत"
+	],
 	"languages": [
 		{
 			"language": "hindi",

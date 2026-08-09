@@ -108,6 +108,100 @@ class ValidateTests(unittest.TestCase):
 		self.assertTrue(any(
 			"iso_num" in e for e in validate(self.root)))
 
+	def test_alias_duplicate_rejected(self):
+		path = self.root / "countries" / "mexico.json"
+		c = json.loads(path.read_text(encoding="utf-8"))
+		c["aliases"] = ["Mejico", "Mejico"]
+		write(path, c)
+		self.assertTrue(any(
+			"duplicate alias" in e
+			for e in validate(self.root)))
+
+	def test_alias_repeating_country_name_rejected(self):
+		path = self.root / "countries" / "mexico.json"
+		c = json.loads(path.read_text(encoding="utf-8"))
+		c["aliases"] = ["mexico"]
+		write(path, c)
+		self.assertTrue(any(
+			"repeats the country name" in e
+			for e in validate(self.root)))
+
+	def test_alias_empty_string_rejected(self):
+		path = self.root / "countries" / "mexico.json"
+		c = json.loads(path.read_text(encoding="utf-8"))
+		c["aliases"] = ["  "]
+		write(path, c)
+		self.assertTrue(any(
+			"non-empty string" in e
+			for e in validate(self.root)))
+
+	def test_alias_wrong_type_rejected(self):
+		path = self.root / "countries" / "mexico.json"
+		c = json.loads(path.read_text(encoding="utf-8"))
+		c["aliases"] = "Mejico"
+		write(path, c)
+		self.assertTrue(any(
+			"non-empty list" in e
+			for e in validate(self.root)))
+
+	def test_alias_redundant_after_folding_rejected(self):
+		"""Search folds Latin accents, so an unaccented twin
+		can never match anything the accented form missed."""
+		path = self.root / "countries" / "mexico.json"
+		c = json.loads(path.read_text(encoding="utf-8"))
+		c["aliases"] = ["Méjico", "Mejico"]
+		write(path, c)
+		self.assertTrue(any(
+			"duplicate alias" in e
+			for e in validate(self.root)))
+
+	def test_alias_accent_only_variant_of_name_rejected(self):
+		path = self.root / "countries" / "mexico.json"
+		c = json.loads(path.read_text(encoding="utf-8"))
+		c["aliases"] = ["México"]
+		write(path, c)
+		self.assertTrue(any(
+			"repeats the country name" in e
+			for e in validate(self.root)))
+
+	def test_alias_non_latin_script_not_folded(self):
+		"""Devanagari marks are load-bearing, so two distinct
+		spellings must not collide the way accents do."""
+		path = self.root / "countries" / "mexico.json"
+		c = json.loads(path.read_text(encoding="utf-8"))
+		c["aliases"] = ["हिन्दी", "हिनदी"]
+		write(path, c)
+		# Only the redundancy rules are under test here; the
+		# index is deliberately left stale, so its own mismatch
+		# error is expected and ignored.
+		self.assertEqual(
+			[e for e in validate(self.root)
+				if "duplicate alias" in e
+				or "repeats the country name" in e], [])
+
+	def test_index_alias_mismatch(self):
+		path = self.root / "countries" / "mexico.json"
+		c = json.loads(path.read_text(encoding="utf-8"))
+		c["aliases"] = ["Mejico"]
+		write(path, c)
+		self.assertTrue(any(
+			"aliases mismatch" in e
+			for e in validate(self.root)))
+
+	def test_aliases_absent_is_valid(self):
+		path = self.root / "countries" / "mexico.json"
+		c = json.loads(path.read_text(encoding="utf-8"))
+		c.pop("aliases", None)
+		write(path, c)
+		idx = json.loads(
+			(self.root / "index.json").read_text(
+				encoding="utf-8"))
+		for row in idx["countries"]:
+			if row["slug"] == "mexico":
+				row.pop("aliases", None)
+		write(self.root / "index.json", idx)
+		self.assertEqual([], validate(self.root))
+
 	def test_index_language_native_name_mismatch(self):
 		path = self.root / "index.json"
 		idx = json.loads(path.read_text(encoding="utf-8"))

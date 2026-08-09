@@ -18,6 +18,9 @@
 			"continent": "Europe",
 			"languages": [
 				"German"
+			],
+			"aliases": [
+				"Österreich"
 			]
 		},
 		{
@@ -28,6 +31,9 @@
 			"continent": "Asia",
 			"languages": [
 				"Bengali"
+			],
+			"aliases": [
+				"বাংলাদেশ"
 			]
 		},
 		{
@@ -40,6 +46,11 @@
 				"Dutch",
 				"French",
 				"German"
+			],
+			"aliases": [
+				"België",
+				"Belgique",
+				"Belgien"
 			]
 		},
 		{
@@ -50,6 +61,9 @@
 			"continent": "South America",
 			"languages": [
 				"Portuguese"
+			],
+			"aliases": [
+				"Brasil"
 			]
 		},
 		{
@@ -60,6 +74,10 @@
 			"continent": "Asia",
 			"languages": [
 				"Khmer"
+			],
+			"aliases": [
+				"Kampuchea",
+				"កម្ពុជា"
 			]
 		},
 		{
@@ -91,6 +109,11 @@
 			"languages": [
 				"Mandarin",
 				"Cantonese"
+			],
+			"aliases": [
+				"中国",
+				"Zhongguo",
+				"PRC"
 			]
 		},
 		{
@@ -121,6 +144,11 @@
 			"continent": "Europe",
 			"languages": [
 				"Czech"
+			],
+			"aliases": [
+				"Czech Republic",
+				"Czech",
+				"Česko"
 			]
 		},
 		{
@@ -131,6 +159,10 @@
 			"continent": "Africa",
 			"languages": [
 				"Arabic (Egyptian)"
+			],
+			"aliases": [
+				"Misr",
+				"مصر"
 			]
 		},
 		{
@@ -143,6 +175,9 @@
 				"Amharic",
 				"Oromo",
 				"Tigrinya"
+			],
+			"aliases": [
+				"ኢትዮጵያ"
 			]
 		},
 		{
@@ -163,6 +198,9 @@
 			"continent": "Europe",
 			"languages": [
 				"German"
+			],
+			"aliases": [
+				"Deutschland"
 			]
 		},
 		{
@@ -173,6 +211,10 @@
 			"continent": "Europe",
 			"languages": [
 				"Greek"
+			],
+			"aliases": [
+				"Hellas",
+				"Ελλάδα"
 			]
 		},
 		{
@@ -189,6 +231,10 @@
 				"Tamil",
 				"Gujarati",
 				"Urdu"
+			],
+			"aliases": [
+				"Bharat",
+				"भारत"
 			]
 		},
 		{
@@ -212,6 +258,10 @@
 			"languages": [
 				"Persian",
 				"Azerbaijani"
+			],
+			"aliases": [
+				"Persia",
+				"ایران"
 			]
 		},
 		{
@@ -224,6 +274,9 @@
 				"Hebrew",
 				"Arabic (Modern Standard)",
 				"Russian"
+			],
+			"aliases": [
+				"ישראל"
 			]
 		},
 		{
@@ -235,6 +288,9 @@
 			"languages": [
 				"Italian",
 				"German"
+			],
+			"aliases": [
+				"Italia"
 			]
 		},
 		{
@@ -245,6 +301,11 @@
 			"continent": "Asia",
 			"languages": [
 				"Japanese"
+			],
+			"aliases": [
+				"Nippon",
+				"Nihon",
+				"日本"
 			]
 		},
 		{
@@ -290,6 +351,10 @@
 				"Moroccan Arabic",
 				"Tamazight",
 				"French"
+			],
+			"aliases": [
+				"Maroc",
+				"المغرب"
 			]
 		},
 		{
@@ -300,6 +365,10 @@
 			"continent": "Europe",
 			"languages": [
 				"Dutch"
+			],
+			"aliases": [
+				"Holland",
+				"Nederland"
 			]
 		},
 		{
@@ -310,6 +379,10 @@
 			"continent": "Oceania",
 			"languages": [
 				"Māori"
+			],
+			"aliases": [
+				"Aotearoa",
+				"NZ"
 			]
 		},
 		{
@@ -337,6 +410,9 @@
 				"Pashto",
 				"Sindhi",
 				"Saraiki"
+			],
+			"aliases": [
+				"پاکستان"
 			]
 		},
 		{
@@ -347,6 +423,9 @@
 			"continent": "Oceania",
 			"languages": [
 				"Tok Pisin"
+			],
+			"aliases": [
+				"PNG"
 			]
 		},
 		{
@@ -369,6 +448,9 @@
 			"languages": [
 				"Tagalog",
 				"Cebuano"
+			],
+			"aliases": [
+				"Pilipinas"
 			]
 		},
 		{
@@ -379,6 +461,9 @@
 			"continent": "Europe",
 			"languages": [
 				"Polish"
+			],
+			"aliases": [
+				"Polska"
 			]
 		},
 		{
@@ -399,6 +484,10 @@
 			"continent": "Europe",
 			"languages": [
 				"Russian"
+			],
+			"aliases": [
+				"Rossiya",
+				"Россия"
 			]
 		},
 		{
@@ -409,6 +498,10 @@
 			"continent": "Asia",
 			"languages": [
 				"Arabic (Modern Standard)"
+			],
+			"aliases": [
+				"KSA",
+				"السعودية"
 			]
 		},
 		{
@@ -422,6 +515,10 @@
 				"Xhosa",
 				"Afrikaans",
 				"Sepedi"
+			],
+			"aliases": [
+				"RSA",
+				"Suid-Afrika"
 			]
 		},
 		{
@@ -432,6 +529,12 @@
 			"continent": "Asia",
 			"languages": [
 				"Korean"
+			],
+			"aliases": [
+				"Korea",
+				"Hanguk",
+				"한국",
+				"Republic of Korea"
 			]
 		},
 		{
@@ -443,6 +546,9 @@
 			"languages": [
 				"Spanish",
 				"Catalan"
+			],
+			"aliases": [
+				"España"
 			]
 		},
 		{
@@ -454,6 +560,10 @@
 			"languages": [
 				"Sinhala",
 				"Tamil"
+			],
+			"aliases": [
+				"Ceylon",
+				"ශ්‍රී ලංකා"
 			]
 		},
 		{
@@ -464,6 +574,9 @@
 			"continent": "Europe",
 			"languages": [
 				"Swedish"
+			],
+			"aliases": [
+				"Sverige"
 			]
 		},
 		{
@@ -477,6 +590,11 @@
 				"German",
 				"French",
 				"Italian"
+			],
+			"aliases": [
+				"Schweiz",
+				"Suisse",
+				"Svizzera"
 			]
 		},
 		{
@@ -500,6 +618,10 @@
 				"Thai",
 				"Isan",
 				"Northern Thai"
+			],
+			"aliases": [
+				"Siam",
+				"ประเทศไทย"
 			]
 		},
 		{
@@ -511,6 +633,9 @@
 			"languages": [
 				"Turkish",
 				"Kurdish (Kurmanji)"
+			],
+			"aliases": [
+				"Türkiye"
 			]
 		},
 		{
@@ -521,6 +646,10 @@
 			"continent": "Europe",
 			"languages": [
 				"Ukrainian"
+			],
+			"aliases": [
+				"Ukraina",
+				"Україна"
 			]
 		},
 		{
@@ -531,6 +660,9 @@
 			"continent": "Asia",
 			"languages": [
 				"Vietnamese"
+			],
+			"aliases": [
+				"Việt Nam"
 			]
 		}
 	],

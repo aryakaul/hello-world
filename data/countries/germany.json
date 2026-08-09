@@ -5,6 +5,9 @@
 	"iso": "DE",
 	"iso_num": "276",
 	"continent": "Europe",
+	"aliases": [
+		"Deutschland"
+	],
 	"languages": [
 		{
 			"language": "german",

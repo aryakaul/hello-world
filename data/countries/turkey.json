@@ -5,6 +5,9 @@
 	"iso": "TR",
 	"iso_num": "792",
 	"continent": "Asia",
+	"aliases": [
+		"Türkiye"
+	],
 	"languages": [
 		{
 			"language": "turkish",
