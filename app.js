@@ -216,13 +216,21 @@ async function renderHome(app) {
 	search.setAttribute("autocomplete", "off");
 	search.setAttribute("role", "combobox");
 	search.setAttribute("aria-expanded", "false");
-	search.setAttribute("aria-controls", "search-results");
+	search.setAttribute("aria-controls", "search-listbox");
 	search.setAttribute("aria-autocomplete", "list");
 	const results = el("div", "search-results");
-	results.id = "search-results";
-	results.setAttribute("role", "listbox");
-	results.setAttribute("aria-label", "Search results");
 	results.hidden = true;
+	// The listbox holds options and nothing else; status copy
+	// is a sibling, since a <p> is not a permitted child of
+	// role="listbox".
+	const listbox = el("div", "search-listbox");
+	listbox.id = "search-listbox";
+	listbox.setAttribute("role", "listbox");
+	listbox.setAttribute("aria-label", "Search results");
+	const resultNote = el("p", "result-empty");
+	resultNote.setAttribute("role", "status");
+	resultNote.hidden = true;
+	results.append(listbox, resultNote);
 	searchWrap.append(search, results);
 	header.append(searchWrap);
 	app.append(header);
@@ -300,14 +308,24 @@ async function renderHome(app) {
 
 	function closeResults() {
 		results.hidden = true;
+		resultNote.hidden = true;
 		search.setAttribute("aria-expanded", "false");
 		search.removeAttribute("aria-activedescendant");
 		options = [];
 		active = -1;
 	}
 
+	// One live region for every search outcome: a visible
+	// sentence when there is something to read, an
+	// announced-only count otherwise.
+	function setNote(text, visible) {
+		resultNote.textContent = text;
+		resultNote.hidden = false;
+		resultNote.classList.toggle("sr-only", !visible);
+	}
+
 	function fillResults(q) {
-		results.replaceChildren();
+		listbox.replaceChildren();
 		options = [];
 		active = -1;
 		const hits = searchMatches(index, q);
@@ -326,23 +344,27 @@ async function renderHome(app) {
 				row.append(el("span", "match-why",
 					hit.why));
 			}
-			results.append(row);
+			listbox.append(row);
 			options.push(row);
 		}
 		if (!options.length) {
-			results.append(el("p", "result-empty",
-				"No countries or languages match “" +
+			// Must clear, not just repoint: the attribute
+			// would otherwise reference a removed node.
+			search.removeAttribute("aria-activedescendant");
+			setNote("No countries or languages match “" +
 				search.value.trim() + "”. Try a country" +
-				" name, or a language like “Tamil”."));
-		} else {
-			if (hits.length > MAX_RESULTS) {
-				results.append(el("p", "result-empty",
-					"Showing the closest " +
-					MAX_RESULTS + " of " +
-					hits.length + " matches."));
-			}
-			setActive(0);
+				" name, or a language like “Tamil”.", true);
+			return;
 		}
+		if (hits.length > MAX_RESULTS) {
+			setNote("Showing the closest " + MAX_RESULTS +
+				" of " + hits.length + " matches.", true);
+		} else {
+			setNote(hits.length === 1
+				? "1 result"
+				: hits.length + " results", false);
+		}
+		setActive(0);
 	}
 
 	search.addEventListener("input", function () {
@@ -634,7 +656,7 @@ async function renderCountry(app, slug) {
 	app.replaceChildren();
 	setTitle(country.name);
 	announce(country.name + ", " + languages.length +
-		" languages.");
+		(languages.length === 1 ? " language." : " languages."));
 	app.append(backLink());
 	app.append(el("h1", null,
 		country.flag + " " + country.name));

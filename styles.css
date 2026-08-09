@@ -83,6 +83,13 @@ body {
 	scroll-margin-top: 0.5rem;
 }
 
+.language-section h2 a {
+	display: inline-block;
+	min-height: 44px;
+	padding: 0.55rem 0;
+	color: #0a58ca;
+}
+
 .language-section h2 {
 	font-size: 1.2rem;
 	margin: 0 0 0.25rem;
@@ -109,6 +116,12 @@ body {
 	padding: 0.6rem 0.4rem;
 	border-top: 1px solid #e5e5e0;
 	vertical-align: top;
+	/* Indic and other non-breaking scripts have no break
+	   opportunity inside a word, so at 320px their min-content
+	   pushed the table past the viewport. `anywhere` lowers
+	   min-content and only breaks when there is no
+	   alternative — nothing changes at 390px and up. */
+	overflow-wrap: anywhere;
 }
 
 .phrase-table .english {
