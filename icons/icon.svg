@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"
-     role="img" aria-label="hello, world">
-  <title>hello, world</title>
+     role="img" aria-label="hello world">
+  <title>hello world</title>
   <circle cx="32" cy="32" r="28" fill="#cbdff7"/>
   <g fill="#3d8f5c">
     <path d="M14 22c3-3 7-4 10-2 2 2 1 5-1 7-2 2-1 5 1 7 3 3 2 8-1 10

@@ -17,7 +17,7 @@
   </g>
 
   <text x="90" y="250" font-family="Helvetica Neue, Helvetica, Arial"
-        font-size="82" font-weight="700" fill="#1c1c1c">hello, world</text>
+        font-size="82" font-weight="700" fill="#1c1c1c">hello world</text>
 
   <text x="90" y="320" font-family="Helvetica Neue, Helvetica, Arial"
         font-size="34" fill="#3d3d3d">A simple, user-contributed phrasebook</text>

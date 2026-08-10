@@ -131,7 +131,7 @@ are acknowledged in country guidance, not phrase files.
 
 ## Brand Commitments
 
-- Name: **hello-world**. Site title and H1: **"hello, world"**,
+- Name: **hello-world**. Site title and H1: **"hello world"**,
   lowercase (chosen 2026-08-01).
 - Planned home: `aryakaul.github.io/hello-world`.
 - Every page carries a "spot an error? fix it on GitHub" affordance.

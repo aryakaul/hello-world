@@ -1,7 +1,7 @@
 {
-	"name": "hello, world",
-	"short_name": "hello, world",
-	"description": "A simple, user-contributed phrasebook for communicating across the world.",
+	"name": "hello world",
+	"short_name": "hello world",
+	"description": "Simple phrasebook site for communicating across the world.",
 	"lang": "en",
 	"start_url": "./",
 	"scope": "./",

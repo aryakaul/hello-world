@@ -7,8 +7,7 @@ const GLOBE_LIBS = [
 ];
 
 // Covered countries differ from land by luminance (3.2:1), not
-// only by hue: the globe is used one-handed outdoors, where a
-// pale mint fill washes out to the same gray as everything else.
+// only by hue: the globe is optimized for one-handed use outdoors. 
 const GLOBE_COLORS = {
 	ocean: "#cbdff7",
 	land: "#e7e5e4",
@@ -396,8 +395,7 @@ async function mountGlobe(container) {
 
 	// 1.002 doubles the previous rate: a wheel notch moves ~22%
 	// instead of ~10%, so base to full zoom is about 9 notches
-	// rather than 18. Pinch stays ratio-based against finger
-	// distance, which should track 1:1 and is left alone.
+	// rather than 18. 
 	canvas.addEventListener("wheel", function (ev) {
 		ev.preventDefault();
 		setScale(projection.scale() *
