@@ -1,6 +1,6 @@
 {
-	"name": "hello world",
-	"short_name": "hello world",
+	"name": "hello world!",
+	"short_name": "hello world!",
 	"description": "Simple phrasebook site for communicating across the world.",
 	"lang": "en",
 	"start_url": "./",

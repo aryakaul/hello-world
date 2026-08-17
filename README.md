@@ -53,10 +53,10 @@ python3 -m http.server 8000
 ```
 
 Then open <http://localhost:8000>. Globe rendering uses the 
-libraries vendored in `vendor/` (d3-geo, topojson-client, 
-world-atlas); a Noto Sans Ethiopic font subset is vendored 
-too, so Ge'ez script renders on any device. It all works 
-offline and makes no external requests.
+libraries vendored in `vendor/` (d3-geo and its d3-array 
+dependency, topojson-client, world-atlas); a Noto Sans Ethiopic 
+font subset is vendored too, so Ge'ez script renders on any 
+device. It all works offline and makes no external requests.
 
 ### Validating the data
 
@@ -75,6 +75,15 @@ python3 scripts/build_index.py        # rebuild data/index.json
 - `data/languages/<slug>.json` — per-language phrase entries
 - `data/countries/<slug>.json` — countries, their languages by
   prevalence, and regional variants (overrides)
--  `data/audio` — per-phrase audio entries (currently empty!! Help out!)
+- `data/audio` — per-phrase audio entries (currently empty!! Help out!)
 - `data/index.json` — search index
+- `scripts/` — `validate.py` (schema + script checks),
+  `build_index.py` (rebuilds the search index),
+  `new_language.py` (scaffolds a language file),
+  `check_audio.py` (audio codec/duration checks, CI only)
+- `tests/` — the validator and scaffolder test suites
+- `icons/`, `site.webmanifest` — favicons, home-screen icons,
+  and the share-preview card
+- `.github/` — issue forms for corrections and verifications,
+  the pull request template, and the CI and Pages workflows
 - `vendor/` — third-party libraries, committed verbatim

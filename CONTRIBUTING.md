@@ -1,4 +1,4 @@
-# Contributing to hello world
+# Contributing to hello world!
 
 Every phrase here started as an AI draft. The whole point of
 this project is to replace those drafts with words a **native

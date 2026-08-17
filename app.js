@@ -60,8 +60,8 @@ function applyDirection(node, text) {
 
 function setTitle(text) {
 	document.title = text
-		? text + " · hello world"
-		: "hello world";
+		? text + " · hello world!"
+		: "hello world!";
 }
 
 function announce(text) {
@@ -325,13 +325,13 @@ async function renderHome(app) {
 	setTitle("");
 	announce("Home. Search countries or languages.");
 	const header = el("header", "home-header");
-	header.append(el("h1", null, "hello world"));
+	header.append(el("h1", null, "hello world!"));
 	// Same sentence as the meta description, the manifest, and
 	// the share card, so the page and its preview say the same
 	// thing.
 	header.append(el("p", "tagline",
-		"A simple, user-contributed phrasebook for" +
-		" communicating across the world."));
+		"Simple phrasebook site for communicating" +
+		" across the world."));
 	const searchWrap = el("div", "search-wrap");
 	const search = el("input", "search");
 	search.type = "search";

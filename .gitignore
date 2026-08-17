@@ -1,5 +1,7 @@
 __pycache__/
 AGENT*.md
+PRODUCT.md
+.impeccable/
 .superpowers/
 .playwright-mcp/
 .DS_Store
