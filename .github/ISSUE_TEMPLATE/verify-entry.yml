@@ -1,15 +1,15 @@
 name: Verify a phrase
-description: Confirm an AI-drafted entry is correct as written.
+description: Confirm AI-drafted entries are correct as written.
 title: "Verify: "
 labels: ["verification"]
 body:
   - type: markdown
     attributes:
       value: >
-        If you're a native or fluent speaker and the entry is
-        right, this flips its badge from "unverified" to
-        "verified". The language and phrase may already be filled
-        in if you came from the site.
+        If you're a native or fluent speaker and the entries are
+        right, this flips their badge from "unverified" to
+        "verified". Verify one phrase or a whole language — the
+        language is already filled in if you came from the site.
   - type: input
     id: language
     attributes:
@@ -21,15 +21,17 @@ body:
     id: phrase
     attributes:
       label: Phrase
-      description: Which phrase (e.g. hello, thank_you, cheers).
-    validations:
-      required: true
+      description: >
+        Which phrase (e.g. hello, thank_you, cheers). Leave blank
+        if every phrase in this language is correct as written.
   - type: checkboxes
     id: confirm
     attributes:
       label: Confirmation
       options:
-        - label: I'm a native or fluent speaker and this entry is correct as written.
+        - label: >
+            I'm a native or fluent speaker and what I named
+            above is correct as written.
           required: true
   - type: input
     id: credit

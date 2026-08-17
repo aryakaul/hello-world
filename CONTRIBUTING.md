@@ -53,12 +53,14 @@ Entries drafted by AI show an **"unverified"** badge. If you're
 a native or fluent speaker and an entry is correct as written,
 confirming it flips that badge to **"verified"**.
 
-On the site, tap **"I speak this — verify it"** under an
-unverified entry, or open a [verify
+On the site, tap **"I speak this — help verify these"** beneath
+a language's phrase table, or open a [verify
 issue](https://github.com/aryakaul/hello-world/issues/new?template=verify-entry.yml).
-Tell us the phrase is right and, if you'd like credit, how you
-want to be named. A maintainer sets the entry's `status` to
-`verified` and records your attribution:
+Name a single phrase, or leave the phrase blank to vouch for
+every phrase in that language at once. Tell us it's right and,
+if you'd like credit, how you want to be named. A maintainer
+sets the entry's `status` to `verified` and records your
+attribution:
 
 ```json
 "hello": {

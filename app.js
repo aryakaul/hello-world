@@ -79,9 +79,6 @@ function fillFooter() {
 	if (!footer || footer.childElementCount) {
 		return;
 	}
-	footer.append(el("p", null,
-		"Every phrase here began as an AI draft." +
-		" Native speakers are reviewing them."));
 	if (REPO_URL !== "") {
 		const p = el("p");
 		const link = el("a", null,
@@ -809,11 +806,23 @@ function entryActions(langSlug, phraseId, current) {
 	return actions;
 }
 
+// Covered countries listing this language, by display name —
+// the same key country rows carry in the index.
+function countriesSpeaking(index, languageName) {
+	return index.countries.filter(function (c) {
+		return c.languages.indexOf(languageName) !== -1;
+	});
+}
+
+// The country page already shows every phrase, so the language
+// page is worth a link only for what it alone knows: the other
+// countries speaking it. Most languages here have none.
 function sectionActions(language, linkToLanguage) {
 	const p = el("p", "section-actions");
 	if (linkToLanguage) {
 		const all = el("a", null,
-			"See all " + language.name + " phrases →");
+			"Where else " + language.name +
+			" is spoken →");
 		all.href = "#/lang/" + language.slug;
 		p.append(all);
 	}
@@ -1003,7 +1012,9 @@ async function renderCountry(app, slug) {
 			&& index.audio[item.language]) || {};
 		body.append(phraseTable(phrases, language,
 			item.overrides || {}, audioMap));
-		body.append(sectionActions(language, true));
+		body.append(sectionActions(language,
+			countriesSpeaking(index, language.name)
+				.length > 1));
 		section.append(body);
 		toggle.addEventListener("click", function () {
 			const open = body.hidden;
@@ -1040,9 +1051,7 @@ async function renderLanguage(app, slug) {
 	app.append(backLink("languages"));
 	app.append(jumpControl([]));
 	app.append(el("h1", null, languageTitle(language)));
-	const spoken = index.countries.filter(function (c) {
-		return c.languages.indexOf(language.name) !== -1;
-	});
+	const spoken = countriesSpeaking(index, language.name);
 	if (spoken.length > 0) {
 		const p = el("p", "guidance");
 		p.append(document.createTextNode("Spoken in: "));
